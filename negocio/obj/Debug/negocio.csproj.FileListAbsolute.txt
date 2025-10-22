@@ -1,0 +1,11 @@
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\bin\Debug\negocio.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\bin\Debug\negocio.pdb
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\bin\Debug\accesoAdatos.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\bin\Debug\dominio.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\bin\Debug\accesoAdatos.pdb
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\bin\Debug\dominio.pdb
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\obj\Debug\negocio.csproj.Up2Date
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\obj\Debug\negocio.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\obj\Debug\negocio.pdb

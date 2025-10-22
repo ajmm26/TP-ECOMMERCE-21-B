@@ -1,24 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\",
+  "WorkspaceRootPath": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|c:\\users\\ale\\desktop\\tp-ecommerce-21-b\\dominio\\detallepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|c:\\users\\ale\\desktop\\tp-ecommerce-21-b\\dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|c:\\users\\ale\\desktop\\tp-ecommerce-21-b\\dominio\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\contact.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:contact.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|c:\\users\\ale\\desktop\\tp-ecommerce-21-b\\dominio\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F1FB2A66-9747-4064-969E-1713335019FF}|..\\negocio\\negocio.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\negocio\\negocioproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|c:\\users\\ale\\desktop\\tp-ecommerce-21-b\\dominio\\marca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E9CE420-DAF8-4F0C-BD57-EBDDE99901B3}|..\\accesoAdatos\\accesoAdatos.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\accesoadatos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|c:\\users\\ale\\desktop\\tp-ecommerce-21-b\\dominio\\imagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\dominio\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\dominio\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\dominio\\detallepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,84 +37,114 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DetallePedido.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs",
-              "RelativeDocumentMoniker": "..\\dominio\\DetallePedido.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs",
-              "RelativeToolTip": "..\\dominio\\DetallePedido.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T01:12:58.892Z",
+              "Title": "Site.Master",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Site.Master",
+              "RelativeDocumentMoniker": "Site.Master",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Site.Master",
+              "RelativeToolTip": "Site.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-10-22T23:08:29.328Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Producto.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Producto.cs",
-              "RelativeDocumentMoniker": "..\\dominio\\Producto.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Producto.cs",
-              "RelativeToolTip": "..\\dominio\\Producto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
+              "Title": "Contact.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Contact.aspx.cs",
+              "RelativeDocumentMoniker": "Contact.aspx.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Contact.aspx.cs",
+              "RelativeToolTip": "Contact.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T01:03:55.036Z",
+              "WhenOpened": "2025-10-22T22:44:29.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Usuario.cs",
-              "RelativeDocumentMoniker": "..\\dominio\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Usuario.cs",
-              "RelativeToolTip": "..\\dominio\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:58:57.337Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Marca.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Marca.cs",
-              "RelativeDocumentMoniker": "..\\dominio\\Marca.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Marca.cs",
-              "RelativeToolTip": "..\\dominio\\Marca.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:54:50.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Imagen.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Imagen.cs",
-              "RelativeDocumentMoniker": "..\\dominio\\Imagen.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Imagen.cs",
-              "RelativeToolTip": "..\\dominio\\Imagen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:53:58.119Z",
+              "Title": "Contact.aspx",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Contact.aspx",
+              "RelativeDocumentMoniker": "Contact.aspx",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Contact.aspx",
+              "RelativeToolTip": "Contact.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-10-22T22:43:44.858Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Pedido.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Pedido.cs",
-              "RelativeDocumentMoniker": "..\\dominio\\Pedido.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Pedido.cs",
-              "RelativeToolTip": "..\\dominio\\Pedido.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
+              "Title": "negocioProducto.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioProducto.cs",
+              "RelativeDocumentMoniker": "..\\negocio\\negocioProducto.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioProducto.cs",
+              "RelativeToolTip": "..\\negocio\\negocioProducto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:52:07.272Z",
+              "WhenOpened": "2025-10-22T21:25:01.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccesoDatos.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\accesoAdatos\\AccesoDatos.cs",
+              "RelativeDocumentMoniker": "..\\accesoAdatos\\AccesoDatos.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\accesoAdatos\\AccesoDatos.cs",
+              "RelativeToolTip": "..\\accesoAdatos\\AccesoDatos.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwC0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:46:40.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Producto.cs",
+              "RelativeDocumentMoniker": "..\\dominio\\Producto.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Producto.cs",
+              "RelativeToolTip": "..\\dominio\\Producto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:45:28.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DetallePedido.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs",
+              "RelativeDocumentMoniker": "..\\dominio\\DetallePedido.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs",
+              "RelativeToolTip": "..\\dominio\\DetallePedido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:45:05.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Categoria.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Categoria.cs",
+              "RelativeDocumentMoniker": "..\\dominio\\Categoria.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Categoria.cs",
+              "RelativeToolTip": "..\\dominio\\Categoria.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:45:03.298Z",
               "EditorCaption": ""
             }
           ]

@@ -1,0 +1,6 @@
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\bin\Debug\accesoAdatos.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\bin\Debug\accesoAdatos.pdb
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\obj\Debug\accesoAdatos.csproj.AssemblyReference.cache
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\obj\Debug\accesoAdatos.csproj.CoreCompileInputs.cache
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\obj\Debug\accesoAdatos.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\obj\Debug\accesoAdatos.pdb

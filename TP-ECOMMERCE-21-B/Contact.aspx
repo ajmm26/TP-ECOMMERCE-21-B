@@ -11,6 +11,7 @@
             425.555.0100
         </address>
 
+        <asp:GridView ID="GridViewProducto" CssClass="table" runat="server"></asp:GridView>
         <address>
             <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
             <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>

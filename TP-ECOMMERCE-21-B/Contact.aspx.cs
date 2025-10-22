@@ -1,4 +1,5 @@
-﻿using System;
+﻿using negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,9 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            negocioProducto productoNegocio = new negocioProducto();
+            GridViewProducto.DataSource = productoNegocio.listar();
+            GridViewProducto.DataBind();
 
         }
     }

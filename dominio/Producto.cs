@@ -8,17 +8,17 @@ namespace dominio
 {
     public class Producto
     {
-        int ID { get; set; }
-        string Codigo { get; set; }
-        string Nombre { get; set; }
-        string Descripcion {  get; set; }
-        Marca IdMarca { get; set; }
-        Categoria IdCategoria { get; set; }
-        List<Imagen> Imagenes { get; set; }
-        decimal PrecioCompra {  get; set; }
-        decimal PorcentajeGanancia { get; set; }
-        decimal PrecioVenta { get; set; }
-        int StockActual {  get; set; }  
-        int StockMinimo { get; set; }
+         public int Id { get; set; }
+        public string Codigo { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion {  get; set; }
+        public Marca IdMarca { get; set; }
+        public Categoria IdCategoria { get; set; }
+        public List<Imagen> Imagenes { get; set; }
+        public decimal PrecioCompra {  get; set; }
+        public decimal PorcentajeGanancia { get; set; }
+        public decimal PrecioVenta { get; set; }
+        public int StockActual {  get; set; }  
+        public  int StockMinimo { get; set; }
     }
 }
