@@ -13,12 +13,15 @@ namespace dominio
         public string Nombre { get; set; }
         public string Descripcion {  get; set; }
         public Marca IdMarca { get; set; }
-        public Categoria IdCategoria { get; set; }
+        //public Categoria IdCategoria { get; set; }
         public List<Imagen> Imagenes { get; set; }
         public decimal PrecioCompra {  get; set; }
         public decimal PorcentajeGanancia { get; set; }
         public decimal PrecioVenta { get; set; }
         public int StockActual {  get; set; }  
         public  int StockMinimo { get; set; }
+        public string UrlImagen => Imagenes != null && Imagenes.Count > 0 ? Imagenes[0].Url : "img/default.jpg";
+
+
     }
 }

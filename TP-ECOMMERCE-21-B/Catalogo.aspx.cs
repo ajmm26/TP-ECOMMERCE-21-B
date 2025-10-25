@@ -1,4 +1,5 @@
-﻿using negocio;
+﻿using dominio;
+using negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +9,14 @@ using System.Web.UI.WebControls;
 
 namespace TP_ECOMMERCE_21_B
 {
-    public partial class Contact : Page
+    public partial class Catalogo : Page
     {
+        public List<Producto> listaProducto { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             negocioProducto productoNegocio = new negocioProducto();
-            GridViewProducto.DataSource = productoNegocio.listar();
-            GridViewProducto.DataBind();
-
+            listaProducto = productoNegocio.listar();
+           
         }
     }
 }

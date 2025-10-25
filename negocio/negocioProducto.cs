@@ -15,6 +15,7 @@ namespace negocio
         {
             List<Producto> lista = new List<Producto>();
             AccesoDatos datos = new AccesoDatos();
+            negocioImagen negocioImagen = new negocioImagen();
             try
             {
 
@@ -34,6 +35,9 @@ namespace negocio
                     producto.PrecioVenta = (decimal)datos.Lector["PrecioVenta"];
                     producto.StockActual = (int)datos.Lector["StockActual"];
                     producto.StockMinimo = (int)datos.Lector["StockMinimo"];
+
+                    producto.Imagenes = negocioImagen.listarImagenes(producto.Id);
+
                     lista.Add(producto);
                 }
 
