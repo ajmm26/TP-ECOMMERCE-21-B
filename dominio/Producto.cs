@@ -20,8 +20,7 @@ namespace dominio
         public decimal PrecioVenta { get; set; }
         public int StockActual {  get; set; }  
         public  int StockMinimo { get; set; }
-        public string UrlImagen => Imagenes != null && Imagenes.Count > 0 ? Imagenes[0].Url : "img/default.jpg";
-
+        public bool Estado {  get; set; }
 
     }
 }

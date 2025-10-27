@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using negocio;
 
 namespace TP_ECOMMERCE_21_B
 {
@@ -17,18 +18,12 @@ namespace TP_ECOMMERCE_21_B
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Catalogo.aspx");
-
+            
 
         }
         protected void btnRegistro_Click(object sender, EventArgs e)
         {
-            lblErrorRegistro.Text = "Registro exitoso. Ahora podés iniciar sesión.";
-
-            mvLoginRegistro.ActiveViewIndex = 0; 
-
-
-
+            
         }
         protected void btnMostrarRegistro_Click(object sender, EventArgs e)
         {

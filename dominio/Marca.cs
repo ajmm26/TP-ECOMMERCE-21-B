@@ -10,5 +10,14 @@ namespace dominio
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+
+        public Marca(int id, string descripcion)
+        {
+            Id = id;
+            Nombre = descripcion;
+        }
+
+        public Marca() { }
+
     }
 }

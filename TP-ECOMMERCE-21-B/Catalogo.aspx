@@ -6,9 +6,14 @@
         <h3>Signos.</h3>
 
         <div class="text-end mt-2 me-3">
+
             <a href="Login.aspx" class="btn btn-outline-dark">
                 <i class="bi bi-person-circle"></i>Iniciar sesión
             </a>
+            <a href="Carrito.aspx" class="btn btn-outline-dark me-2">
+                <i class="bi bi-cart"></i>Carrito
+            </a>
+
         </div>
 
 
@@ -16,58 +21,56 @@
 
 
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <%
-                foreach (dominio.Producto item in listaProducto)
-                {
-            %>
-            <div class="col">
-                <div class="card h-100">
-                    <div id="carousel<%: item.Id %>" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <% 
-                                for (int i = 0; i < item.Imagenes.Count; i++)
-                                {
-                                    var img = item.Imagenes[i];
-                            %>
-                            <div class="carousel-item <% if (i == 0)
-                                { %>active<% } %>">
-                                <img src="<%: img.Url %>" class="d-block w-100" alt="Imagen del producto">
+
+
+        <!-- ✅ El row va afuera del Repeater -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <asp:Repeater ID="RepeaterProducto" runat="server">
+                <ItemTemplate>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div id="carousel<%# Eval("Id") %>" class="carousel slide" data-bs-ride="carousel" aria-label="Imágenes del producto">
+                                <div class="carousel-inner">
+                                    <asp:Repeater ID="RepeaterImagenes" runat="server" DataSource='<%# Eval("Imagenes") %>'>
+                                        <ItemTemplate>
+                                            <div class="carousel-item <%# Container.ItemIndex == 0 ? "active" : "" %>">
+                                                <img src='<%# Eval("Url") %>' class="d-block w-100 img-fluid" style="max-height: 300px; object-fit: cover;" alt="Imagen del producto" />
+                                            </div>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%# Eval("Id") %>" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Anterior</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel<%# Eval("Id") %>" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Siguiente</span>
+                                </button>
                             </div>
-                            <% } %>
+
+                            <div class="card-body">
+                                <h5 class="card-Nombre"><%# Eval("Nombre") %></h5>
+                                <p class="card-Descripcion"><%# Eval("Descripcion") %></p>
+                                <p class="card-Precio"><%# string.Format("${0:N2}", Eval("PrecioVenta")) %></p>
+                                <p class="card-StockActual">Stock disponible: <%# Eval("StockActual") %></p>
+
+                                <asp:Button ID="btnAgregarCarrito" runat="server" Text="Agregar al carrito" CssClass="btn btn-outline-secondary w-100 mb-2"
+                                    CommandArgument='<%# Eval("Id") %>' CommandName="AgregarCarrito" OnCommand="btnCarrito_Command" />
+
+                                <asp:Button ID="btnComprar" runat="server" Text="Comprar ahora" CssClass="btn btn-primary w-100"
+                                    CommandArgument='<%# Eval("Id") %>' CommandName="ComprarAhora" OnCommand="btnComprar_Command" />
+
+                            </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%: item.Id %>" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Anterior</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel<%: item.Id %>" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Siguiente</span>
-                        </button>
                     </div>
-
-
-                    <div class="card-body">
-                        <h5 class="card-Nombre"><%:item.Nombre %></h5>
-                        <p class="card-descripcion"><%:item.Descripcion %></p>
-                        <p class="card-precio"><%:item.PrecioVenta %></p>
-                        <p class="card-stock"><%:item.StockActual %></p>
-                        <a href='Comprar.aspx?id=<%: item.Id %>' class="btn btn-primary w-100 mt-2">Comprar</a>
-                    </div>
-                </div>
-            </div>
-
-            <% 
-                }
-            %>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
 
 
 
-        <address>
-            <strong>Soporte:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-            
-            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-        </address>
+
+
     </main>
 </asp:Content>

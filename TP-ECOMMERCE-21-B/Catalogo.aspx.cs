@@ -15,8 +15,22 @@ namespace TP_ECOMMERCE_21_B
         protected void Page_Load(object sender, EventArgs e)
         {
             negocioProducto productoNegocio = new negocioProducto();
-            listaProducto = productoNegocio.listar();
+            RepeaterProducto.DataSource = productoNegocio.listar();
+            RepeaterProducto.DataBind();
            
         }
+        protected void btnComprar_Command(object sender, CommandEventArgs e)
+        {
+            int idProducto = Convert.ToInt32(e.CommandArgument);
+            // Lógica para agregar al carrito o redirigir
+        }
+
+        protected void btnCarrito_Command(object sender, CommandEventArgs e)
+        {
+            int idProducto = Convert.ToInt32(e.CommandArgument);
+            // Lógica para agregar al carrito sin redirigir
+        }
+
+
     }
 }

@@ -19,7 +19,7 @@ namespace negocio
             try
             {
 
-                datos.setearConsulta("select Id,Codigo,Nombre,MarcaId,Descripcion,PrecioCompra,PorcentajeGanancia,PrecioVenta,StockActual,StockMinimo from Producto");
+                datos.setearConsulta("select Id,Codigo,Nombre,MarcaId,Descripcion,PrecioCompra,PorcentajeGanancia,PrecioVenta,StockActual,StockMinimo,Estado from Producto");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -35,6 +35,7 @@ namespace negocio
                     producto.PrecioVenta = (decimal)datos.Lector["PrecioVenta"];
                     producto.StockActual = (int)datos.Lector["StockActual"];
                     producto.StockMinimo = (int)datos.Lector["StockMinimo"];
+                    producto.Estado = (bool)datos.Lector["Estado"];
 
                     producto.Imagenes = negocioImagen.listarImagenes(producto.Id);
 
@@ -52,6 +53,34 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
+        }
+          
+        public void agregarProducto(Producto nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("INSERT INTO Producto (Codigo,Nombre,MarcaId,Descripcion,PrecioCompra,PorcentajeGanancia,PrecioVenta,StockActual,StockMinimo,Estado) " +
+                      "VALUES (@codigo,@nombre,@marcaId,@descripcion,@precioCompra,@porcentajeGanancia,@precioVenta,@stockActual,@stockMinimo,@estado)");
+
+                datos.agregarParametros("@codigo", nuevo.Codigo);
+                datos.agregarParametros("@nombre", nuevo.Nombre);
+                datos.agregarParametros("@marcaId", nuevo.IdMarca.Id);
+                datos.agregarParametros("@descripcion", nuevo.Descripcion);
+                datos.agregarParametros("@precioCompra", nuevo.PrecioCompra);
+                datos.agregarParametros("@porcentajeGanancia", nuevo.PorcentajeGanancia);
+                datos.agregarParametros("@precioVenta", nuevo.PrecioVenta);
+                datos.agregarParametros("@stockActual", nuevo.StockActual);
+                datos.agregarParametros("@stockMinimo", nuevo.StockMinimo);
+                datos.agregarParametros("@estado", nuevo.Estado);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
         }
     }
 }
