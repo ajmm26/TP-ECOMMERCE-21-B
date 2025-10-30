@@ -6,13 +6,40 @@
         <h3>Signos.</h3>
 
         <div class="text-end mt-2 me-3">
-
-            <a href="Login.aspx" class="btn btn-outline-dark">
+            <a href="Login.aspx" class="btn btn-outline-dark mb-3">
                 <i class="bi bi-person-circle"></i>Iniciar sesión
             </a>
-            <a href="Carrito.aspx" class="btn btn-outline-dark me-2">
+            <a href="Carrito.aspx" class="btn btn-outline-dark me-2 mb-3">
                 <i class="bi bi-cart"></i>Carrito
             </a>
+        </div>
+
+        <div>
+            <asp:TextBox ID="txtFiltro" runat="server" CssClass="mb-2"></asp:TextBox>
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+        </div>
+
+
+       <div class="mb-3 carousel slide carousel-fixed-height bg-dark" id="carouselExampleControlsNoTouching" data-bs-touch="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://img.joomcdn.net/5614e867d137a0dae93a61d2076d9bd638957a95_400_400.jpeg" style="background-color: black; display: block; margin: 0 auto; max-height: 300px; object-fit: contain;" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.joomcdn.net/5614e867d137a0dae93a61d2076d9bd638957a95_400_400.jpeg" style="background-color: black; display: block; margin: 0 auto; max-height: 300px; object-fit: contain;" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.joomcdn.net/5614e867d137a0dae93a61d2076d9bd638957a95_400_400.jpeg" style="background-color: black; display: block; margin: 0 auto; max-height: 300px; object-fit: contain;" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
 
         </div>
 
@@ -23,7 +50,9 @@
 
 
 
-        <!-- ✅ El row va afuera del Repeater -->
+
+
+
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <asp:Repeater ID="RepeaterProducto" runat="server">
                 <ItemTemplate>
