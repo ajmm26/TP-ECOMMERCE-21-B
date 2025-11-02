@@ -17,5 +17,12 @@ namespace TP_ECOMMERCE_21_B
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Session_Start(object sender, EventArgs e)
+        {
+            // 🔹 Esto se ejecuta automáticamente cuando se crea una nueva sesión
+            Session["items"] = 0;
+        }
+
     }
 }

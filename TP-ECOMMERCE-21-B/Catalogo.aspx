@@ -9,7 +9,7 @@
             <a href="Login.aspx" class="btn btn-outline-dark mb-3">
                 <i class="bi bi-person-circle"></i>Iniciar sesión
             </a>
-            <a href="Carrito.aspx" class="btn btn-outline-dark me-2 mb-3">
+            <a href="carritoWithMaster.aspx" class="btn btn-outline-dark me-2 mb-3">
                 <i class="bi bi-cart"></i>Carrito
             </a>
         </div>
