@@ -33,5 +33,27 @@ namespace negocio
 				throw;
 			}
         }
+
+		public void agregarMarca(Marca nueva)
+		{
+			AccesoDatos datos =new AccesoDatos();
+			try
+			{
+				datos.setearConsulta("insert into marca (Nombre) values (@nombre)");
+				datos.agregarParametros("@nombre",nueva.Nombre);
+				
+				datos.ejecutarAccion();
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+			finally
+			{
+				datos.cerrarConexion();
+			}
+		}
+		
     }
 }

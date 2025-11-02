@@ -53,6 +53,25 @@ namespace accesoAdatos
             finally 
             { conexion.Close(); }
         }
+        public object ejecutarEscalar()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                return comando.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+
         public void cerrarConexion()
         {
             if(lector != null)

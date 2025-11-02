@@ -19,7 +19,7 @@ namespace negocio
             try
             {
 
-                datos.setearConsulta("select Id,Codigo,Nombre,MarcaId,Descripcion,PrecioCompra,PorcentajeGanancia,PrecioVenta,StockActual,StockMinimo,Estado from Producto");
+                datos.setearConsulta("select Id,Codigo,Nombre,MarcaId,Descripcion,PrecioCompra,PorcentajeGanancia,PrecioVenta,StockActual,StockMinimo,Estado from Producto where Estado=1");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -61,7 +61,7 @@ namespace negocio
             try
             {
                 datos.setearConsulta("INSERT INTO Producto (Codigo,Nombre,MarcaId,Descripcion,PrecioCompra,PorcentajeGanancia,PrecioVenta,StockActual,StockMinimo,Estado) " +
-                      "VALUES (@codigo,@nombre,@marcaId,@descripcion,@precioCompra,@porcentajeGanancia,@precioVenta,@stockActual,@stockMinimo,@estado)");
+                      "VALUES (@codigo,@nombre,@marcaId,@descripcion,@precioCompra,@porcentajeGanancia,@precioVenta,@stockActual,@stockMinimo,@estado);" + "select scope_Identity();");
 
                 datos.agregarParametros("@codigo", nuevo.Codigo);
                 datos.agregarParametros("@nombre", nuevo.Nombre);
@@ -73,7 +73,9 @@ namespace negocio
                 datos.agregarParametros("@stockActual", nuevo.StockActual);
                 datos.agregarParametros("@stockMinimo", nuevo.StockMinimo);
                 datos.agregarParametros("@estado", nuevo.Estado);
-                datos.ejecutarAccion();
+                object resultado = datos.ejecutarEscalar();
+                nuevo.Id = Convert.ToInt32(resultado);
+            
             }
             catch (Exception ex)
             {
@@ -82,5 +84,179 @@ namespace negocio
             }
             finally { datos.cerrarConexion(); }
         }
+
+        public void modificarProducto(Producto aModificar)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update Producto set Codigo = @codigo,Nombre=@nombre,MarcaId=@marcaId,Descripcion=@descripcion,PrecioCompra=@precioCompra,PorcentajeGanancia=@porcentajeGanancia,PrecioVenta=@precioVenta,StockActual=@stockActual,StockMinimo=@stockMinimo,Estado=@estado where Id=@id");
+                datos.agregarParametros("@codigo",aModificar.Codigo);
+                datos.agregarParametros("@nombre",aModificar.Nombre);
+                datos.agregarParametros("@marcaId",aModificar.IdMarca.Id);
+                datos.agregarParametros("@descripcion",aModificar.Descripcion);
+                datos.agregarParametros("@precioCompra",aModificar.PrecioCompra);
+                datos.agregarParametros("@porcentajeGanancia",aModificar.PorcentajeGanancia);
+                datos.agregarParametros("@precioVenta",aModificar.PrecioVenta);
+                datos.agregarParametros("@stockActual",aModificar.StockActual);
+                datos.agregarParametros("@stockMinimo",aModificar.StockMinimo);
+                datos.agregarParametros("@estado",aModificar.Estado);
+                datos.agregarParametros("@id",aModificar.Id);
+
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        public Producto obtenerPorId(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Producto producto = new Producto();
+
+            try
+            {
+                datos.setearConsulta("SELECT * FROM Producto WHERE Id = @id");
+                datos.agregarParametros("@id", id);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    producto.Id = (int)datos.Lector["Id"];
+                    producto.Codigo = datos.Lector["Codigo"].ToString();
+                    producto.Nombre = datos.Lector["Nombre"].ToString();
+                    producto.Descripcion = datos.Lector["Descripcion"].ToString();
+                    producto.PrecioCompra = Convert.ToDecimal(datos.Lector["PrecioCompra"]);
+                    producto.PorcentajeGanancia = Convert.ToDecimal(datos.Lector["PorcentajeGanancia"]);
+                    producto.PrecioVenta = Convert.ToDecimal(datos.Lector["PrecioVenta"]);
+                    producto.StockActual = Convert.ToInt32(datos.Lector["StockActual"]);
+                    producto.StockMinimo = Convert.ToInt32(datos.Lector["StockMinimo"]);
+                    producto.Estado = Convert.ToBoolean(datos.Lector["Estado"]);
+
+                    int idMarca = Convert.ToInt32(datos.Lector["MarcaId"]);
+                    producto.IdMarca = new Marca(idMarca, ""); // Podés cargar el nombre si querés
+
+                    return producto;
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void darDeBaja(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Producto SET Estado = 0 WHERE Id = @id");
+                datos.agregarParametros("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
+        public List<Producto> listarInactivos()
+        {
+            List<Producto> lista = new List<Producto>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT * FROM Producto WHERE Estado = 0");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Producto producto = new Producto();
+                    producto.Id = (int)datos.Lector["Id"];
+                    producto.Codigo = datos.Lector["Codigo"].ToString();
+                    producto.Nombre = datos.Lector["Nombre"].ToString();
+                    producto.IdMarca = new Marca();
+                    producto.IdMarca.Id = (int)datos.Lector["MarcaId"];
+                    producto.Descripcion = datos.Lector["Descripcion"].ToString();
+                    producto.PrecioCompra = (decimal)datos.Lector["PrecioCompra"];
+                    producto.PorcentajeGanancia = (decimal)datos.Lector["PorcentajeGanancia"];
+                    producto.PrecioVenta = (decimal)datos.Lector["PrecioVenta"];
+                    producto.StockActual = (int)datos.Lector["StockActual"];
+                    producto.StockMinimo = (int)datos.Lector["StockMinimo"];
+                    producto.Estado = (bool)datos.Lector["Estado"];
+
+                    lista.Add(producto);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void darDeAlta(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Producto SET Estado = 1 WHERE Id = @id");
+                datos.agregarParametros("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void eliminarProducto(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM Producto WHERE Id = @id");
+                datos.agregarParametros("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
+
+
+
     }
 }
