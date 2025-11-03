@@ -1,0 +1,25 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+*.dll
+*.pdb
+*.cache
+*.log
+*.tlog
+*.ide
+*.db
+*.lock
+
+# ASP.NET
+*.Publish.xml
+
+# Otros temporales
+*.json
+*.vsidx
