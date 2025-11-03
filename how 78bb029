@@ -1,0 +1,73 @@
+[33mcommit 581e6ca2783c522d16a5b55b0dd7b9a88ecaf7b0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: RaulLuppini <raulluppini@gmail.com>
+Date:   Mon Nov 3 18:39:01 2025 -0300
+
+    Agregar .gitignore para ignorar archivos temporales
+
+[33mcommit e0d1f0984bb9646760eb1d3cee52b1da39865829[m
+Author: RaulLuppini <raulluppini@gmail.com>
+Date:   Sun Nov 2 16:46:37 2025 -0300
+
+    CRUD producto (reaplicado)
+
+[33mcommit 3c384fe924214b2a3cef34e01f0b0348a11db234[m
+Author: RaulLuppini <raulluppini@gmail.com>
+Date:   Sun Nov 2 15:41:10 2025 -0300
+
+    CRUD producto
+    
+    B
+
+[33mcommit 78bb029ef0bd70c54ea2e7fbb03abc840926de8d[m
+Author: Alejandro Maza <ajmm9257@gmail.com>
+Date:   Sat Nov 1 21:45:44 2025 -0300
+
+    Modificacion en producto unico y creacion de logica de carrito
+
+[33mcommit 6ed859ce29ace24afdc35ab7ff22554f6052acb5[m
+Author: RaulLuppini <raulluppini@gmail.com>
+Date:   Thu Oct 30 18:24:07 2025 -0300
+
+    formularioPago,scriptsBD,diagramaNavegacion
+
+[33mcommit 4e89466ed958f6227a32955a6c41bf7e1d4ec486[m
+Author: Alejandro Maza <ajmm9257@gmail.com>
+Date:   Wed Oct 29 23:33:56 2025 -0300
+
+    creacion de la vista de producto unico
+
+[33mcommit 91e7151b5a10d292a19913a6297c8ee5d00e3082[m
+Author: RaulLuppini <raulluppini@gmail.com>
+Date:   Mon Oct 27 16:51:36 2025 -0300
+
+    Lista Productos,Alta Producto
+
+[33mcommit 7f51ea894c5146f1e2dffc9300c81cebfcc3cbea[m
+Author: RaulLuppini <raulluppini@gmail.com>
+Date:   Sat Oct 25 17:35:32 2025 -0300
+
+    metodo Listar Imagen en negocio imagen,Catalogo con imagenes,pagina iniciar seccion o registrarse
+
+[33mcommit c174df81dff75b36abb4d12f6a48f4b32bf599d8[m
+Author: RaulLuppini <raulluppini@gmail.com>
+Date:   Wed Oct 22 20:17:08 2025 -0300
+
+    clase AccesoDatos,listarProducto
+
+[33mcommit 9167bacaea66b48bdcd52de771c98e77ce468045[m
+Author: Alejandro Maza <ajmm9257@gmail.com>
+Date:   Mon Oct 20 22:28:10 2025 -0300
+
+    Creacion de clases Usuario, Pedido Y detallePedido
+
+[33mcommit c0a6a6ad63f934d24bc4f320ab245ca9b4e93d47[m
+Author: RaulLuppini <raulluppini@gmail.com>
+Date:   Sun Oct 19 15:14:36 2025 -0300
+
+    Readme,Clase producto,marca,categoria,imagen
+
+[33mcommit a1ee8dd1440ad86c2a17d839b0083670893d46ba[m
+Author: ajmm26 <106683219+ajmm26@users.noreply.github.com>
+Date:   Sun Oct 19 13:38:29 2025 -0300
+
+    Initial commit

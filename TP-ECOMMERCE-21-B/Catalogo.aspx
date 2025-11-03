@@ -15,8 +15,8 @@
         </div>
 
         <div>
-            <asp:TextBox ID="txtFiltro" runat="server" CssClass="mb-2"></asp:TextBox>
-            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+            <asp:TextBox ID="txtFiltro" runat="server" CssClass="mb-2" Style="width:500px;"></asp:TextBox>
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-primary" />
         </div>
 
 
