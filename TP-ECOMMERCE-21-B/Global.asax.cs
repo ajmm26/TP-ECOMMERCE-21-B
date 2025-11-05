@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
-
+using dominio;
 namespace TP_ECOMMERCE_21_B
 {
     public class Global : HttpApplication
@@ -20,8 +21,13 @@ namespace TP_ECOMMERCE_21_B
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            // 🔹 Esto se ejecuta automáticamente cuando se crea una nueva sesión
-            Session["items"] = 0;
+            List<Producto> items;
+
+            if (Session["items"] == null)
+            {
+                items = new List<Producto>();
+                Session["items"] = items;
+            }
         }
 
     }

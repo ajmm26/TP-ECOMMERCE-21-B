@@ -1,4 +1,6 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -14,8 +16,18 @@ namespace TP_ECOMMERCE_21_B
         {
             if (!IsPostBack)
             {
-            numLabel.Text = "0";
-          
+
+            string idproduct= Request.QueryString["id"];
+                if (!string.IsNullOrEmpty(idproduct))
+                {
+                    int id = int.Parse(idproduct);
+                    Producto p = getCurrentproduct(id);
+                    ttlp.Text = String.Format(p.Nombre);
+                    labelDescripcionText.Text = String.Format(p.Descripcion);
+                    labelPrecioNormal.Text = String.Format(p.PrecioVenta.ToString());
+                    imgProducto.ImageUrl = p.Imagenes[0].Url;
+                    numLabel.Text = "0";
+                }
             }
         }
 
@@ -77,20 +89,34 @@ namespace TP_ECOMMERCE_21_B
 
             if (Session["items"] != null)
             {
-                int n = (int)Session["items"];
+                List<Producto> items = Session["items"] as List<Producto>;
 
                 int num = int.Parse(numLabel.Text);
 
                 if (num>0)
                 {
-                int nw = n + 1;
-
-                Session["items"] = nw;
+                    Producto product = new Producto();
+                    product.Nombre = ttlp.Text;
+                    product.Descripcion = labelDescripcionText.Text;
+                    product.PrecioVenta = decimal.Parse(labelPrecioNormal.Text);
+                    items.Add(product);
+                    Session["items"] = items;
                 }
 
             }
 
 
+        }
+
+        protected Producto getCurrentproduct(int id)
+        {
+            negocioProducto negoProduct = new negocioProducto();
+            Producto product = negoProduct.obtenerPorId(id);
+            if(product != null)
+            {
+                return product;
+            }
+            return null;
         }
 
     }

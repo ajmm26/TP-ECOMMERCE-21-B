@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,16 +17,16 @@ namespace TP_ECOMMERCE_21_B
             }
 
             if (Session["items"] != null) {
-                int n = (int)Session["items"];
-                if (n == 0)
+                List<Producto> items = Session["items"] as List<Producto>;
+                if (items.Count == 0)
                 {
                     textcart.Text = "no tienes articulos en el carrito";
                 }
                 else
                 {
-                    if(n > 0)
+                    if(items.Count > 0)
                     {
-                        textcart.Text = "La cantidad de articulos seleccinados es: " + n.ToString();
+                        textcart.Text = "La cantidad de articulos seleccinados es: " + items.Count.ToString();
                     }
                 }
             }

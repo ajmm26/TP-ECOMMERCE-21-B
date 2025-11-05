@@ -42,7 +42,7 @@ namespace TP_ECOMMERCE_21_B
         protected void btnComprar_Command(object sender, CommandEventArgs e)
         {
             int idProducto = Convert.ToInt32(e.CommandArgument);
-            // Lógica para agregar al carrito o redirigir
+            Response.Redirect("product.aspx?id=" + idProducto, false);
         }
 
         protected void btnCarrito_Command(object sender, CommandEventArgs e)

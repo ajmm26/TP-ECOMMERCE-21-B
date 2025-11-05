@@ -104,7 +104,7 @@ namespace TP_ECOMMERCE_21_B
                     negocio.agregarProducto(nuevo);
                     List<Imagen> imagenes = urlsValidas.Select(url => new Imagen
                     {
-                        IdProducto = nuevo.Id,
+                       
                         Url = url
                     }).ToList();
 

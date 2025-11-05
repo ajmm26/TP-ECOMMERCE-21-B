@@ -4,15 +4,16 @@
     <div id="div-container-product">
     <div id="div-details">
     <div id="div-img">
-      <asp:Image runat="server" ID="imgProducto" CssClass="imagen-producto" ImageUrl="https://pngimg.com/uploads/shampoo/shampoo_PNG17.png"/>
+      <asp:Image runat="server" ID="imgProducto" CssClass="imagen-producto" />
     </div>
     <div id="div-text">
-       <h4><asp:Label runat="server" ID="ttlp"  Text="Shampoo reparador de cecamo"/></h4>
+       <h4><asp:Label runat="server" ID="ttlp"/></h4>
         <div>
             <strong><asp:Label runat="server" Text="Descripcion: " CssClass="noise"/></strong><asp:Label runat="server" ID="labelDescripcionText" Text="Es un producto utilizado para limpiar y cuidar el cabello. Su función principal es eliminar la grasa, el polvo y las partículas no deseadas que se acumulan en el pelo, haciéndolo más manejable."/>
         </div>
         <div>
-            <strong><asp:Label runat="server" Text="Precio: "/></strong><asp:Label runat="server" ID="labelPrecioNormal" Text="84000.00"/>
+            <strong><asp:Label runat="server" Text="Precio: "/></strong><asp:Label runat="server" ID="labelPrecioNormal"/>
+             <asp:HiddenField ID="hfId" runat="server"/>
         </div>
     </div>
 </div>

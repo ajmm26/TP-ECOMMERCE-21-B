@@ -51,6 +51,15 @@ namespace TP_ECOMMERCE_21_B
         protected global::System.Web.UI.WebControls.Label labelPrecioNormal;
 
         /// <summary>
+        /// Control hfId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfId;
+
+        /// <summary>
         /// Control buttonRest.
         /// </summary>
         /// <remarks>
