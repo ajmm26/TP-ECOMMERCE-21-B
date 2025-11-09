@@ -11,6 +11,8 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Redirect("Default.aspx", false);
+
 
         }
 

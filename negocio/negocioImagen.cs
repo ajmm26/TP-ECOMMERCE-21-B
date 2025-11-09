@@ -17,14 +17,14 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT Id, IdProducto, Url FROM Imagen WHERE IdProducto = @id");
+                datos.setearConsulta("SELECT Id, IdProducto, Url FROM Imagenes WHERE IdProducto = @id");
                 datos.agregarParametros("@id",idProducto);
                 datos.ejecutarLectura();
                 while(datos.Lector.Read())
                 {
                     Imagen img = new Imagen();
                     img.Id=(int)datos.Lector["Id"];
-            
+                    //img.IdProducto = idProducto;
                     img.Url=(string)datos.Lector["Url"];
                     imagenes.Add(img);
                 }
@@ -47,8 +47,8 @@ namespace negocio
             AccesoDatos datos=new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into Imagen (IdProducto,Url) values (@idProducto,@url)");
-               /// datos.agregarParametros("@idProducto", nueva.IdProducto);
+                datos.setearConsulta("insert into Imagenes (IdProducto,Url) values (@idProducto,@url)");
+                //datos.agregarParametros("@idProducto", nueva.IdProducto);
                 datos.agregarParametros("@url", nueva.Url);
                 datos.ejecutarAccion();
 

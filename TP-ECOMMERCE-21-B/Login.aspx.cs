@@ -18,7 +18,27 @@ namespace TP_ECOMMERCE_21_B
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            
+            string email = txtEmail.Text.Trim();
+            string clave = txtClave.Text.Trim();
+
+            negocioUsuario negocio = new negocioUsuario();
+            Usuario usuario = negocio.Login(email, clave);
+
+            if (usuario != null)
+            {
+                Session["usuario"] = usuario;
+
+                if (usuario.RolUsuario == "admin")
+                    Response.Redirect("Productos.aspx", false);
+                else
+                    Response.Redirect("Default.aspx", false);
+            }
+            else
+            {
+                lblErrorLogin.Text = "Email o contraseña incorrectos.";
+            }
+
+
 
         }
         protected void btnRegistro_Click(object sender, EventArgs e)

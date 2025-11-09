@@ -7,7 +7,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
-using dominio;
+
 namespace TP_ECOMMERCE_21_B
 {
     public class Global : HttpApplication
