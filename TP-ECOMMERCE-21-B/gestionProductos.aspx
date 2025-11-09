@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Alta Productos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Productos.aspx.cs" Inherits="TP_ECOMMERCE_21_B.Productos" %>
+﻿<%@ Page Title="Alta Productos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="gestionProductos.aspx.cs" Inherits="TP_ECOMMERCE_21_B.gestionProductos" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
@@ -19,6 +19,11 @@
                 <asp:TemplateField HeaderText="Id Marca">
                     <ItemTemplate>
                         <%# Eval("IdMarca.Id") %>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Id Categoria">
+                    <ItemTemplate>
+                        <%# Eval("IdCategoria.Id") %>
                     </ItemTemplate>
                 </asp:TemplateField>
 

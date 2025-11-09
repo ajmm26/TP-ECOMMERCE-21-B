@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace dominio
 {
-    internal class DetallePedido
+    public class DetallePedido
     {
 
-        int idPedido;
+        public int idPedido;
 
-        int idProducto {  get; set; }
+        public int idProducto {  get; set; }
 
-        string nombreProducto { get; set; }
+        public string nombreProducto { get; set; }
 
-        float precioUnitario { get; set; }
+        public decimal precioUnitario { get; set; }
 
-        float precioRebajado { get; set; }
+        public decimal precioRebajado { get; set; }
 
     }
 }

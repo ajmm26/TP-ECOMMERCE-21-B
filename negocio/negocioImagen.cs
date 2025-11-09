@@ -11,7 +11,7 @@ namespace negocio
 {
     public class negocioImagen
     {
-        public List<Imagen> listarImagenes(int idProducto)
+        /*public List<Imagen> listarImagenes(int idProducto)
         {
             List<Imagen> imagenes = new List<Imagen>();
             AccesoDatos datos = new AccesoDatos();
@@ -41,7 +41,7 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-
+        */
         public void agregarImagen(Imagen nueva)
         {
             AccesoDatos datos=new AccesoDatos();
@@ -67,7 +67,7 @@ namespace negocio
                 agregarImagen(img);
             }
         }
-
+        
         public List<Imagen> ObetenerimagenesId(int id)
         {
             List<Imagen> imagenes = new List<Imagen>();

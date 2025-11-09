@@ -10,5 +10,13 @@ namespace dominio
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public Categoria(int id, string descripcion)
+        {
+            Id = id;
+            Nombre = descripcion;
+        }
+
+        public Categoria() { }
+
     }
 }

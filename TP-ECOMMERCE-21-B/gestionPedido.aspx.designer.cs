@@ -11,25 +11,16 @@ namespace TP_ECOMMERCE_21_B
 {
 
 
-    public partial class SiteMaster
+    public partial class gestionPedido
     {
 
         /// <summary>
-        /// Control phGestionLinks.
+        /// Control GridViewPedido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phGestionLinks;
-
-        /// <summary>
-        /// Control MainContent.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.GridView GridViewPedido;
     }
 }

@@ -11,7 +11,7 @@ namespace TP_ECOMMERCE_21_B
 {
 
 
-    public partial class Productos
+    public partial class gestionProductos
     {
 
         /// <summary>

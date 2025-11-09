@@ -115,7 +115,7 @@ namespace TP_ECOMMERCE_21_B
 
                 }
 
-                Response.Redirect("Productos.aspx");
+                Response.Redirect("gestionProductos.aspx");
             }
             catch (Exception ex)
             {

@@ -34,7 +34,7 @@
                         <h2 class="text-center mb-4">Registrarse</h2>
                         <div class="card p-4 shadow-sm">
                             <div class="mb-3">
-                                <asp:TextBox ID="txtNuevoEmail" runat="server" CssClass="form-control" Placeholder="Email" />
+                                <asp:TextBox ID="txtNuevoEmail" runat="server"  CssClass="form-control" Placeholder="Email" />
                             </div>
                             <div class="mb-3">
                                 <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" Placeholder="Nombre" />

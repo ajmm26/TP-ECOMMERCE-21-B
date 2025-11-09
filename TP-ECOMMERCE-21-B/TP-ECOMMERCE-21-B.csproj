@@ -103,7 +103,8 @@
     <Content Include="carritoWithMaster.aspx" />
     <Content Include="Content\estilos.css" />
     <Content Include="FormularioPago.aspx" />
-    <Content Include="Productos.aspx" />
+    <Content Include="gestionPedido.aspx" />
+    <Content Include="gestionProductos.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -154,6 +155,7 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="gestionUsuario.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
@@ -211,12 +213,19 @@
     <Compile Include="FormularioPago.aspx.designer.cs">
       <DependentUpon>FormularioPago.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Productos.aspx.cs">
-      <DependentUpon>Productos.aspx</DependentUpon>
+    <Compile Include="gestionPedido.aspx.cs">
+      <DependentUpon>gestionPedido.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Productos.aspx.designer.cs">
-      <DependentUpon>Productos.aspx</DependentUpon>
+    <Compile Include="gestionPedido.aspx.designer.cs">
+      <DependentUpon>gestionPedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gestionProductos.aspx.cs">
+      <DependentUpon>gestionProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gestionProductos.aspx.designer.cs">
+      <DependentUpon>gestionProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Default.aspx.cs">
@@ -257,6 +266,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="gestionUsuario.aspx.cs">
+      <DependentUpon>gestionUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gestionUsuario.aspx.designer.cs">
+      <DependentUpon>gestionUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

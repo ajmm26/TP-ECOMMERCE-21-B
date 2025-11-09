@@ -14,6 +14,8 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
 
         }
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -29,7 +31,7 @@ namespace TP_ECOMMERCE_21_B
                 Session["usuario"] = usuario;
 
                 if (usuario.RolUsuario == "admin")
-                    Response.Redirect("Productos.aspx", false);
+                    Response.Redirect("gestionProductos.aspx", false);
                 else
                     Response.Redirect("Default.aspx", false);
             }

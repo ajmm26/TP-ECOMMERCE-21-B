@@ -19,7 +19,7 @@ namespace negocio
             try
             {
 
-                datos.setearConsulta("select Id,Codigo,Nombre,MarcaId,Descripcion,PrecioCompra,PorcentajeGanancia,PrecioVenta,StockActual,StockMinimo,Estado from Producto where Estado=1");
+                datos.setearConsulta("select Id,Codigo,Nombre,MarcaId,CategoriaId,Descripcion,PrecioCompra,PorcentajeGanancia,PrecioVenta,StockActual,StockMinimo,Estado from Producto where Estado=1");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -29,6 +29,8 @@ namespace negocio
                     producto.Nombre = (string)datos.Lector["Nombre"];
                     producto.IdMarca = new Marca();
                     producto.IdMarca.Id = (int)datos.Lector["MarcaId"];
+                    producto.IdCategoria = new Categoria();
+                    producto.IdCategoria.Id = (int)datos.Lector["CategoriaId"];
                     producto.Descripcion = (string)datos.Lector["Descripcion"];
                     producto.PrecioCompra = (decimal)datos.Lector["PrecioCompra"];
                     producto.PorcentajeGanancia = (decimal)datos.Lector["PorcentajeGanancia"];
@@ -137,7 +139,7 @@ namespace negocio
                     producto.StockMinimo = Convert.ToInt32(datos.Lector["StockMinimo"]);
                     producto.Estado = Convert.ToBoolean(datos.Lector["Estado"]);
                     int idMarca = Convert.ToInt32(datos.Lector["MarcaId"]);
-                    producto.IdMarca = new Marca(idMarca, ""); // Podés cargar el nombre si querés
+                    producto.IdMarca = new Marca(idMarca, ""); 
                     producto.Imagenes = ng.ObetenerimagenesId(id);
                     return producto;
                 }

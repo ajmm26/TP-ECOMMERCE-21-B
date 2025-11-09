@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace TP_ECOMMERCE_21_B
 {
-    public partial class Productos : Page
+    public partial class gestionProductos : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -61,13 +61,13 @@ namespace TP_ECOMMERCE_21_B
             {
                 negocio.darDeBaja(idProducto);
                 Session.Remove("modoBaja");
-                Response.Redirect("Productos.aspx");
+                Response.Redirect("gestionProductos.aspx");
             }
             else if (Session["modoAlta"] != null && (bool)Session["modoAlta"])
             {
                 negocio.darDeAlta(idProducto);
                 Session.Remove("modoAlta");
-                Response.Redirect("Productos.aspx");
+                Response.Redirect("gestionProductos.aspx");
             }
 
             else if (Session["modoEliminar"] != null && (bool)Session["modoEliminar"])
@@ -76,7 +76,7 @@ namespace TP_ECOMMERCE_21_B
                 negocio.eliminarProducto(idProducto);
 
                 Session.Remove("modoEliminar");
-                Response.Redirect("Productos.aspx");
+                Response.Redirect("gestionProductos.aspx");
             }
 
 

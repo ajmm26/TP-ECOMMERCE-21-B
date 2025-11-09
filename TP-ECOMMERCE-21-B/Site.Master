@@ -52,11 +52,15 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
 
-                        <!--
-                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Catalogo">Catalogo</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Productos">Lista Productos</a></li>
+                       <asp:PlaceHolder ID="phGestionLinks" runat="server" Visible="false">
+
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionProductos">Gestion Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionUsuario">Gestion Usuarios</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionPedido">Gestion Pedidos</a></li>
+                         <!--
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/altaProducto">Alta Productos</a></li>
                         -->
+                        </asp:PlaceHolder>
 
 
                     </ul>

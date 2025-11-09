@@ -8,13 +8,13 @@ namespace dominio
 {
     public class Pedido
     {
-        int id {  get; set; }
-        DateTime datatime { get; set; }
-        int idUsuario { get; set; }
-        float precioTotal { get; set; }
-        string estado {  get; set; }
-       string metodoDePago { get; set; }
-        List<DetallePedido> detallePedidos { get; set; }
+        public int Id {  get; set; }
+        public DateTime Fecha { get; set; }
+        public int IdUsuario { get; set; }
+        public decimal PrecioTotal { get; set; }
+        public string Estado {  get; set; }
+        public string MetodoDePago { get; set; }
+        public List<DetallePedido> DetallePedidos { get; set; }
 
     }
 }
