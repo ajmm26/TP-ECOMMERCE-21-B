@@ -15,6 +15,7 @@ namespace dominio
         public Marca IdMarca { get; set; }
         public Categoria IdCategoria { get; set; }
         public List<Imagen> Imagenes { get; set; }
+        public int cantidad { get; set; }
         public decimal PrecioCompra {  get; set; }
         public decimal PorcentajeGanancia { get; set; }
         public decimal PrecioVenta { get; set; }

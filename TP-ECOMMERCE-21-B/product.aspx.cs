@@ -99,6 +99,11 @@ namespace TP_ECOMMERCE_21_B
                     product.Nombre = ttlp.Text;
                     product.Descripcion = labelDescripcionText.Text;
                     product.PrecioVenta = decimal.Parse(labelPrecioNormal.Text);
+                    product.cantidad = int.Parse(numLabel.Text);
+                    product.Imagenes = new List<Imagen>();
+                    Imagen img = new Imagen();
+                    img.Url = imgProducto.ImageUrl;
+                    product.Imagenes.Add(img);
                     items.Add(product);
                     Session["items"] = items;
                 }

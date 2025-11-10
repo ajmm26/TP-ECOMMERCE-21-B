@@ -101,6 +101,7 @@
   <ItemGroup>
     <Content Include="altaProducto.aspx" />
     <Content Include="carritoWithMaster.aspx" />
+    <Content Include="Content\carrito.css" />
     <Content Include="Content\estilos.css" />
     <Content Include="FormularioPago.aspx" />
     <Content Include="gestionPedido.aspx" />
@@ -125,6 +126,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="img\trash.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="product.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />

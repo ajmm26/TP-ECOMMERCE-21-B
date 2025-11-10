@@ -16,20 +16,20 @@ namespace TP_ECOMMERCE_21_B
             
             }
 
-            if (Session["items"] != null) {
-                List<Producto> items = Session["items"] as List<Producto>;
-                if (items.Count == 0)
-                {
-                    textcart.Text = "no tienes articulos en el carrito";
-                }
-                else
-                {
-                    if(items.Count > 0)
-                    {
-                        textcart.Text = "La cantidad de articulos seleccinados es: " + items.Count.ToString();
-                    }
-                }
-            }
+         /*   if (Session["items"] != null) {
+                 List<Producto> items = Session["items"] as List<Producto>;
+                 if (items.Count == 0)
+                 {
+                     textcart.Text = "no tienes articulos en el carrito";
+                 }
+                 else
+                 {
+                     if(items.Count > 0)
+                     {
+                         textcart.Text = "La cantidad de articulos seleccinados es: " + items.Count.ToString();
+                     }
+                 }
+            }*/
         }
     }
 }
