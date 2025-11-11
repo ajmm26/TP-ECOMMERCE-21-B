@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace TP_ECOMMERCE_21_B
@@ -19,11 +20,41 @@ namespace TP_ECOMMERCE_21_B
 
                 // Mostrar menú solo si estás en gestionProductos.aspx
                 phGestionLinks.Visible = currentPage.Contains("gestion");
+                lnkCarrito.Visible = !currentPage.Contains("carritowithmaster");
+
+
+
+                Usuario usuario = Session["usuario"] as Usuario;
+
+
+                if (Session["usuario"] != null)
+                {
+                    lblUsuario.Text = $"Hola, {usuario.Nombre}";
+                    pnlUsuario.Visible = true;
+                    btnLogin.Visible = false;
+                }
+                else
+                {
+                    pnlUsuario.Visible = false;
+                    btnLogin.Visible = true;
+                }
+
+
             }
 
-
-
-
         }
+            protected void btnLogout_Click(object sender, EventArgs e)
+        {  
+            Session.Clear();
+            Response.Redirect("Default.aspx");
+        }
+
+
+        
+
+
+
+
+
     }
 }

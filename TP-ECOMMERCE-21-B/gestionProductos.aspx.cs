@@ -85,7 +85,7 @@ namespace TP_ECOMMERCE_21_B
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             Session["modoModificar"] = true;
-            Response.Redirect("Productos.aspx"); 
+            Response.Redirect("gestionProductos.aspx"); 
 
 
         }
@@ -93,21 +93,21 @@ namespace TP_ECOMMERCE_21_B
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             Session["modoEliminar"] = true;
-            Response.Redirect("Productos.aspx");
+            Response.Redirect("gestionProductos.aspx");
 
         }
 
         protected void btnBaja_Click(object sender, EventArgs e)
         {
             Session["modoBaja"] = true;
-            Response.Redirect("Productos.aspx"); 
+            Response.Redirect("gestionProductos.aspx"); 
 
         }
 
         protected void btnAlta_Click(object sender, EventArgs e)
         {
             Session["modoAlta"] = true;
-            Response.Redirect("Productos.aspx");
+            Response.Redirect("gestionProductos.aspx");
 
         }
 
@@ -118,7 +118,7 @@ namespace TP_ECOMMERCE_21_B
             Session.Remove("modoBaja");
             Session.Remove("modoModificar");
 
-            Response.Redirect("Productos.aspx"); 
+            Response.Redirect("gestionProductos.aspx"); 
         }
 
 

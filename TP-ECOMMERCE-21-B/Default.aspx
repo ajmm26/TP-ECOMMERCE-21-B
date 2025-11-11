@@ -5,21 +5,6 @@
         <h2 id="title"><%: Title %>.</h2>
         <h3>Signos.</h3>
 
-        <div class="text-end mt-2 me-3">
-            <asp:LinkButton ID="btnLogin" runat="server" CssClass="btn btn-outline-dark mb-3" PostBackUrl="Login.aspx">
-              <i class="bi bi-person-circle"></i>
-                
-                <asp:Label ID="lblLoginTexto" runat="server" Text="Iniciar sesión" />
-            </asp:LinkButton>
-            
-
-            <a href="carritoWithMaster.aspx" class="btn btn-outline-dark me-2 mb-3">
-                <i class="bi bi-cart"></i>Carrito
-            </a>
-
-             <asp:Button ID="btnLogout" runat="server" Text="Cerrar sesión" CssClass="btn btn-outline-danger ms-2" OnClick="btnLogout_Click" />
-        </div>
-
         <div>
             <asp:TextBox ID="txtFiltro" runat="server" CssClass="mb-2" Style="width: 500px;"></asp:TextBox>
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-primary" />
@@ -90,8 +75,7 @@
                                 <p class="card-Precio"><%# string.Format("${0:N2}", Eval("PrecioVenta")) %></p>
                                 <p class="card-StockActual">Stock disponible: <%# Eval("StockActual") %></p>
 
-                                <asp:Button ID="btnAgregarCarrito" runat="server" Text="Agregar al carrito" CssClass="btn btn-outline-secondary w-100 mb-2"
-                                    CommandArgument='<%# Eval("Id") %>' CommandName="AgregarCarrito" OnCommand="btnCarrito_Command" />
+                                
 
                                 <asp:Button ID="btnComprar" runat="server" Text="Comprar ahora" CssClass="btn btn-primary w-100"
                                     CommandArgument='<%# Eval("Id") %>' CommandName="ComprarAhora" OnCommand="btnComprar_Command" />

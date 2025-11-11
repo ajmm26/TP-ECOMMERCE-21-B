@@ -23,7 +23,7 @@
 </head>
 <body>
     <form runat="server">
-             <asp:ContentPlaceHolder ID="head" runat="server" />
+        <asp:ContentPlaceHolder ID="head" runat="server" />
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -43,6 +43,9 @@
             </Scripts>
         </asp:ScriptManager>
 
+
+
+
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" runat="server" href="Default.aspx">E-commerce SIGNOS</a>
@@ -53,12 +56,12 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
 
-                       <asp:PlaceHolder ID="phGestionLinks" runat="server" Visible="false">
+                        <asp:PlaceHolder ID="phGestionLinks" runat="server" Visible="false">
 
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionProductos">Gestion Productos</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionUsuario">Gestion Usuarios</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionPedido">Gestion Pedidos</a></li>
-                         <!--
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionProductos">Gestion Productos</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionUsuario">Gestion Usuarios</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionPedido">Gestion Pedidos</a></li>
+                            <!--
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/altaProducto">Alta Productos</a></li>
                         -->
                         </asp:PlaceHolder>
@@ -68,6 +71,34 @@
                 </div>
             </div>
         </nav>
+        <!--
+            session
+            -->
+        <div class="d-flex justify-content-end align-items-center mt-3 me-3">
+            <asp:LinkButton ID="btnLogin" runat="server" CssClass="btn btn-outline-dark me-2" PostBackUrl="Login.aspx" Visible="true">
+                <i class="bi bi-person-circle"></i>
+                <asp:Label ID="lblLoginTexto" runat="server" Text="Iniciar sesión" />
+            </asp:LinkButton>
+
+            <asp:Panel ID="pnlUsuario" runat="server" CssClass="d-flex align-items-center" Visible="false">
+                <asp:Label ID="lblUsuario" runat="server" CssClass="me-2 fw-bold text-dark" />
+                <asp:LinkButton ID="btnLogout" runat="server" CssClass="btn btn-danger" OnClick="btnLogout_Click">Cerrar sesión</asp:LinkButton>
+            </asp:Panel>
+
+            <asp:HyperLink ID="lnkCarrito" runat="server" NavigateUrl="carritoWithMaster.aspx" CssClass="btn btn-outline-dark ms-2">
+             <i class="bi bi-cart"></i>Carrito
+            </asp:HyperLink>
+
+
+        </div>
+
+
+
+        <!--
+session
+-->
+
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

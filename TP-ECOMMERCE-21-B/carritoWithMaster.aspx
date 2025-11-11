@@ -7,6 +7,10 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Button ID="btnVolverCatalogo" runat="server" Text="Volver al catálogo" CssClass="btn btn-secondary" OnClick="btnVolverCatalogo_Click" />
+
+
+
     <asp:Label runat="server" ID="textcart"/>
     <% 
         List<Producto> products = (List<Producto>)Session["items"]; 

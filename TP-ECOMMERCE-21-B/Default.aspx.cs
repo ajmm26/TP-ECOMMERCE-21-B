@@ -30,15 +30,7 @@ namespace TP_ECOMMERCE_21_B
 
                 RepeaterProducto.DataSource = listaProducto;
                 RepeaterProducto.DataBind();
-
-                Usuario usuario = Session["usuario"] as Usuario;
-
-                if (usuario != null)
-                {
-                    lblLoginTexto.Text = $"Hola, {usuario.Nombre}";
-
-
-                }
+               
             }
         }
         protected void btnComprar_Command(object sender, CommandEventArgs e)
@@ -47,11 +39,7 @@ namespace TP_ECOMMERCE_21_B
             Response.Redirect("product.aspx?id=" + idProducto, false);
         }
 
-        protected void btnCarrito_Command(object sender, CommandEventArgs e)
-        {
-            int idProducto = Convert.ToInt32(e.CommandArgument);
-            // Lógica para agregar al carrito sin redirigir
-        }
+        
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -72,12 +60,7 @@ namespace TP_ECOMMERCE_21_B
 
 
         }
-        protected void btnLogout_Click(object sender, EventArgs e)
-        {
-            Session.Clear(); // Elimina todos los datos de sesión
-            Response.Redirect("Default.aspx", false); // Redirige al catálogo
-        }
-
+        
 
     }
 }

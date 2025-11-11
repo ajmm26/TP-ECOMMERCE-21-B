@@ -11,7 +11,7 @@ namespace negocio
 {
     public class negocioImagen
     {
-        /*public List<Imagen> listarImagenes(int idProducto)
+        public List<Imagen> listarImagenes(int idProducto)
         {
             List<Imagen> imagenes = new List<Imagen>();
             AccesoDatos datos = new AccesoDatos();
@@ -24,7 +24,7 @@ namespace negocio
                 {
                     Imagen img = new Imagen();
                     img.Id=(int)datos.Lector["Id"];
-                    //img.IdProducto = idProducto;
+                    img.IdProducto = idProducto;
                     img.Url=(string)datos.Lector["Url"];
                     imagenes.Add(img);
                 }
@@ -41,14 +41,14 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-        */
+        
         public void agregarImagen(Imagen nueva)
         {
             AccesoDatos datos=new AccesoDatos();
             try
             {
                 datos.setearConsulta("insert into Imagenes (IdProducto,Url) values (@idProducto,@url)");
-                //datos.agregarParametros("@idProducto", nueva.IdProducto);
+                datos.agregarParametros("@idProducto", nueva.IdProducto);
                 datos.agregarParametros("@url", nueva.Url);
                 datos.ejecutarAccion();
 
@@ -83,6 +83,7 @@ namespace negocio
                 {
                     Imagen img = new Imagen();
                     img.Url = (string)datos.Lector["Url"];
+                    img.IdProducto = id;
                     imagenes.Add(img);
                 }
                 return imagenes;

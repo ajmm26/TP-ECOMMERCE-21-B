@@ -61,12 +61,13 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("INSERT INTO Producto (Codigo,Nombre,MarcaId,Descripcion,PrecioCompra,PorcentajeGanancia,PrecioVenta,StockActual,StockMinimo,Estado) " +
-                      "VALUES (@codigo,@nombre,@marcaId,@descripcion,@precioCompra,@porcentajeGanancia,@precioVenta,@stockActual,@stockMinimo,@estado);" + "select scope_Identity();");
+                datos.setearConsulta("INSERT INTO Producto (Codigo,Nombre,MarcaId,CategoriaId,Descripcion,PrecioCompra,PorcentajeGanancia,PrecioVenta,StockActual,StockMinimo,Estado) " +
+                "VALUES (@codigo,@nombre,@marcaId,@categoriaId,@descripcion,@precioCompra,@porcentajeGanancia,@precioVenta,@stockActual,@stockMinimo,@estado); select scope_identity();");
 
                 datos.agregarParametros("@codigo", nuevo.Codigo);
                 datos.agregarParametros("@nombre", nuevo.Nombre);
                 datos.agregarParametros("@marcaId", nuevo.IdMarca.Id);
+                datos.agregarParametros("@categoriaId", nuevo.IdCategoria.Id);
                 datos.agregarParametros("@descripcion", nuevo.Descripcion);
                 datos.agregarParametros("@precioCompra", nuevo.PrecioCompra);
                 datos.agregarParametros("@porcentajeGanancia", nuevo.PorcentajeGanancia);
