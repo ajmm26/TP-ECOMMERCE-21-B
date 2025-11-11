@@ -6,7 +6,7 @@
         <h3>Your application description page.</h3>
         <p>Use this area to provide additional information.</p>
 
-        <asp:GridView ID="GridViewProductos" runat="server"
+        <asp:GridView ID="GridViewProductos" runat="server" AllowPaging="true" PageSize="10" OnPageIndexChanging="GridViewProductos_PageIndexChanging"
             CssClass="table table-bordered"
             AutoGenerateColumns="False"
             DataKeyNames="Id"

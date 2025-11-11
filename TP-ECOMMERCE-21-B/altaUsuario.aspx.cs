@@ -1,0 +1,120 @@
+﻿using dominio;
+using negocio;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace TP_ECOMMERCE_21_B
+{
+    public partial class altaUsuario : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                bool esAdmin = Session["modoAdmin"] != null;
+
+                ddlRol.Visible = esAdmin;
+                chkEstado.Visible = esAdmin;
+                lblEstado.Visible = esAdmin;
+                phLinkLogin.Visible = !esAdmin;
+
+
+                if (esAdmin)
+                {
+                    btnAceptar.Text = "Aceptar";
+                    ddlRol.Items.Add("admin");
+                    ddlRol.Items.Add("cliente");
+                    chkEstado.Checked = true;
+                }
+                else
+                {
+                    btnAceptar.Text = "Registrarse";
+                }
+
+                if (Session["modificarUsuarioId"] != null)
+                {
+                    int id = (int)Session["modificarUsuarioId"];
+                    negocioUsuario negocio = new negocioUsuario();
+                    Usuario u = negocio.buscarPorId(id);
+
+                    if (u != null)
+                    {
+                        txtEmail.Text = u.Email;
+                        txtNombre.Text = u.Nombre;
+                        txtApellido.Text = u.Apellido;
+                        txtDireccion.Text = u.Direccion;
+                        txtCodigoPostal.Text = u.CodigoPostal;
+                        txtTelefono.Text = u.Telefono;
+                        txtClave.Text = u.Contraseña;
+
+                        if (esAdmin)
+                        {
+                            ddlRol.SelectedValue = u.RolUsuario;
+                            chkEstado.Checked = u.Estado;
+                        }
+                    }
+                }
+            }
+            }
+
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+            Usuario nuevo = new Usuario();
+            nuevo.Email = txtEmail.Text;
+            nuevo.Nombre = txtNombre.Text;
+            nuevo.Apellido = txtApellido.Text;
+            nuevo.Dni = txtDni.Text; // ← si tenés ese campo en el formulario
+            nuevo.Direccion = txtDireccion.Text;
+            nuevo.CodigoPostal = txtCodigoPostal.Text;
+            nuevo.Telefono = txtTelefono.Text;
+            nuevo.Contraseña = txtClave.Text;
+
+            bool esAdmin = Session["modoAdmin"] != null;
+
+            if (esAdmin)
+            {
+                nuevo.RolUsuario = ddlRol.SelectedValue;
+                nuevo.Estado = chkEstado.Checked;
+            }
+            else
+            {
+                nuevo.RolUsuario = "cliente";
+                nuevo.Estado = true;
+            }
+
+            negocioUsuario negocio = new negocioUsuario();
+
+            if (Session["modificarUsuarioId"] != null)
+            {
+                nuevo.Id = (int)Session["modificarUsuarioId"];
+                negocio.modificarUsuario(nuevo);
+            }
+            else
+            {
+                negocio.agregarUsuario(nuevo);
+            }
+
+            Session.Remove("modoAdmin");
+            Session.Remove("modificarUsuarioId");
+
+            if (Session["usuario"] != null && ((Usuario)Session["usuario"]).RolUsuario == "admin")
+            {
+                Response.Redirect("gestionUsuario.aspx");
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+
+
+
+        }
+
+
+    }
+}

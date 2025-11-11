@@ -80,6 +80,11 @@ namespace TP_ECOMMERCE_21_B
                     lblError.Text = "⚠️ Los precios y porcentaje deben ser valores numéricos.";
                     return;
                 }
+                if (precioVenta < precioCompra)
+                {
+                    lblError.Text = "⚠️ El precio de venta no puede ser menor al de compra.";
+                    return;
+                }
 
                 if (!int.TryParse(txtStockActual.Text, out int stockActual) ||
                     !int.TryParse(txtStockMinimo.Text, out int stockMinimo))

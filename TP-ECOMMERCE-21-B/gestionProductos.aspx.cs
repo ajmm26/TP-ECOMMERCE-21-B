@@ -11,31 +11,35 @@ namespace TP_ECOMMERCE_21_B
 {
     public partial class gestionProductos : Page
     {
+        private void cargarGrilla()
+        {
+            negocioProducto negocio = new negocioProducto();
+
+            if (Session["modoAlta"] != null && (bool)Session["modoAlta"])
+                GridViewProductos.DataSource = negocio.listarInactivos();
+            else
+                GridViewProductos.DataSource = negocio.listar();
+
+            GridViewProductos.DataBind();
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                if (Session["modoModificar"] != null && (bool)Session["modoModificar"])
+                if (Session["modoModificar"] != null && (bool)Session["modoModificar"] ||
+                    Session["modoBaja"] != null && (bool)Session["modoBaja"] ||
+                    Session["modoAlta"] != null && (bool)Session["modoAlta"] ||
+                    Session["modoEliminar"] != null && (bool)Session["modoEliminar"])
+                {
                     GridViewProductos.AutoGenerateSelectButton = true;
+                }
 
-                if (Session["modoBaja"] != null && (bool)Session["modoBaja"])
-                    GridViewProductos.AutoGenerateSelectButton = true;
-
-                if (Session["modoAlta"] != null && (bool)Session["modoAlta"])
-                    GridViewProductos.AutoGenerateSelectButton = true;
-
-                if (Session["modoEliminar"] != null && (bool)Session["modoEliminar"])
-                    GridViewProductos.AutoGenerateSelectButton = true;
-
-                negocioProducto negocio = new negocioProducto();
-
-                if (Session["modoAlta"] != null && (bool)Session["modoAlta"])
-                    GridViewProductos.DataSource = negocio.listarInactivos(); 
-                else
-                    GridViewProductos.DataSource = negocio.listar();
-
-                GridViewProductos.DataBind();
+                cargarGrilla();
             }
+
+
 
 
 
@@ -121,6 +125,11 @@ namespace TP_ECOMMERCE_21_B
             Response.Redirect("gestionProductos.aspx"); 
         }
 
+        protected void GridViewProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridViewProductos.PageIndex = e.NewPageIndex;
+            cargarGrilla(); // Método que encapsula la lógica de carga
 
+        }
     }
 }

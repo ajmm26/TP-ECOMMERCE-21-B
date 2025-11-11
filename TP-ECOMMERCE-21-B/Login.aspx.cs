@@ -14,10 +14,9 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
-
+            // Nada que hacer acá por ahora
         }
+
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string email = txtEmail.Text.Trim();
@@ -39,25 +38,7 @@ namespace TP_ECOMMERCE_21_B
             {
                 lblErrorLogin.Text = "Email o contraseña incorrectos.";
             }
-
-
-
         }
-        protected void btnRegistro_Click(object sender, EventArgs e)
-        {
-            
-        }
-        protected void btnMostrarRegistro_Click(object sender, EventArgs e)
-        {
-            mvLoginRegistro.ActiveViewIndex = 1;
-        }
-
-        protected void btnMostrarLogin_Click(object sender, EventArgs e)
-        {
-            mvLoginRegistro.ActiveViewIndex = 0;
-        }
-
-
 
 
 

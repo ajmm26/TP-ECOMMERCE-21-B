@@ -115,12 +115,12 @@ namespace negocio
             }
 
         }
-
         public Producto obtenerPorId(int id)
         {
             AccesoDatos datos = new AccesoDatos();
             Producto producto = new Producto();
             negocioImagen ng = new negocioImagen();
+
             try
             {
                 datos.setearConsulta("SELECT * FROM Producto WHERE Id = @id");
@@ -139,9 +139,15 @@ namespace negocio
                     producto.StockActual = Convert.ToInt32(datos.Lector["StockActual"]);
                     producto.StockMinimo = Convert.ToInt32(datos.Lector["StockMinimo"]);
                     producto.Estado = Convert.ToBoolean(datos.Lector["Estado"]);
+
                     int idMarca = Convert.ToInt32(datos.Lector["MarcaId"]);
-                    producto.IdMarca = new Marca(idMarca, ""); 
+                    producto.IdMarca = new Marca(idMarca, "");
+
+                    int idCategoria = Convert.ToInt32(datos.Lector["CategoriaId"]);
+                    producto.IdCategoria = new Categoria(idCategoria, "");
+
                     producto.Imagenes = ng.ObetenerimagenesId(id);
+
                     return producto;
                 }
 

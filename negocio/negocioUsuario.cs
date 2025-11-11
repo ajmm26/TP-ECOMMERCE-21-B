@@ -16,7 +16,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select id,Dni,Nombre,Apellido,Correo,Contraseña,rol,Telefono from Usuario");
+                datos.setearConsulta("SELECT Id, Dni, Nombre, Apellido, Correo, Contraseña, Rol, Telefono, Direccion, CodigoPostal, Estado FROM Usuario\r\n\r\n");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -26,6 +26,9 @@ namespace negocio
                     users.Nombre = (string)datos.Lector["Nombre"];
                     users.Apellido = (string)datos.Lector["Apellido"];
                     users.Email = (string)datos.Lector["Correo"];
+                    users.Direccion = datos.Lector["Direccion"] != DBNull.Value ? (string)datos.Lector["Direccion"] : null;
+                    users.CodigoPostal = datos.Lector["CodigoPostal"] != DBNull.Value ? (string)datos.Lector["CodigoPostal"] : null;
+                    users.Estado = (bool)datos.Lector["Estado"];
                     users.RolUsuario = (string)datos.Lector["rol"];
                     users.Telefono = (string)datos.Lector["Telefono"];
                     lista.Add(users);
@@ -102,6 +105,129 @@ namespace negocio
 
         }
 
+        public void modificarUsuario(Usuario usuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Usuario SET Dni = @dni, Nombre = @nombre, Apellido = @apellido, Correo = @correo, Contraseña = @clave, Rol = @rol, Telefono = @telefono, Direccion = @direccion, CodigoPostal = @codigoPostal, Estado = @estado WHERE Id = @id");
+                datos.agregarParametros("@dni", usuario.Dni);
+                datos.agregarParametros("@nombre", usuario.Nombre);
+                datos.agregarParametros("@apellido", usuario.Apellido);
+                datos.agregarParametros("@correo", usuario.Email);
+                datos.agregarParametros("@clave", usuario.Contraseña);
+                datos.agregarParametros("@rol", usuario.RolUsuario);
+                datos.agregarParametros("@telefono", usuario.Telefono);
+                datos.agregarParametros("@direccion", usuario.Direccion);
+                datos.agregarParametros("@codigoPostal", usuario.CodigoPostal);
+                datos.agregarParametros("@estado", usuario.Estado);
+                datos.agregarParametros("@id", usuario.Id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void darDeAlta(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Usuario SET Estado = 1 WHERE Id = @id");
+                datos.agregarParametros("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void darDeBaja(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Usuario SET Estado = 0 WHERE Id = @id");
+                datos.agregarParametros("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void eliminarUsuario(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM Usuario WHERE Id = @id");
+                datos.agregarParametros("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public Usuario buscarPorId(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Usuario usuario = new Usuario();
+
+            try
+            {
+                datos.setearConsulta("SELECT Id, Dni, Nombre, Apellido, Correo, Contraseña, Rol, Telefono, Direccion, CodigoPostal, Estado FROM Usuario WHERE Id = @id");
+                datos.agregarParametros("@id", id);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    usuario.Id = (int)datos.Lector["Id"];
+                    usuario.Dni = datos.Lector["Dni"].ToString();
+                    usuario.Nombre = datos.Lector["Nombre"].ToString();
+                    usuario.Apellido = datos.Lector["Apellido"].ToString();
+                    usuario.Email = datos.Lector["Correo"].ToString();
+                    usuario.Contraseña = datos.Lector["Contraseña"].ToString();
+                    usuario.RolUsuario = datos.Lector["Rol"].ToString();
+                    usuario.Telefono = datos.Lector["Telefono"] != DBNull.Value ? datos.Lector["Telefono"].ToString() : null;
+                    usuario.Direccion = datos.Lector["Direccion"] != DBNull.Value ? datos.Lector["Direccion"].ToString() : null;
+                    usuario.CodigoPostal = datos.Lector["CodigoPostal"] != DBNull.Value ? datos.Lector["CodigoPostal"].ToString() : null;
+                    usuario.Estado = (bool)datos.Lector["Estado"];
+                }
+
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
     }
 }
