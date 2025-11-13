@@ -82,19 +82,10 @@ namespace TP_ECOMMERCE_21_B
         protected void click_buttonAdd(object sender, EventArgs e)
         {
 
-            if (!IsPostBack)
-            {
-
-            }
-
-            if (Session["items"] != null)
-            {
-                List<Producto> items = Session["items"] as List<Producto>;
-
-                int num = int.Parse(numLabel.Text);
-
-                if (num>0)
-                {
+            int num = int.Parse(numLabel.Text);
+            if (num <= 0)
+                return;
+                
                     Producto product = new Producto();
                     product.Nombre = ttlp.Text;
                     product.Descripcion = labelDescripcionText.Text;
@@ -104,13 +95,16 @@ namespace TP_ECOMMERCE_21_B
                     Imagen img = new Imagen();
                     img.Url = imgProducto.ImageUrl;
                     product.Imagenes.Add(img);
-                    items.Add(product);
+
+            List<Producto> items = Session["items"] as List<Producto>;
+            if (items == null)
+                items = new List<Producto>();
+
+
+            items.Add(product);
                     Session["items"] = items;
-                }
-
-            }
-
-
+            Response.Redirect("carritoWithMaster.aspx");
+     
         }
 
         protected Producto getCurrentproduct(int id)

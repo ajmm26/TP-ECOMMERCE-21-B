@@ -1,5 +1,6 @@
 ﻿using dominio;
 using negocio;
+using service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace TP_ECOMMERCE_21_B
         {
             if (!IsPostBack)
             {
+                lblTitulo.Text = Session["modificarId"] != null ? "Modificar Usuario" : "Alta de Usuario";
+                btnAceptar.Text = Session["modificarId"] != null ? "Guardar Cambios" : "Aceptar";
                 bool esAdmin = Session["modoAdmin"] != null;
 
                 ddlRol.Visible = esAdmin;
@@ -34,6 +37,9 @@ namespace TP_ECOMMERCE_21_B
                 {
                     btnAceptar.Text = "Registrarse";
                 }
+
+                lblTitulo.Text = Session["modificarUsuarioId"] != null ? "Modificar Usuario" : "Alta de Usuario";
+                btnAceptar.Text = Session["modificarUsuarioId"] != null ? "Guardar Cambios" : "Aceptar";
 
                 if (Session["modificarUsuarioId"] != null)
                 {
@@ -68,7 +74,7 @@ namespace TP_ECOMMERCE_21_B
             nuevo.Email = txtEmail.Text;
             nuevo.Nombre = txtNombre.Text;
             nuevo.Apellido = txtApellido.Text;
-            nuevo.Dni = txtDni.Text; // ← si tenés ese campo en el formulario
+            nuevo.Dni = txtDni.Text; 
             nuevo.Direccion = txtDireccion.Text;
             nuevo.CodigoPostal = txtCodigoPostal.Text;
             nuevo.Telefono = txtTelefono.Text;
@@ -97,6 +103,34 @@ namespace TP_ECOMMERCE_21_B
             else
             {
                 negocio.agregarUsuario(nuevo);
+                if (nuevo.RolUsuario == "cliente")
+                {
+                    try
+                    {
+                        string asunto = "Bienvenido a E-commerce SIGNOS";
+
+                        string cuerpo = $@"<h1>✔ ¡Hola {nuevo.Nombre}!</h1>
+                           <h2>Tu registro ha sido exitoso</h2>
+                           <hr />
+                           <p>Ya podés comenzar a comprar tus productos favoritos en nuestra tienda.</p>
+                           <p>Si tenés dudas, escribinos a soporte@signos.com</p>
+                           <br />
+                           <h4>¡Gracias por confiar en nosotros!</h4>";
+
+                        emailService servicio = new emailService();
+                        servicio.armarCorreo(nuevo.Email, asunto, cuerpo);
+                        servicio.enviarMail();
+                    }
+                    catch (Exception ex)
+                    {
+                        
+                        throw ex;
+                    }
+                }
+
+
+
+
             }
 
             Session.Remove("modoAdmin");

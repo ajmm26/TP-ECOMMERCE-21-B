@@ -158,3 +158,5 @@ C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\obj\Debug\TP-ECOMMERCE-
 C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\obj\Debug\TP-ECOMM.8057015F.Up2Date
 C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\obj\Debug\TP-ECOMMERCE-21-B.dll
 C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\obj\Debug\TP-ECOMMERCE-21-B.pdb
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\bin\service.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\bin\service.pdb

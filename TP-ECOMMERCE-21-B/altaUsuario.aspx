@@ -4,7 +4,9 @@
     <main class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <h2 class="text-center mb-4">Alta de Usuario</h2>
+                <asp:Label ID="lblTitulo" runat="server" CssClass="h2 text-center mb-4" />
+
+
                 <div class="card p-4 shadow-sm">
 
                     <asp:ValidationSummary ID="vsErrores" runat="server" CssClass="alert alert-danger" HeaderText="Por favor corregí los siguientes errores:" DisplayMode="BulletList" />
@@ -18,23 +20,43 @@
                     <div class="mb-3">
                         <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" Placeholder="Nombre" />
                         <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="El nombre es obligatorio" CssClass="text-danger" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="revNombre" runat="server"
+                            ControlToValidate="txtNombre"
+                            ValidationExpression="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"
+                            ErrorMessage="⚠️ Solo se permiten letras en el nombre"
+                            ForeColor="Red" Display="Dynamic" />
+
+
                     </div>
 
                     <div class="mb-3">
                         <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" Placeholder="Apellido" />
                         <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="txtApellido" ErrorMessage="El apellido es obligatorio" CssClass="text-danger" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+                            ControlToValidate="txtApellido"
+                            ValidationExpression="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"
+                            ErrorMessage="⚠️ Solo se permiten letras en el Apellido"
+                            ForeColor="Red" Display="Dynamic" />
+
+
                     </div>
 
                     <div class="mb-3">
                         <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" Placeholder="DNI" />
                         <asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="txtDni" ErrorMessage="El DNI es obligatorio" CssClass="text-danger" Display="Dynamic" />
-                        <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Formato inválido (solo números)" CssClass="text-danger" Display="Dynamic" ValidationExpression="^\d{7,8}$" />
+                        <asp:RegularExpressionValidator ID="revDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Formato inválido (Debe contener entre 7 y 9 numeros solamente )" CssClass="text-danger" Display="Dynamic" ValidationExpression="^\d{7,8}$" />
                     </div>
 
 
                     <div class="mb-3">
                         <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control" Placeholder="Dirección" />
                         <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="La dirección es obligatoria" CssClass="text-danger" Display="Dynamic" />
+                        <asp:RegularExpressionValidator ID="revDireccion" runat="server"
+                            ControlToValidate="txtDireccion"
+                            ValidationExpression="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s\.,\-]+$"
+                            ErrorMessage="⚠️ La dirección contiene caracteres inválidos."
+                            ForeColor="Red" Display="Dynamic" />
+
                     </div>
 
                     <div class="mb-3">

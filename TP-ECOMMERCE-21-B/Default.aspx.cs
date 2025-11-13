@@ -56,9 +56,6 @@ namespace TP_ECOMMERCE_21_B
             RepeaterProducto.DataSource = listaFiltrada;
             RepeaterProducto.DataBind();
 
-
-
-
         }
         
 

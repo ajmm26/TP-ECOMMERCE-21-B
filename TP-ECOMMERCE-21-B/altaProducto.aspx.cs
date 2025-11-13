@@ -15,7 +15,12 @@ namespace TP_ECOMMERCE_21_B
         {
             if (!IsPostBack)
             {
-                
+                bool esModificacion = Session["modificarId"] != null;
+                lblTitulo.Text = esModificacion ? "Modificar Producto" : "Alta de Producto";
+                btnAceptar.Text = esModificacion ? "Guardar Cambios" : "Aceptar";
+
+
+
                 negocioMarca negocio = new negocioMarca();
                 List<Marca> marcas = negocio.listar();
                 ddlMarcas.DataSource = marcas;
@@ -46,7 +51,9 @@ namespace TP_ECOMMERCE_21_B
                         txtNombre.Text = producto.Nombre;
                         txtDescripcion.Text = producto.Descripcion;
                         txtPrecioCompra.Text = producto.PrecioCompra.ToString();
-                        txtPorcentajeGanancia.Text = producto.PorcentajeGanancia.ToString();
+                        txtPorcentajeGanancia.Text = producto.PorcentajeGanancia.ToString("F2") + " %";
+
+
                         txtPrecioVenta.Text = producto.PrecioVenta.ToString();
                         txtStockActual.Text = producto.StockActual.ToString();
                         txtStockMinimo.Text = producto.StockMinimo.ToString();
@@ -66,7 +73,10 @@ namespace TP_ECOMMERCE_21_B
         {
             try
             {
-                // Validar campos obligatorios
+                if (!Page.IsValid)
+                    return;
+
+
                 if (string.IsNullOrWhiteSpace(txtCodigo.Text) || string.IsNullOrWhiteSpace(txtNombre.Text))
                 {
                     lblError.Text = "⚠️ Código y Nombre son obligatorios.";
@@ -74,7 +84,7 @@ namespace TP_ECOMMERCE_21_B
                 }
 
                 if (!decimal.TryParse(txtPrecioCompra.Text, out decimal precioCompra) ||
-                    !decimal.TryParse(txtPorcentajeGanancia.Text, out decimal porcentajeGanancia) ||
+                    //!decimal.TryParse(txtPorcentajeGanancia.Text, out decimal porcentajeGanancia) ||
                     !decimal.TryParse(txtPrecioVenta.Text, out decimal precioVenta))
                 {
                     lblError.Text = "⚠️ Los precios y porcentaje deben ser valores numéricos.";
@@ -93,7 +103,7 @@ namespace TP_ECOMMERCE_21_B
                     return;
                 }
 
-                // Validar selección de marca y categoría
+               
                 if (string.IsNullOrWhiteSpace(ddlMarcas.SelectedValue) || !int.TryParse(ddlMarcas.SelectedValue, out int idMarca))
                 {
                     lblError.Text = "⚠️ La marca seleccionada no es válida.";
@@ -106,7 +116,7 @@ namespace TP_ECOMMERCE_21_B
                     return;
                 }
 
-                // Validar al menos una imagen
+                
                 List<string> imagenes = Session["imagenes"] as List<string> ?? new List<string>();
                 if (Session["modificarId"] == null && imagenes.Count < 1)
                 {
@@ -114,7 +124,7 @@ namespace TP_ECOMMERCE_21_B
                     return;
                 }
 
-                // Crear producto
+               
                 Producto nuevo = new Producto
                 {
                     Codigo = txtCodigo.Text,
@@ -123,7 +133,7 @@ namespace TP_ECOMMERCE_21_B
                     IdCategoria = new Categoria(idCategoria, ddlCategoria.SelectedItem.Text),
                     Descripcion = txtDescripcion.Text,
                     PrecioCompra = precioCompra,
-                    PorcentajeGanancia = porcentajeGanancia,
+                    //PorcentajeGanancia = porcentajeGanancia,
                     PrecioVenta = precioVenta,
                     StockActual = stockActual,
                     StockMinimo = stockMinimo,
@@ -171,7 +181,7 @@ namespace TP_ECOMMERCE_21_B
 
             negocioMarca negocio = new negocioMarca();
 
-            // 🔒 Validar duplicado
+           
             List<Marca> marcasExistentes = negocio.listar();
             if (marcasExistentes.Any(m => m.Nombre.Equals(nombreMarca, StringComparison.OrdinalIgnoreCase)))
             {
@@ -179,10 +189,10 @@ namespace TP_ECOMMERCE_21_B
                 return;
             }
 
-            // ✅ Agregar nueva marca
+            
             negocio.agregarMarca(new Marca { Nombre = nombreMarca });
 
-            // Recargar y seleccionar
+            
             List<Marca> marcas = negocio.listar();
             ddlMarcas.DataSource = marcas;
             ddlMarcas.DataTextField = "Nombre";
@@ -211,7 +221,7 @@ namespace TP_ECOMMERCE_21_B
 
             negocioCategoria negocio = new negocioCategoria();
 
-            // 🔒 Validar duplicado
+            
             List<Categoria> categoriasExistentes = negocio.listarCategoria();
             if (categoriasExistentes.Any(c => c.Nombre.Equals(nombreCategoria, StringComparison.OrdinalIgnoreCase)))
             {
@@ -219,10 +229,10 @@ namespace TP_ECOMMERCE_21_B
                 return;
             }
 
-            // ✅ Agregar nueva categoría
+            
             negocio.agregarCategoria(new Categoria { Nombre = nombreCategoria });
 
-            // Recargar y seleccionar
+           
             List<Categoria> categorias = negocio.listarCategoria();
             ddlCategoria.DataSource = categorias;
             ddlCategoria.DataTextField = "Nombre";

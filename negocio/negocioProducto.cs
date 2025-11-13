@@ -33,7 +33,7 @@ namespace negocio
                     producto.IdCategoria.Id = (int)datos.Lector["CategoriaId"];
                     producto.Descripcion = (string)datos.Lector["Descripcion"];
                     producto.PrecioCompra = (decimal)datos.Lector["PrecioCompra"];
-                    producto.PorcentajeGanancia = (decimal)datos.Lector["PorcentajeGanancia"];
+                    //producto.PorcentajeGanancia = (decimal)datos.Lector["PorcentajeGanancia"];
                     producto.PrecioVenta = (decimal)datos.Lector["PrecioVenta"];
                     producto.StockActual = (int)datos.Lector["StockActual"];
                     producto.StockMinimo = (int)datos.Lector["StockMinimo"];
@@ -55,7 +55,7 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-          
+
         public void agregarProducto(Producto nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -70,14 +70,19 @@ namespace negocio
                 datos.agregarParametros("@categoriaId", nuevo.IdCategoria.Id);
                 datos.agregarParametros("@descripcion", nuevo.Descripcion);
                 datos.agregarParametros("@precioCompra", nuevo.PrecioCompra);
-                datos.agregarParametros("@porcentajeGanancia", nuevo.PorcentajeGanancia);
+                decimal porcentaje = nuevo.PrecioCompra == 0 ? 0 :
+                Math.Round(((nuevo.PrecioVenta - nuevo.PrecioCompra) / nuevo.PrecioCompra) * 100, 2);
+
+                datos.agregarParametros("@porcentajeGanancia", porcentaje);
+
+
                 datos.agregarParametros("@precioVenta", nuevo.PrecioVenta);
                 datos.agregarParametros("@stockActual", nuevo.StockActual);
                 datos.agregarParametros("@stockMinimo", nuevo.StockMinimo);
                 datos.agregarParametros("@estado", nuevo.Estado);
                 object resultado = datos.ejecutarEscalar();
                 nuevo.Id = Convert.ToInt32(resultado);
-            
+
             }
             catch (Exception ex)
             {
@@ -93,17 +98,19 @@ namespace negocio
             try
             {
                 datos.setearConsulta("update Producto set Codigo = @codigo,Nombre=@nombre,MarcaId=@marcaId,Descripcion=@descripcion,PrecioCompra=@precioCompra,PorcentajeGanancia=@porcentajeGanancia,PrecioVenta=@precioVenta,StockActual=@stockActual,StockMinimo=@stockMinimo,Estado=@estado where Id=@id");
-                datos.agregarParametros("@codigo",aModificar.Codigo);
-                datos.agregarParametros("@nombre",aModificar.Nombre);
-                datos.agregarParametros("@marcaId",aModificar.IdMarca.Id);
-                datos.agregarParametros("@descripcion",aModificar.Descripcion);
-                datos.agregarParametros("@precioCompra",aModificar.PrecioCompra);
-                datos.agregarParametros("@porcentajeGanancia",aModificar.PorcentajeGanancia);
-                datos.agregarParametros("@precioVenta",aModificar.PrecioVenta);
-                datos.agregarParametros("@stockActual",aModificar.StockActual);
-                datos.agregarParametros("@stockMinimo",aModificar.StockMinimo);
-                datos.agregarParametros("@estado",aModificar.Estado);
-                datos.agregarParametros("@id",aModificar.Id);
+                datos.agregarParametros("@codigo", aModificar.Codigo);
+                datos.agregarParametros("@nombre", aModificar.Nombre);
+                datos.agregarParametros("@marcaId", aModificar.IdMarca.Id);
+                datos.agregarParametros("@descripcion", aModificar.Descripcion);
+                datos.agregarParametros("@precioCompra", aModificar.PrecioCompra);
+                decimal porcentaje = aModificar.PrecioCompra == 0 ? 0 :
+                Math.Round(((aModificar.PrecioVenta - aModificar.PrecioCompra) / aModificar.PrecioCompra) * 100, 2);
+                datos.agregarParametros("@porcentajeGanancia", porcentaje);
+                datos.agregarParametros("@precioVenta", aModificar.PrecioVenta);
+                datos.agregarParametros("@stockActual", aModificar.StockActual);
+                datos.agregarParametros("@stockMinimo", aModificar.StockMinimo);
+                datos.agregarParametros("@estado", aModificar.Estado);
+                datos.agregarParametros("@id", aModificar.Id);
 
                 datos.ejecutarAccion();
 
@@ -134,7 +141,8 @@ namespace negocio
                     producto.Nombre = datos.Lector["Nombre"].ToString();
                     producto.Descripcion = datos.Lector["Descripcion"].ToString();
                     producto.PrecioCompra = Convert.ToDecimal(datos.Lector["PrecioCompra"]);
-                    producto.PorcentajeGanancia = Convert.ToDecimal(datos.Lector["PorcentajeGanancia"]);
+
+                    //producto.PorcentajeGanancia = Convert.ToDecimal(datos.Lector["PorcentajeGanancia"]);
                     producto.PrecioVenta = Convert.ToDecimal(datos.Lector["PrecioVenta"]);
                     producto.StockActual = Convert.ToInt32(datos.Lector["StockActual"]);
                     producto.StockMinimo = Convert.ToInt32(datos.Lector["StockMinimo"]);
@@ -202,7 +210,7 @@ namespace negocio
                     producto.IdMarca.Id = (int)datos.Lector["MarcaId"];
                     producto.Descripcion = datos.Lector["Descripcion"].ToString();
                     producto.PrecioCompra = (decimal)datos.Lector["PrecioCompra"];
-                    producto.PorcentajeGanancia = (decimal)datos.Lector["PorcentajeGanancia"];
+                    //producto.PorcentajeGanancia = (decimal)datos.Lector["PorcentajeGanancia"];
                     producto.PrecioVenta = (decimal)datos.Lector["PrecioVenta"];
                     producto.StockActual = (int)datos.Lector["StockActual"];
                     producto.StockMinimo = (int)datos.Lector["StockMinimo"];

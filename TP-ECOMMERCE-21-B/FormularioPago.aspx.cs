@@ -1,6 +1,8 @@
-﻿using System;
+﻿using dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,14 +13,105 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx", false);
+            if (!IsPostBack)
+            {
+                string tipo = rbEnvio.SelectedValue;
+                panelDireccion.Visible = tipo == "Retiro";
+                panelTelefono.Visible = tipo == "Coordinar";
+
+
+                Usuario usuario = Session["usuario"] as Usuario;
+                if (usuario != null)
+                {
+                    txtNombre.Text = usuario.Nombre;
+                    txtApellido.Text = usuario.Apellido;
+                    txtEmail.Text = usuario.Email;
+                }
+
+                List<Producto> carrito = Session["items"] as List<Producto>;
+                if (carrito != null && carrito.Count > 0)
+                {
+                    decimal total = carrito.Sum(p => p.PrecioVenta * p.cantidad);
+                    lblTotal.Text = $"Total a pagar: ${total}";
+                }
+                else
+                {
+                    lblTotal.Text = "No hay productos en el carrito.";
+                }
+            }
+
 
 
         }
 
         protected void btnConfirmarPago_Click(object sender, EventArgs e)
         {
+            List<Producto> carrito = Session["items"] as List<Producto>;
+            if (carrito == null || carrito.Count == 0)
+            {
+                Response.Redirect("carritoWithMaster.aspx");
+                return;
+            }
 
+            string nombre = txtNombre.Text;
+            string apellido = txtApellido.Text;
+            string email = txtEmail.Text;
+            string tipoEnvio = rbEnvio.SelectedValue;
+            string metodoPago = rbPago.SelectedValue;
+
+            
+            try
+            {
+                service.emailService servicioEmail = new service.emailService();
+
+                string asunto = "Confirmación de compra - E-commerce SIGNOS";
+
+                StringBuilder cuerpo = new StringBuilder();
+                cuerpo.AppendLine($"<h1>✔ Gracias por tu compra, {nombre}!</h1>");
+                cuerpo.AppendLine("<h2>Resumen del pedido:</h2>");
+                cuerpo.AppendLine("<ul>");
+                foreach (var p in carrito)
+                {
+                    cuerpo.AppendLine($"<li>{p.Nombre} x{p.cantidad} = ${p.PrecioVenta * p.cantidad}</li>");
+                }
+                cuerpo.AppendLine("</ul>");
+                cuerpo.AppendLine($"<h3>Total: ${carrito.Sum(p => p.PrecioVenta * p.cantidad)}</h3>");
+                cuerpo.AppendLine($"<p>Método de pago: {metodoPago}</p>");
+                cuerpo.AppendLine("<hr />");
+                cuerpo.AppendLine("<p>Tu pedido está siendo procesado. ¡Gracias por confiar en SIGNOS!</p>");
+
+                servicioEmail.armarCorreo(email, asunto, cuerpo.ToString());
+                servicioEmail.enviarMail();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            Session["items"] = null;
+            Response.Redirect("Confirmacion.aspx");
         }
+
+
+
+        protected void rbPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string metodo = rbPago.SelectedValue;
+
+            panelTarjeta.Visible = metodo == "tarjeta";
+            panelTransferencia.Visible = metodo == "transferencia";
+            panelMercadoPago.Visible = metodo == "mercadopago";
+        }
+        protected void rbEnvio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tipo = rbEnvio.SelectedValue;
+
+            panelDireccion.Visible = tipo == "Retiro";
+            panelTelefono.Visible = tipo == "Coordinar";
+        }
+
+
+
+
     }
 }

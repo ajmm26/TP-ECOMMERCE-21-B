@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="altaProducto.aspx.cs" Inherits="TP_ECOMMERCE_21_B.altaProducto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>PRODUCTOS   </h1>
+
+    <asp:Label ID="lblTitulo" runat="server" CssClass="h2 text-center mb-4" />
+
     <div class="row">
         <!-- Columna izquierda -->
         <div class="col-md-6">
@@ -34,7 +36,8 @@
                 <asp:TextBox ID="txtPrecioCompra" runat="server" CssClass="form-control" Placeholder="Precio Compra" />
             </div>
             <div class="mb-3">
-                <asp:TextBox ID="txtPorcentajeGanancia" runat="server" CssClass="form-control" Placeholder="Porcentaje Ganancia" />
+                <asp:TextBox ID="txtPorcentajeGanancia" runat="server" CssClass="form-control" ReadOnly="true" />
+
             </div>
             <div class="mb-3">
                 <asp:TextBox ID="txtPrecioVenta" runat="server" CssClass="form-control" Placeholder="Precio Venta" />
@@ -52,7 +55,7 @@
                 <asp:Label ID="lblError" runat="server" CssClass="text-danger" />
 
 
-                <asp:Button ID="Aceptar" runat="server" Text="Aceptar" OnClick="Aceptar_Click" CssClass="btn btn-success" />
+                <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="Aceptar_Click" CssClass="btn btn-success" />
             </div>
         </div>
 

@@ -14,9 +14,7 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack) { 
             
-            }
 
             List<Producto> products = (List<Producto>)Session["items"];
 
@@ -33,6 +31,15 @@ namespace TP_ECOMMERCE_21_B
             Response.Redirect("Default.aspx");
         }
 
+        protected void btnIniciarCompra_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FormularioPago.aspx");
+        }
+
+
+
+
+
         protected void Click_btnDelete(object sender, CommandEventArgs e)
         {
 
@@ -44,6 +51,9 @@ namespace TP_ECOMMERCE_21_B
             List<Producto> products = (List<Producto>)Session["items"];
             Producto seleccionado = products[index];
         }
+
+
+
 
     }
 }

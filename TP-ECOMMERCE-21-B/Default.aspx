@@ -11,28 +11,27 @@
         </div>
 
 
-        <div class="mb-3 carousel slide carousel-fixed-height bg-dark" id="carouselExampleControlsNoTouching" data-bs-touch="false">
+        <div class="mb-3 carousel slide carousel-fixed-height bg-dark"
+            id="carouselExampleControlsNoTouching"
+            data-bs-touch="false"
+            data-bs-ride="carousel"
+            data-bs-interval="2000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://img.joomcdn.net/5614e867d137a0dae93a61d2076d9bd638957a95_400_400.jpeg" style="background-color: black; display: block; margin: 0 auto; max-height: 300px; object-fit: contain;" alt="...">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS-16UNOVHe5nIZWa7zLh-ex6terwMLo5nz58LivszmFGL-38kQENQi49HzUOnsRcieNGQ4gL-e0z0CKl7mDYIGtyVs5zivW1MUFfH5R4E"
+                        style="background-color: black; display: block; margin: 0 auto; max-height: 300px; object-fit: contain;" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://img.joomcdn.net/5614e867d137a0dae93a61d2076d9bd638957a95_400_400.jpeg" style="background-color: black; display: block; margin: 0 auto; max-height: 300px; object-fit: contain;" alt="...">
+                    <img src="https://www.megatone.net/images/Articulos/zoom2x/253/MKT0579LTA-1.jpg"
+                        style="background-color: black; display: block; margin: 0 auto; max-height: 300px; object-fit: contain;" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://img.joomcdn.net/5614e867d137a0dae93a61d2076d9bd638957a95_400_400.jpeg" style="background-color: black; display: block; margin: 0 auto; max-height: 300px; object-fit: contain;" alt="...">
+                    <img src="https://www.megatone.net/images/Articulos/zoom2x/200/03/MKT0114DIN_3.jpg"
+                        style="background-color: black; display: block; margin: 0 auto; max-height: 300px; object-fit: contain;" alt="...">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-
         </div>
+
 
 
 
@@ -75,7 +74,7 @@
                                 <p class="card-Precio"><%# string.Format("${0:N2}", Eval("PrecioVenta")) %></p>
                                 <p class="card-StockActual">Stock disponible: <%# Eval("StockActual") %></p>
 
-                                
+
 
                                 <asp:Button ID="btnComprar" runat="server" Text="Comprar ahora" CssClass="btn btn-primary w-100"
                                     CommandArgument='<%# Eval("Id") %>' CommandName="ComprarAhora" OnCommand="btnComprar_Command" />

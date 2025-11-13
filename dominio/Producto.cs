@@ -17,7 +17,17 @@ namespace dominio
         public List<Imagen> Imagenes { get; set; }
         public int cantidad { get; set; }
         public decimal PrecioCompra {  get; set; }
-        public decimal PorcentajeGanancia { get; set; }
+        public decimal PorcentajeGanancia
+        {
+            get
+            {
+                if (PrecioCompra == 0)
+                    return 0;
+                return Math.Round(((PrecioVenta - PrecioCompra) / PrecioCompra) * 100, 2);
+            }
+        }
+
+
         public decimal PrecioVenta { get; set; }
         public int StockActual {  get; set; }  
         public  int StockMinimo { get; set; }

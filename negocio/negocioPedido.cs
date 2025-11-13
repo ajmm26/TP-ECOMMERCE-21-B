@@ -38,5 +38,21 @@ namespace negocio
                 throw;
             }
         }
+
+        public void actualizarEstado(int idPedido, string nuevoEstado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Pedido SET estado = @estado WHERE id = @id");
+                datos.agregarParametros("@estado", nuevoEstado);
+                datos.agregarParametros("@id", idPedido);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
