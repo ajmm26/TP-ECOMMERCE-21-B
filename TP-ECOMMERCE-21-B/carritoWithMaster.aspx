@@ -21,8 +21,8 @@
     <% } else if (products != null && products.Count > 0) { %>
         <%int index = 0; %>
          <%foreach (Producto product in products) {%>
-        <div class="div-contenedor-producto">
-            <asp:HiddenField ID="hfId" runat="server" Value="<%=index %>" />
+        <div class="div-contenedor-producto" id="<%=index%>">
+            <input type="hidden" name="hfId" class="hfId" value="<%= index %>" />
             <div class="div-img-carrito">
                 <img src="<%=product.Imagenes[0].Url %>">
             </div>
@@ -33,17 +33,21 @@
                 <strong><label>Cantidad: </label></strong><p><%=product.cantidad.ToString()%></p>
             </div>
             <div class="div-button-eliminar">
+
  <asp:ImageButton 
                 runat="server" 
                 ID="btnDelete"
                 ImageUrl="~/img/trash.jpg" 
+         CommandName="EliminarProducto" 
      Cssclass="imagebtDelete"
-                 />  
-
+     OnCommand="Click_btnDelete"
+          />  
+        
             </div>
         </div>
     <%index++; %>
     <%} %>
     <asp:Button runat="server" Cssclass="buttonAddCart" role="button" Text="Iniciar Compra"></asp:Button>
     <% } %>
+    <script src="<%= ResolveUrl("~/Scripts/WebForms/carrito.js") %>"></script>
 </asp:Content>
