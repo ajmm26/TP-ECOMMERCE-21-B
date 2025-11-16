@@ -1,4 +1,5 @@
 ﻿using dominio;
+using negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,14 +54,27 @@ namespace TP_ECOMMERCE_21_B
                 return;
             }
 
-            string nombre = txtNombre.Text;
+            negocioPedido np = new negocioPedido();
+            Pedido pedido = new Pedido();
+            Usuario user = (Usuario)Session["usuario"];
+            pedido.IdUsuario = user.Id;
+            pedido.PrecioTotal= carrito.Sum(p => p.PrecioVenta * p.cantidad);
+            pedido.Estado = "Pagado";
+            pedido.MetodoDePago = rbPago.SelectedValue;
+            int numPedido = np.AgregarPedido(pedido);
+            pedido.DetallePedidos = getDetallePedido(numPedido);
+            foreach(var detalle in pedido.DetallePedidos)
+            {
+                np.AgregarDetalleDePedido(detalle);
+            }
+           /* string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
             string email = txtEmail.Text;
             string tipoEnvio = rbEnvio.SelectedValue;
-            string metodoPago = rbPago.SelectedValue;
+            string metodoPago = rbPago.SelectedValue;*/
 
             
-            try
+           /* try
             {
                 service.emailService servicioEmail = new service.emailService();
 
@@ -86,12 +100,32 @@ namespace TP_ECOMMERCE_21_B
             catch (Exception ex)
             {
                 throw ex;
-            }
+            }*/
 
             Session["items"] = null;
             Response.Redirect("Confirmacion.aspx");
         }
 
+        protected List<DetallePedido> getDetallePedido(int numPedido)
+        { 
+            List<DetallePedido> detallePedidos = new List<DetallePedido>();
+            List<Producto> items = (List<Producto>)Session["items"];
+           
+            if (items.Count < 0 || items == null) {
+                return null;
+            }
+
+            foreach (var item in items) { 
+                DetallePedido detalleP = new DetallePedido();
+                detalleP.idProducto=item.Id;
+                detalleP.idPedido = numPedido;
+                detalleP.cantidadProducto = item.cantidad;
+                detalleP.precioUnitario = item.PrecioVenta;
+                detalleP.precioRebajado = 0;
+                detallePedidos.Add(detalleP);
+            }
+            return detallePedidos;
+        }
 
 
         protected void rbPago_SelectedIndexChanged(object sender, EventArgs e)

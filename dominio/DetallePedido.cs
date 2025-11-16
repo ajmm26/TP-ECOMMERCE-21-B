@@ -9,11 +9,13 @@ namespace dominio
     public class DetallePedido
     {
 
-        public int idPedido;
+        public int idPedido { get; set; }
 
         public int idProducto {  get; set; }
 
         public string nombreProducto { get; set; }
+
+        public int cantidadProducto { get; set; }
 
         public decimal precioUnitario { get; set; }
 

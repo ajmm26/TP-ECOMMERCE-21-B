@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="product.aspx.cs" Inherits="TP_ECOMMERCE_21_B.productoUnico" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <asp:HiddenField runat="server" ID="labelHidden"/>
+    <asp:Label runat="server" ID="labelMessage" />
     <div id="div-container-product">
     <div id="div-details">
     <div id="div-img">

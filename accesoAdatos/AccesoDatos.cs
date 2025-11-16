@@ -71,6 +71,11 @@ namespace accesoAdatos
             }
         }
 
+        public void setearProcedimiento(string nombre)
+        {
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = nombre;
+        }
 
         public void cerrarConexion()
         {

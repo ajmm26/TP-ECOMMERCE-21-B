@@ -15,6 +15,24 @@ namespace TP_ECOMMERCE_21_B
     {
 
         /// <summary>
+        /// Control labelHidden.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField labelHidden;
+
+        /// <summary>
+        /// Control labelMessage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelMessage;
+
+        /// <summary>
         /// Control imgProducto.
         /// </summary>
         /// <remarks>

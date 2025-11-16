@@ -16,7 +16,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos ();
             try
             {
-                datos.setearConsulta("SELECT id, idUsuario, precioTotal, estado, metodoDepago,fechaPedido FROM Pedido;");
+                datos.setearConsulta("SELECT id, idUsuario, precioTotal, estado, metodoDepago FROM Pedido;");
                 datos.ejecutarLectura();
                 while(datos.Lector.Read())
                 {
@@ -26,7 +26,7 @@ namespace negocio
                     pedido.PrecioTotal = (decimal)datos.Lector["precioTotal"];
                     pedido.Estado = (string)datos.Lector["estado"];
                     pedido.MetodoDePago = (string)datos.Lector["metodoDepago"];
-                    pedido.Fecha = (DateTime)datos.Lector["fechaPedido"];
+                    //pedido.Fecha = (DateTime)datos.Lector["fechaPedido"];
                     lista.Add (pedido);
                 }
 
@@ -37,6 +37,66 @@ namespace negocio
 
                 throw;
             }
+        }
+
+        public int AgregarPedido(Pedido pedido)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+
+                datos.limpiarParametros();
+                datos.setearProcedimiento("agregar_Pedido");
+                datos.agregarParametros("@idUsuario", pedido.IdUsuario);
+                datos.agregarParametros("@precioTotal", pedido.PrecioTotal);
+                datos.agregarParametros("@estado", pedido.Estado);
+                datos.agregarParametros("@metodoDePago", pedido.MetodoDePago);
+
+                object res = datos.ejecutarEscalar();
+                return Convert.ToInt32(res);
+
+            }
+            catch (Exception ex) {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+
+        }
+
+
+
+        public void AgregarDetalleDePedido(DetallePedido dp)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try {
+                datos.limpiarParametros();
+                datos.setearConsulta("Insert into detalleProducto(idProducto,idPedido,cantidadProducto,precioUnitario,precioRebajado) " +
+                    "values(@idProducto,@idPedido,@cantidadProducto,@precioUnitario,@precioRebajadoido)");
+                datos.agregarParametros("@idProducto",dp.idProducto);
+                datos.agregarParametros("@idPedido",dp.idPedido);
+                datos.agregarParametros("@cantidadProducto",dp.cantidadProducto);
+                datos.agregarParametros("@precioUnitario",dp.precioUnitario);
+                datos.agregarParametros("@precioRebajado",dp.precioRebajado);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
         }
 
         public void actualizarEstado(int idPedido, string nuevoEstado)
@@ -54,5 +114,6 @@ namespace negocio
                 throw ex;
             }
         }
+
     }
 }

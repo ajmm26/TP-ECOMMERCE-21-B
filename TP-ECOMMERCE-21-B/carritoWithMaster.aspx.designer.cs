@@ -33,22 +33,13 @@ namespace TP_ECOMMERCE_21_B
         protected global::System.Web.UI.WebControls.Label textcart;
 
         /// <summary>
-        /// Control Label1.
+        /// Control repRepetidor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// Control btnDelete.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnDelete;
+        protected global::System.Web.UI.WebControls.Repeater repRepetidor;
 
         /// <summary>
         /// Control btnIniciarCompra.

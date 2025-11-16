@@ -31,7 +31,7 @@
     <hr />  
 
 
-    <div class="mb-3">
+  <!----  <div class="mb-3">
         <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" Placeholder="Nombre" />
     </div>
     <div class="mb-3">
@@ -39,7 +39,7 @@
     </div>
     <div class="mb-3">
         <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Placeholder="Email" TextMode="Email" />
-    </div>
+    </div> --->
 
 
 

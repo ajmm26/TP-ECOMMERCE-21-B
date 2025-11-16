@@ -14,17 +14,30 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack)
+            {
+                CargarProductos();
+            }
+        }
 
+        private void CargarProductos()
+        {
             List<Producto> products = (List<Producto>)Session["items"];
 
+            if (products == null || products.Count == 0)
+            {
+                textcart.Text = "No tiene articulos en el carrito";
+                btnIniciarCompra.Visible= false;
+                repRepetidor.DataSource = null;
+                repRepetidor.DataBind();
+                return;
+            }
 
-            if (products != null && products.Count == 0) { 
-                TextBox tbtVacio= new TextBox();
-                tbtVacio.Text = "No tiene articulos en el carrito";
-                
-            } 
+            repRepetidor.DataSource = products;
+            repRepetidor.DataBind();
+            btnIniciarCompra.Visible = true;
         }
+
 
         protected void btnVolverCatalogo_Click(object sender, EventArgs e)
         {
@@ -33,27 +46,35 @@ namespace TP_ECOMMERCE_21_B
 
         protected void btnIniciarCompra_Click(object sender, EventArgs e)
         {
+
+            Usuario user = (Usuario)Session["user"];
+
+            if (user != null) { 
             Response.Redirect("FormularioPago.aspx");
+            }
+
+            Session["redirectCarrito"] = true;
+            Response.Redirect("login.aspx");
+
         }
 
-
-
-
-
-        protected void Click_btnDelete(object sender, CommandEventArgs e)
+        protected void btnDelete_Click(object sender, ImageClickEventArgs e)
         {
+            var btn = (ImageButton)sender;
+            int id = int.Parse(btn.CommandArgument);
 
-            int index = int.Parse(e.CommandArgument.ToString());
-            string script = "el div es: " + index.ToString();
-            ClientScript.RegisterStartupScript(this.GetType(), "mensaje", script, true);
-
-            // Si querés acceder al producto:
             List<Producto> products = (List<Producto>)Session["items"];
-            Producto seleccionado = products[index];
+
+            // Eliminar el producto
+            Producto item = products.FirstOrDefault(x => x.Id == id);
+            if (item != null)
+                products.Remove(item);
+
+            // Actualizar sesión
+            Session["items"] = products;
+
+            // Rebindea
+            CargarProductos();
         }
-
-
-
-
     }
 }

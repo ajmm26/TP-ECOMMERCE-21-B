@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebGrease.Css.Ast.Selectors;
 
 namespace TP_ECOMMERCE_21_B
 {
@@ -16,11 +17,12 @@ namespace TP_ECOMMERCE_21_B
         {
             if (!IsPostBack)
             {
-
-            string idproduct= Request.QueryString["id"];
+                labelMessage.Visible = false;
+                string idproduct= Request.QueryString["id"];
                 if (!string.IsNullOrEmpty(idproduct))
                 {
                     int id = int.Parse(idproduct);
+                    labelHidden.Value=id.ToString();
                     Producto p = getCurrentproduct(id);
                     ttlp.Text = String.Format(p.Nombre);
                     labelDescripcionText.Text = String.Format(p.Descripcion);
@@ -81,31 +83,69 @@ namespace TP_ECOMMERCE_21_B
 
         protected void click_buttonAdd(object sender, EventArgs e)
         {
-
             int num = int.Parse(numLabel.Text);
             if (num <= 0)
+            {
+                ShowMessage("No puede ser 0 la cantidad del producto", false);
                 return;
-                
-                    Producto product = new Producto();
-                    product.Nombre = ttlp.Text;
-                    product.Descripcion = labelDescripcionText.Text;
-                    product.PrecioVenta = decimal.Parse(labelPrecioNormal.Text);
-                    product.cantidad = int.Parse(numLabel.Text);
-                    product.Imagenes = new List<Imagen>();
-                    Imagen img = new Imagen();
-                    img.Url = imgProducto.ImageUrl;
-                    product.Imagenes.Add(img);
 
-            List<Producto> items = Session["items"] as List<Producto>;
-            if (items == null)
-                items = new List<Producto>();
-
-
-            items.Add(product);
-                    Session["items"] = items;
-            Response.Redirect("carritoWithMaster.aspx");
-     
+            }
+           
+          bool res = addProductToCar();
+            if (res) {
+                ShowMessage("Se ha agregado tu producto al carrito", true);
+            }
         }
+
+
+        protected bool addProductToCar()
+        {
+            // Obtener lista de Session
+            List<Producto> items = Session["items"] as List<Producto>;
+
+            // Crear producto nuevo
+            Producto product = getNewProduct();
+
+            // Si la lista NO existe → crearla
+            if (items == null)
+            {
+                items = new List<Producto>();
+                items.Add(product);
+                Session["items"] = items;
+                Response.Redirect("carritoWithMaster.aspx");
+                return true;
+            }
+
+            // Si la lista sí existe → buscar si el producto ya está
+            bool encontrado = false;
+
+            foreach (Producto item in items)
+            {
+                if (item.Id == product.Id)
+                {
+                    item.cantidad += product.cantidad; // sumar cantidad
+                    encontrado = true;
+                    break;
+                }
+            }
+
+            // Si no está → agregarlo
+            if (!encontrado)
+            {
+                items.Add(product);
+               
+            }
+
+            // Guardar cambios
+            if (items.Count <= 0)
+            {
+                return false;
+            }
+            Session["items"] = items;
+                return true;
+        }
+
+
 
         protected Producto getCurrentproduct(int id)
         {
@@ -116,6 +156,46 @@ namespace TP_ECOMMERCE_21_B
                 return product;
             }
             return null;
+        }
+
+        protected Producto getNewProduct()
+        {
+            Producto product = new Producto();
+            product.Id = int.Parse(labelHidden.Value);
+            product.Nombre = ttlp.Text;
+            product.Descripcion = labelDescripcionText.Text;
+            product.PrecioVenta = decimal.Parse(labelPrecioNormal.Text);
+            product.cantidad = int.Parse(numLabel.Text);
+            product.Imagenes = new List<Imagen>();
+            Imagen img = new Imagen();
+            img.Url = imgProducto.ImageUrl;
+            product.Imagenes.Add(img);
+
+            return product;
+        }
+
+        protected void ShowMessage(string message, bool success)
+        {
+            // Color según estado
+            string cssClass = success ? "message-box message-success" : "message-box message-error";
+
+            labelMessage.Text = message;
+            labelMessage.CssClass = cssClass;
+            labelMessage.Visible = true;
+
+            // Script para mostrar y desaparecer el mensaje
+            string script = @"
+        setTimeout(function() {
+            var lbl = document.getElementById('" + labelMessage.ClientID + @"');
+            if(lbl){
+                lbl.style.opacity = '1';
+                setTimeout(function(){
+                    lbl.style.opacity = '0';
+                }, 2500);
+            }
+        }, 100);";
+
+            ScriptManager.RegisterStartupScript(this, GetType(), "msg" + Guid.NewGuid(), script, true);
         }
 
     }

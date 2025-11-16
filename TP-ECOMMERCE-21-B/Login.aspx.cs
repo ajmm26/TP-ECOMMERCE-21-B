@@ -32,7 +32,22 @@ namespace TP_ECOMMERCE_21_B
                 if (usuario.RolUsuario == "admin")
                     Response.Redirect("gestionProductos.aspx", false);
                 else
-                    Response.Redirect("Default.aspx", false);
+                {
+                    bool redirect = (Session["redirectCarrito"] as bool?) ?? false;
+
+                    if (!redirect && usuario.RolUsuario=="client")
+                    {
+                        Response.Redirect("Default.aspx");
+                    }
+
+                    if (usuario.RolUsuario == "client")
+                    {
+                        Session["redirectCarrito"] = false;
+                    Response.Redirect("FormularioPago.aspx");
+                    }
+
+                }
+                   
             }
             else
             {

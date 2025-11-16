@@ -1,5 +1,4 @@
-﻿<%@ Import Namespace="dominio" %>
-
+﻿
 <%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="carritoWithMaster.aspx.cs" Inherits="TP_ECOMMERCE_21_B.carritoWithMaster" %>
 
@@ -8,53 +7,44 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Panel runat="server" CssClass="contentCarrito">
     <asp:Button ID="btnVolverCatalogo" runat="server" Text="Volver al catálogo" CssClass="btn btn-secondary" OnClick="btnVolverCatalogo_Click" />
-
-
-
     <asp:Label runat="server" ID="textcart" />
-    <% 
-        List<Producto> products = (List<Producto>)Session["items"];
-    %>
+    <asp:Repeater runat="server" ID="repRepetidor">
+        <ItemTemplate>
 
-    <% if (products != null && products.Count == 0)
-        { %>
-    <asp:Label runat="server" ID="Label1" Text="No tiene productos en el carrito" />
-    <% }
-        else if (products != null && products.Count > 0)
-        { %>
-    <%int index = 0; %>
-    <%foreach (Producto product in products)
-        {%>
-    <div class="div-contenedor-producto" id="<%=index%>">
-        <input type="hidden" name="hfId" class="hfId" value="<%= index %>" />
-        <div class="div-img-carrito">
-            <img src="<%=product.Imagenes[0].Url %>">
-        </div>
-
-        <div class="div-producto-info">
-            <p><%= product.Nombre %></p>
-            <p><%= product.Descripcion %></p>
-            <strong>
-                <label>Cantidad: </label>
-            </strong>
-            <p><%=product.cantidad.ToString()%></p>
-        </div>
-        <div class="div-button-eliminar">
-
-            <asp:ImageButton
-            runat="server"
-            ID="btnDelete"
-            ImageUrl="~/img/trash.jpg"
-            CommandName="EliminarProducto"
-            CssClass="imagebtDelete"
-            OnCommand="Click_btnDelete" />
-
-        </div>
+            <div class="div-contenedor-producto" >
+    <input type="hidden" name="hfId" class="hfId" value="" />
+    <div class="div-img-carrito">
+        <img src="<%# Eval("Imagenes[0].Url")%>">
     </div>
-    <%index++; %>
-    <%} %>
+
+    <div class="div-producto-info">
+        <p><%# Eval("Nombre") %></p>
+        <p><%# Eval("Descripcion") %></p>
+        <strong>
+            <label>Cantidad:</label>
+        </strong>
+        <p><%# Eval("cantidad")%></p>
+    </div>
+    <div class="div-button-eliminar">
+
+        <asp:ImageButton
+        runat="server"
+        ID="btnDelete"
+        ImageUrl="~/img/trash.jpg"
+        CssClass="imagebtDelete"
+            CommandName="productId"
+         CommandArgument='<%# Eval("Id")%>'
+            Onclick="btnDelete_Click"/>
+
+    </div>
+</div>
+
+        </ItemTemplate>
+    </asp:Repeater>
+       
     <asp:Button ID="btnIniciarCompra" runat="server" Text="Iniciar Compra" CssClass="btn btn-success" OnClick="btnIniciarCompra_Click" />
-    <% } %>
+        </asp:Panel>
     <script src="<%= ResolveUrl("~/Scripts/WebForms/carrito.js") %>"></script>
 </asp:Content>

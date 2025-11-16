@@ -1,14 +1,8 @@
-﻿document.addEventListener("DOMContentLoaded", ()=> {
-    console.log("se ha conectado el js");
-
-    const divsContenedoresProductosCarrito = document.querySelectorAll(".div-contenedor-producto")
-    divsContenedoresProductosCarrito.forEach(div => {
-        div.addEventListener('click', () => {
-        console.log(div);
-        })
-});
-
-});
+﻿window.onload = () => {
+    console.log("window loaded");
+    const cont = document.querySelector('.content-carrito');
+    console.log(cont);
+};
 
 
 
