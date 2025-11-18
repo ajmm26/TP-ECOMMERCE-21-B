@@ -35,12 +35,12 @@ namespace TP_ECOMMERCE_21_B
                 {
                     bool redirect = (Session["redirectCarrito"] as bool?) ?? false;
 
-                    if (!redirect && usuario.RolUsuario=="client")
+                    if (!redirect && usuario.RolUsuario=="cliente")
                     {
                         Response.Redirect("Default.aspx");
                     }
 
-                    if (usuario.RolUsuario == "client")
+                    if (usuario.RolUsuario == "cliente")
                     {
                         Session["redirectCarrito"] = false;
                     Response.Redirect("FormularioPago.aspx");

@@ -104,6 +104,7 @@
     <Content Include="carritoWithMaster.aspx" />
     <Content Include="Confirmacion.aspx" />
     <Content Include="Content\carrito.css" />
+    <Content Include="Content\default.css" />
     <Content Include="Content\estilos.css" />
     <Content Include="FormularioPago.aspx" />
     <Content Include="gestionPedido.aspx" />

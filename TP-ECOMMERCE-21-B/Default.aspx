@@ -1,14 +1,32 @@
 ﻿<%@ Page Title="Catalogo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TP_ECOMMERCE_21_B.Default" %>
 
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="server">
+    <link href="<%= ResolveUrl("~/Content/default.css") %>" rel="stylesheet" />
+</asp:Content>
+
+
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
         <h2 id="title"><%: Title %>.</h2>
         <h3>Signos.</h3>
 
-        <div>
-            <asp:TextBox ID="txtFiltro" runat="server" CssClass="mb-2" Style="width: 500px;"></asp:TextBox>
-            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-primary" />
-        </div>
+        <div class="div-buscadores">
+    <div class="divs-contentBuscador" id="div-marca">
+        <p>Marca:</p>
+        <asp:DropDownList runat="server" CssClass="select-category" id="marcaSelect"/>
+    </div>
+
+    <div class="divs-contentBuscador" id="div-category">
+        <p>Categoria:</p>
+        <asp:DropDownList runat="server" CssClass="select-category" id="categoriaSelect"/>
+    </div>
+
+    <div class="divs-contentBuscador buscador-right">
+        <asp:TextBox ID="txtFiltro" runat="server" CssClass="mb-2" Style="width: 300px;"></asp:TextBox>
+        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-primary" />
+    </div>
+</div>
 
 
         <div class="mb-3 carousel slide carousel-fixed-height bg-dark"
@@ -44,6 +62,7 @@
 
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
             <asp:Repeater ID="RepeaterProducto" runat="server">
                 <ItemTemplate>
                     <div class="col">

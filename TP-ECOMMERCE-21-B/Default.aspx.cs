@@ -30,7 +30,21 @@ namespace TP_ECOMMERCE_21_B
 
                 RepeaterProducto.DataSource = listaProducto;
                 RepeaterProducto.DataBind();
-               
+
+                negocioMarca nm = new negocioMarca();
+                List<Marca> marcas = nm.listar();
+                marcaSelect.DataSource = marcas;
+                marcaSelect.DataTextField = "Nombre"; 
+                marcaSelect.DataValueField = "Id";
+                marcaSelect.DataBind();
+
+                negocioCategoria nc = new negocioCategoria();
+                List<Categoria> categorias = nc.listarCategoria();
+                categoriaSelect.DataSource = categorias;
+                categoriaSelect.DataTextField = "Nombre";
+                categoriaSelect.DataValueField = "id";
+                categoriaSelect.DataBind();
+
             }
         }
         protected void btnComprar_Command(object sender, CommandEventArgs e)
