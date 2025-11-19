@@ -43,13 +43,13 @@ namespace TP_ECOMMERCE_21_B
             {
                 negocio.darDeBaja(idUsuario);
                 Session.Remove("modoBaja");
-                cargarListaUsuarios();
+                Response.Redirect("gestionUsuario.aspx");
             }
             else if (Session["modoAlta"] != null && (bool)Session["modoAlta"])
             {
                 negocio.darDeAlta(idUsuario);
                 Session.Remove("modoAlta");
-                cargarListaUsuarios();
+                Response.Redirect("gestionUsuario.aspx");
             }
             else if (Session["modoEliminar"] != null && (bool)Session["modoEliminar"])
             {
@@ -66,6 +66,11 @@ namespace TP_ECOMMERCE_21_B
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("login.aspx", false);
+            }
+
             if (!IsPostBack)
             {
                 cargarListaUsuarios();
@@ -91,11 +96,7 @@ namespace TP_ECOMMERCE_21_B
 
         }
 
-        protected void btnEliminar_Click(object sender, EventArgs e)
-        {
-            Session["modoEliminar"] = true;
-            cargarListaUsuarios();
-        }
+       
 
         protected void btnAlta_Click(object sender, EventArgs e)
         {
@@ -133,8 +134,33 @@ namespace TP_ECOMMERCE_21_B
             return Session["modoModificar"] != null || Session["modoBaja"] != null || Session["modoAlta"] != null || Session["modoEliminar"] != null;
         }
 
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            string filtroTexto = txtFiltro.Text.Trim().ToLower();
+            string estadoSeleccionado = ddlEstado.SelectedValue;
 
+            negocioUsuario negocio = new negocioUsuario();
+            List<Usuario> lista = negocio.listarUsuarios();
 
+            var filtrados = lista.Where(u =>
+                (string.IsNullOrEmpty(filtroTexto) ||
+                    (!string.IsNullOrEmpty(u.Dni) && u.Dni.ToLower().Contains(filtroTexto)) ||
+                    (!string.IsNullOrEmpty(u.Nombre) && u.Nombre.ToLower().Contains(filtroTexto)) ||
+                    (!string.IsNullOrEmpty(u.Apellido) && u.Apellido.ToLower().Contains(filtroTexto))
+                ) &&
+                (string.IsNullOrEmpty(estadoSeleccionado) ||
+                    (estadoSeleccionado == "activo" && u.Estado) ||
+                    (estadoSeleccionado == "baja" && !u.Estado))
+            ).ToList();
 
+            GridViewUsuario.DataSource = filtrados;
+            GridViewUsuario.DataBind();
+        }
+
+        protected void btnLimpiarFiltro_Click(object sender, EventArgs e)
+        {
+            txtFiltro.Text = "";
+            cargarListaUsuarios();
+        }
     }
 }

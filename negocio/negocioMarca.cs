@@ -54,6 +54,25 @@ namespace negocio
 				datos.cerrarConexion();
 			}
 		}
-		
+
+
+        public void eliminarMarca(int idMarca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM Marca WHERE Id = @idMarca");
+                datos.agregarParametros("@idMarca", idMarca);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

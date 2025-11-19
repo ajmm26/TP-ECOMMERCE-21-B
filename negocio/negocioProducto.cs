@@ -19,7 +19,7 @@ namespace negocio
             try
             {
 
-                datos.setearConsulta("select Id,Codigo,Nombre,MarcaId,CategoriaId,Descripcion,PrecioCompra,PorcentajeGanancia,PrecioVenta,StockActual,StockMinimo,Estado from Producto where Estado=1");
+                datos.setearConsulta("SELECT p.Id, p.Codigo,p.Nombre,p.Descripcion,p.MarcaId,m.Nombre AS MarcaNombre,p.CategoriaId,c.NombreCategoria AS CategoriaNombre,p.PrecioCompra,p.PrecioVenta,p.StockActual,p.StockMinimo,p.Estado FROM Producto p JOIN Marca m ON p.MarcaId = m.Id JOIN Categoria c ON p.CategoriaId = c.Id");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -29,8 +29,10 @@ namespace negocio
                     producto.Nombre = (string)datos.Lector["Nombre"];
                     producto.IdMarca = new Marca();
                     producto.IdMarca.Id = (int)datos.Lector["MarcaId"];
+                    producto.IdMarca.Nombre = (string)datos.Lector["MarcaNombre"];
                     producto.IdCategoria = new Categoria();
                     producto.IdCategoria.Id = (int)datos.Lector["CategoriaId"];
+                    producto.IdCategoria.Nombre = (string)datos.Lector["CategoriaNombre"];
                     producto.Descripcion = (string)datos.Lector["Descripcion"];
                     producto.PrecioCompra = (decimal)datos.Lector["PrecioCompra"];
                     //producto.PorcentajeGanancia = (decimal)datos.Lector["PorcentajeGanancia"];
@@ -269,9 +271,45 @@ namespace negocio
             }
         }
 
+        public bool ExistenProductosPorMarca(int idMarca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT COUNT(*) FROM Producto WHERE MarcaId = @idMarca");
+                datos.agregarParametros("@idMarca", idMarca);
+                datos.ejecutarLectura();
 
+                if (datos.Lector.Read())
+                    return (int)datos.Lector[0] > 0;
 
+                return false;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
+        public bool ExistenProductosPorCategoria(int idCategoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT COUNT(*) FROM Producto WHERE CategoriaId = @idCategoria");
+                datos.agregarParametros("@idCategoria", idCategoria);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                    return (int)datos.Lector[0] > 0;
+
+                return false;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
     }
 }

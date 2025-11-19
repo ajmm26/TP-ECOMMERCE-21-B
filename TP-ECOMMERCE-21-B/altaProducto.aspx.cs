@@ -13,6 +13,11 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("login.aspx", false);
+            }
+
             if (!IsPostBack)
             {
                 bool esModificacion = Session["modificarId"] != null;
@@ -170,84 +175,8 @@ namespace TP_ECOMMERCE_21_B
             }
         }
 
-        protected void btnMarca_Click(object sender, EventArgs e)
-        {
-            string nombreMarca = txtMarca.Text.Trim();
-            if (string.IsNullOrWhiteSpace(nombreMarca))
-            {
-                lblError.Text = "⚠️ Ingresá un nombre de marca válido.";
-                return;
-            }
-
-            negocioMarca negocio = new negocioMarca();
-
-           
-            List<Marca> marcasExistentes = negocio.listar();
-            if (marcasExistentes.Any(m => m.Nombre.Equals(nombreMarca, StringComparison.OrdinalIgnoreCase)))
-            {
-                lblError.Text = "⚠️ Esa marca ya existe.";
-                return;
-            }
-
-            
-            negocio.agregarMarca(new Marca { Nombre = nombreMarca });
-
-            
-            List<Marca> marcas = negocio.listar();
-            ddlMarcas.DataSource = marcas;
-            ddlMarcas.DataTextField = "Nombre";
-            ddlMarcas.DataValueField = "Id";
-            ddlMarcas.DataBind();
-
-            Marca nueva = marcas.FirstOrDefault(m => m.Nombre.Equals(nombreMarca, StringComparison.OrdinalIgnoreCase));
-            if (nueva != null)
-                ddlMarcas.SelectedValue = nueva.Id.ToString();
-
-            txtMarca.Text = "";
-            lblError.Text = $"✅ Marca '{nombreMarca}' agregada.";
-
-            updListas.Update();
-
-        }
-
-        protected void btnCategoria_Click(object sender, EventArgs e)
-        {
-            string nombreCategoria = txtCategoria.Text.Trim();
-            if (string.IsNullOrWhiteSpace(nombreCategoria))
-            {
-                lblError.Text = "⚠️ Ingresá un nombre de categoría válido.";
-                return;
-            }
-
-            negocioCategoria negocio = new negocioCategoria();
-
-            
-            List<Categoria> categoriasExistentes = negocio.listarCategoria();
-            if (categoriasExistentes.Any(c => c.Nombre.Equals(nombreCategoria, StringComparison.OrdinalIgnoreCase)))
-            {
-                lblError.Text = "⚠️ Esa categoría ya existe.";
-                return;
-            }
-
-            
-            negocio.agregarCategoria(new Categoria { Nombre = nombreCategoria });
-
-           
-            List<Categoria> categorias = negocio.listarCategoria();
-            ddlCategoria.DataSource = categorias;
-            ddlCategoria.DataTextField = "Nombre";
-            ddlCategoria.DataValueField = "Id";
-            ddlCategoria.DataBind();
-            Categoria nueva = categorias.FirstOrDefault(c => c.Nombre.Equals(nombreCategoria, StringComparison.OrdinalIgnoreCase));
-            if (nueva != null)
-                ddlCategoria.SelectedValue = nueva.Id.ToString();
-
-            txtCategoria.Text = "";
-            lblError.Text = $"✅ Categoría '{nombreCategoria}' agregada.";
-
-            updListas.Update();
-
-        }
+        
+        
 
 
         protected void actualizarPreview(object sender, EventArgs e)

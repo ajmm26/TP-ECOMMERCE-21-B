@@ -107,6 +107,7 @@
     <Content Include="Content\default.css" />
     <Content Include="Content\estilos.css" />
     <Content Include="FormularioPago.aspx" />
+    <Content Include="gestionCategoria.aspx" />
     <Content Include="gestionPedido.aspx" />
     <Content Include="gestionProductos.aspx" />
     <Content Include="Default.aspx" />
@@ -232,6 +233,13 @@
     </Compile>
     <Compile Include="FormularioPago.aspx.designer.cs">
       <DependentUpon>FormularioPago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gestionCategoria.aspx.cs">
+      <DependentUpon>gestionCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gestionCategoria.aspx.designer.cs">
+      <DependentUpon>gestionCategoria.aspx</DependentUpon>
     </Compile>
     <Compile Include="gestionPedido.aspx.cs">
       <DependentUpon>gestionPedido.aspx</DependentUpon>

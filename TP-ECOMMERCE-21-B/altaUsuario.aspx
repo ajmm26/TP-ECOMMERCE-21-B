@@ -87,6 +87,7 @@
                     </div>
 
                     <div class="d-grid">
+                         <asp:Label ID="lblError" runat="server" CssClass="text-danger" />
                         <asp:Button ID="btnAceptar" runat="server" Text="Registrarse" CssClass="btn btn-success" OnClick="btnAceptar_Click" />
                     </div>
 

@@ -61,6 +61,7 @@
                             <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionProductos">Gestion Productos</a></li>
                             <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionUsuario">Gestion Usuarios</a></li>
                             <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionPedido">Gestion Pedidos</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/gestionCategoria">Gestion Categoria</a></li>
 
                             <!--
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/altaProducto">Alta Productos</a></li>

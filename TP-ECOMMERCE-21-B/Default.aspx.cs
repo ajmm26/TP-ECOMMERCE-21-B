@@ -16,7 +16,11 @@ namespace TP_ECOMMERCE_21_B
             get { return Session["listaProducto"] as List<Producto>; }
             set { Session["listaProducto"] = value; }
         }
-
+        private void BindRepeater(List<Producto> productos)
+        {
+            RepeaterProducto.DataSource = productos;
+            RepeaterProducto.DataBind();
+        }
 
 
 
@@ -25,11 +29,19 @@ namespace TP_ECOMMERCE_21_B
 
             if (!IsPostBack)
             {
+                Session["cantidadMostrar"] = 9;
                 negocioProducto productoNegocio = new negocioProducto();
                 listaProducto = productoNegocio.listar();
 
-                RepeaterProducto.DataSource = listaProducto;
-                RepeaterProducto.DataBind();
+                int cantidad = (int)Session["cantidadMostrar"];
+                var productosLimitados = listaProducto.Take(cantidad).ToList();
+                BindRepeater(productosLimitados);
+
+                
+                btnMostrarMas.Visible = listaProducto.Count > cantidad;
+
+
+                BindRepeater(productosLimitados);
 
                 negocioMarca nm = new negocioMarca();
                 List<Marca> marcas = nm.listar();
@@ -50,7 +62,25 @@ namespace TP_ECOMMERCE_21_B
         protected void btnComprar_Command(object sender, CommandEventArgs e)
         {
             int idProducto = Convert.ToInt32(e.CommandArgument);
-            Response.Redirect("product.aspx?id=" + idProducto, false);
+
+            
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("login.aspx?returnUrl=product.aspx?id=" + idProducto + "&msg=loginRequired", false);
+                return;
+            }
+
+            
+            Usuario usuario = (Usuario)Session["usuario"];
+
+            if (usuario.RolUsuario == "admin")
+            {
+                Response.Redirect("gestionProductos.aspx", false);
+            }
+            else
+            {
+                Response.Redirect("product.aspx?id=" + idProducto, false);
+            }
         }
 
         
@@ -67,11 +97,20 @@ namespace TP_ECOMMERCE_21_B
                 .Where(p => p.Nombre != null && p.Nombre.ToLower().Contains(filtro.ToLower()))
                 .ToList();
 
-            RepeaterProducto.DataSource = listaFiltrada;
-            RepeaterProducto.DataBind();
+            BindRepeater(listaFiltrada);
 
         }
-        
 
+        protected void btnMostrarMas_Click(object sender, EventArgs e)
+        {
+            int cantidadActual = (int)Session["cantidadMostrar"];
+            cantidadActual += 9;
+            Session["cantidadMostrar"] = cantidadActual;
+
+            var productosMostrados = listaProducto.Take(cantidadActual).ToList();
+            BindRepeater(productosMostrados);
+
+            btnMostrarMas.Visible = listaProducto.Count > cantidadActual;
+        }
     }
 }

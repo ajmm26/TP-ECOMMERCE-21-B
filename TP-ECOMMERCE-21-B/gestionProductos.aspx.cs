@@ -26,8 +26,14 @@ namespace TP_ECOMMERCE_21_B
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("login.aspx", false);
+            }
+
             if (!IsPostBack)
             {
+               
                 if (Session["modoModificar"] != null && (bool)Session["modoModificar"] ||
                     Session["modoBaja"] != null && (bool)Session["modoBaja"] ||
                     Session["modoAlta"] != null && (bool)Session["modoAlta"] ||
@@ -36,12 +42,24 @@ namespace TP_ECOMMERCE_21_B
                     GridViewProductos.AutoGenerateSelectButton = true;
                 }
 
+               
+                negocioCategoria negocioCat = new negocioCategoria();
+                ddlFiltroCategoria.DataSource = negocioCat.listarCategoria();
+                ddlFiltroCategoria.DataTextField = "Nombre";
+                ddlFiltroCategoria.DataValueField = "Id";
+                ddlFiltroCategoria.DataBind();
+                ddlFiltroCategoria.Items.Insert(0, new ListItem("Todas las categorías", ""));
+
+                negocioMarca negocioMarca = new negocioMarca();
+                ddlFiltroMarca.DataSource = negocioMarca.listar();
+                ddlFiltroMarca.DataTextField = "Nombre";
+                ddlFiltroMarca.DataValueField = "Id";
+                ddlFiltroMarca.DataBind();
+                ddlFiltroMarca.Items.Insert(0, new ListItem("Todas las marcas", ""));
+
+                
                 cargarGrilla();
             }
-
-
-
-
 
         }
 
@@ -93,14 +111,14 @@ namespace TP_ECOMMERCE_21_B
 
 
         }
-
+        /*
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             Session["modoEliminar"] = true;
             Response.Redirect("gestionProductos.aspx");
 
         }
-
+        */
         protected void btnBaja_Click(object sender, EventArgs e)
         {
             Session["modoBaja"] = true;
@@ -130,6 +148,27 @@ namespace TP_ECOMMERCE_21_B
             GridViewProductos.PageIndex = e.NewPageIndex;
             cargarGrilla(); // Método que encapsula la lógica de carga
 
+        }
+        protected void btnFiltrarProducto_Click(object sender, EventArgs e)
+        {
+            string texto = txtFiltroProducto.Text.Trim().ToLower();
+            string idCategoria = ddlFiltroCategoria.SelectedValue;
+            string idMarca = ddlFiltroMarca.SelectedValue;
+
+            negocioProducto negocio = new negocioProducto();
+            List<Producto> lista = negocio.listar();
+
+            var filtrados = lista.Where(p =>
+                (string.IsNullOrEmpty(texto) ||
+                    (!string.IsNullOrEmpty(p.Nombre) && p.Nombre.ToLower().Contains(texto)) ||
+                    (!string.IsNullOrEmpty(p.Codigo) && p.Codigo.ToLower().Contains(texto))
+                ) &&
+                (string.IsNullOrEmpty(idCategoria) || p.IdCategoria.Id.ToString() == idCategoria) &&
+                (string.IsNullOrEmpty(idMarca) || p.IdMarca.Id.ToString() == idMarca)
+            ).ToList();
+
+            GridViewProductos.DataSource = filtrados;
+            GridViewProductos.DataBind();
         }
     }
 }

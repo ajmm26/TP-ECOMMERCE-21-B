@@ -14,6 +14,11 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                Response.Redirect("login.aspx", false);
+            } 
+
             if (!IsPostBack)
             {
                 lblTitulo.Text = Session["modificarId"] != null ? "Modificar Usuario" : "Alta de Usuario";
@@ -65,20 +70,19 @@ namespace TP_ECOMMERCE_21_B
                     }
                 }
             }
-            }
+        }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-
             Usuario nuevo = new Usuario();
-            nuevo.Email = txtEmail.Text;
-            nuevo.Nombre = txtNombre.Text;
-            nuevo.Apellido = txtApellido.Text;
-            nuevo.Dni = txtDni.Text; 
-            nuevo.Direccion = txtDireccion.Text;
-            nuevo.CodigoPostal = txtCodigoPostal.Text;
-            nuevo.Telefono = txtTelefono.Text;
-            nuevo.Contraseña = txtClave.Text;
+            nuevo.Email = txtEmail.Text.Trim();
+            nuevo.Nombre = txtNombre.Text.Trim();
+            nuevo.Apellido = txtApellido.Text.Trim();
+            nuevo.Dni = txtDni.Text.Trim();
+            nuevo.Direccion = txtDireccion.Text.Trim();
+            nuevo.CodigoPostal = txtCodigoPostal.Text.Trim();
+            nuevo.Telefono = txtTelefono.Text.Trim();
+            nuevo.Contraseña = txtClave.Text.Trim();
 
             bool esAdmin = Session["modoAdmin"] != null;
 
@@ -94,6 +98,26 @@ namespace TP_ECOMMERCE_21_B
             }
 
             negocioUsuario negocio = new negocioUsuario();
+            List<Usuario> usuarios = negocio.listarUsuarios();
+
+            string emailNuevo = nuevo.Email.ToLower();
+            string dniNuevo = nuevo.Dni;
+            int? idActual = Session["modificarUsuarioId"] as int?;
+
+            bool emailRepetido = usuarios.Any(u => u.Email.ToLower() == emailNuevo && u.Id != idActual);
+            bool dniRepetido = usuarios.Any(u => u.Dni == dniNuevo && u.Id != idActual);
+
+            if (emailRepetido)
+            {
+                lblError.Text = "⚠️ El email ya está registrado por otro usuario.";
+                return;
+            }
+
+            if (dniRepetido)
+            {
+                lblError.Text = "⚠️ El DNI ya está registrado por otro usuario.";
+                return;
+            }
 
             if (Session["modificarUsuarioId"] != null)
             {
@@ -103,19 +127,19 @@ namespace TP_ECOMMERCE_21_B
             else
             {
                 negocio.agregarUsuario(nuevo);
+
                 if (nuevo.RolUsuario == "cliente")
                 {
                     try
                     {
                         string asunto = "Bienvenido a E-commerce SIGNOS";
-
                         string cuerpo = $@"<h1>✔ ¡Hola {nuevo.Nombre}!</h1>
-                           <h2>Tu registro ha sido exitoso</h2>
-                           <hr />
-                           <p>Ya podés comenzar a comprar tus productos favoritos en nuestra tienda.</p>
-                           <p>Si tenés dudas, escribinos a soporte@signos.com</p>
-                           <br />
-                           <h4>¡Gracias por confiar en nosotros!</h4>";
+                   <h2>Tu registro ha sido exitoso</h2>
+                   <hr />
+                   <p>Ya podés comenzar a comprar tus productos favoritos en nuestra tienda.</p>
+                   <p>Si tenés dudas, escribinos a soporte@signos.com</p>
+                   <br />
+                   <h4>¡Gracias por confiar en nosotros!</h4>";
 
                         emailService servicio = new emailService();
                         servicio.armarCorreo(nuevo.Email, asunto, cuerpo);
@@ -123,14 +147,10 @@ namespace TP_ECOMMERCE_21_B
                     }
                     catch (Exception ex)
                     {
-                        
-                        throw ex;
+                        lblError.Text = "❌ Error al enviar el correo: " + ex.Message;
+                        return;
                     }
                 }
-
-
-
-
             }
 
             Session.Remove("modoAdmin");
@@ -144,9 +164,6 @@ namespace TP_ECOMMERCE_21_B
             {
                 Response.Redirect("Login.aspx");
             }
-
-
-
         }
 
 

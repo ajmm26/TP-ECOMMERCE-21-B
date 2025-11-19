@@ -14,7 +14,16 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Nada que hacer acá por ahora
+            if (!IsPostBack)
+            {
+                string msg = Request.QueryString["msg"];
+                if (msg == "loginRequired")
+                {
+                    lblErrorLogin.Text = "Debes iniciar sesión para comprar.";
+                    lblErrorLogin.Visible = true;
+                }
+            }
+            
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -28,26 +37,19 @@ namespace TP_ECOMMERCE_21_B
             if (usuario != null)
             {
                 Session["usuario"] = usuario;
+                Session["user"] = usuario;
 
                 if (usuario.RolUsuario == "admin")
-                    Response.Redirect("gestionProductos.aspx", false);
-                else
                 {
-                    bool redirect = (Session["redirectCarrito"] as bool?) ?? false;
-
-                    if (!redirect && usuario.RolUsuario=="cliente")
-                    {
-                        Response.Redirect("Default.aspx");
-                    }
-
-                    if (usuario.RolUsuario == "cliente")
-                    {
-                        Session["redirectCarrito"] = false;
-                    Response.Redirect("FormularioPago.aspx");
-                    }
-
+                    Response.Redirect("gestionProductos.aspx", false);
+                    return;
                 }
-                   
+
+                string returnUrl = Request.QueryString["returnUrl"];
+                if (!string.IsNullOrEmpty(returnUrl))
+                    Response.Redirect(returnUrl, false);
+                else
+                    Response.Redirect("Default.aspx", false);
             }
             else
             {

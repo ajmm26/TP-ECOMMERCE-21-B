@@ -12,21 +12,21 @@
         <h3>Signos.</h3>
 
         <div class="div-buscadores">
-    <div class="divs-contentBuscador" id="div-marca">
-        <p>Marca:</p>
-        <asp:DropDownList runat="server" CssClass="select-category" id="marcaSelect"/>
-    </div>
+            <div class="divs-contentBuscador" id="div-marca">
+                <p>Marca:</p>
+                <asp:DropDownList runat="server" CssClass="select-category" ID="marcaSelect" />
+            </div>
 
-    <div class="divs-contentBuscador" id="div-category">
-        <p>Categoria:</p>
-        <asp:DropDownList runat="server" CssClass="select-category" id="categoriaSelect"/>
-    </div>
+            <div class="divs-contentBuscador" id="div-category">
+                <p>Categoria:</p>
+                <asp:DropDownList runat="server" CssClass="select-category" ID="categoriaSelect" />
+            </div>
 
-    <div class="divs-contentBuscador buscador-right">
-        <asp:TextBox ID="txtFiltro" runat="server" CssClass="mb-2" Style="width: 300px;"></asp:TextBox>
-        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-primary" />
-    </div>
-</div>
+            <div class="divs-contentBuscador buscador-right">
+                <asp:TextBox ID="txtFiltro" runat="server" CssClass="mb-2" Style="width: 300px;"></asp:TextBox>
+                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-primary" />
+            </div>
+        </div>
 
 
         <div class="mb-3 carousel slide carousel-fixed-height bg-dark"
@@ -104,10 +104,47 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-
-
-
-
-
+        <div class="text-center">
+            <asp:Button ID="btnMostrarMas" runat="server" Text="Mostrar más productos" CssClass="btn btn-dark" OnClick="btnMostrarMas_Click" />
+        </div>
     </main>
+    <footer class="bg-dark text-light py-4 mt-5 w-100">
+        <div class="container-fluid px-5">
+            <div class="row">
+
+                <div class="col-md-3 mb-3">
+                    <h5>Navegación</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="EcommerceSignos.aspx" class="text-light">Inicio</a></li>
+                        <li><a href="product.aspx" class="text-light">Productos</a></li>
+                        <li><a href="contacto.aspx" class="text-light">Contacto</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-md-3 mb-3">
+                    <h5>Medios de pago</h5>
+                    <p>Visa, Mastercard, American Express, MercadoPago</p>
+                </div>
+
+
+                <div class="col-md-3 mb-3">
+                    <h5>Envíos</h5>
+                    <p>Correo Argentino, OCA, Retiro en tienda</p>
+                </div>
+
+
+                <div class="col-md-3 mb-3">
+                    <h5>Contacto</h5>
+                    <p>📞 +54 9 11 5107 6003</p>
+                    <p>📧 EcommerceSignos@gmail.com</p>
+                    <p>📍 Av. Corrientes 791, CABA</p>
+                    <div>
+                        <a href="#" class="text-light me-2">Instagram</a>
+                        <a href="#" class="text-light">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </asp:Content>
