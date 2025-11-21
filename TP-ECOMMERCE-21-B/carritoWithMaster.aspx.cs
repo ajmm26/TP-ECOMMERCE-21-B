@@ -14,10 +14,7 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["usuario"] == null)
-            {
-                Response.Redirect("login.aspx", false);
-            } 
+            
 
             if (!IsPostBack)
             {
@@ -46,7 +43,7 @@ namespace TP_ECOMMERCE_21_B
 
         protected void btnVolverCatalogo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Ecommerce.aspx");
         }
 
         protected void btnIniciarCompra_Click(object sender, EventArgs e)

@@ -19,7 +19,7 @@ namespace TP_ECOMMERCE_21_B
         }
         protected void btnVolverInicio_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Ecommerce.aspx");
         }
 
 

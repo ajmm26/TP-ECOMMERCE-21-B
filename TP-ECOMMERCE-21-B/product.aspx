@@ -25,4 +25,10 @@
     </div>
     <asp:Button runat="server" Cssclass="buttonAddCart" Onclick="click_buttonAdd"  role="button" Text="Add to cart"></asp:Button>
         </div>
+
+    <div class="mt-3">
+        <asp:Button ID="btnSeguirComprando" runat="server" Text="Seguir Comprando" CssClass="btn btn-secondary" OnClick="btnSeguirComprando_Click"  />
+        <asp:Button ID="btnIrAlCarrito" runat="server" Text="Ir al carrito" CssClass="btn btn-primary" OnClick="btnIrAlCarrito_Click" />
+    </div>
+
 </asp:Content>

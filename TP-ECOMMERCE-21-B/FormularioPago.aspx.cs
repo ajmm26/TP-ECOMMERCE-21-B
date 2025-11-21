@@ -14,10 +14,7 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["usuario"] == null)
-            {
-                Response.Redirect("login.aspx", false);
-            }
+           
 
             if (!IsPostBack)
             {
@@ -37,6 +34,8 @@ namespace TP_ECOMMERCE_21_B
                 List<Producto> carrito = Session["items"] as List<Producto>;
                 if (carrito != null && carrito.Count > 0)
                 {
+                    RepeaterCarrito.DataSource = carrito;
+                    RepeaterCarrito.DataBind();
                     decimal total = carrito.Sum(p => p.PrecioVenta * p.cantidad);
                     lblTotal.Text = $"Total a pagar: ${total}";
                 }

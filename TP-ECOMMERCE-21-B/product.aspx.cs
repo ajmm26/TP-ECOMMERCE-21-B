@@ -15,10 +15,7 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["usuario"] == null)
-            {
-                Response.Redirect("login.aspx", false);
-            }
+           
 
             if (!IsPostBack)
             {
@@ -203,5 +200,14 @@ namespace TP_ECOMMERCE_21_B
             ScriptManager.RegisterStartupScript(this, GetType(), "msg" + Guid.NewGuid(), script, true);
         }
 
+        protected void btnSeguirComprando_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ecommerce.aspx");
+        }
+
+        protected void btnIrAlCarrito_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("carritoWithMaster.aspx");
+        }
     }
 }

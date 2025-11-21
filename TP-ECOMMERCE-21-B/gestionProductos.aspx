@@ -18,7 +18,7 @@
                 <asp:ListItem Text="Todas las marcas" Value="" />
             </asp:DropDownList>
 
-            <asp:Button ID="btnFiltrarProducto" runat="server" Text="Filtrar" CssClass="btn btn-info" OnClick="btnFiltrarProducto_Click" />
+            <asp:Button ID="btnFiltrarProducto" runat="server" Text="Filtrar" CssClass="btn btn-secondary" OnClick="btnFiltrarProducto_Click" />
         </div>
 
         <asp:GridView ID="GridViewProductos" runat="server" AllowPaging="true" PageSize="10" OnPageIndexChanging="GridViewProductos_PageIndexChanging"

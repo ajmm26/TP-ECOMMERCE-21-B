@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Catalogo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TP_ECOMMERCE_21_B.Default" %>
+﻿<%@ Page Title="Catalogo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ecommerce.aspx.cs" Inherits="TP_ECOMMERCE_21_B.Ecommerce" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="server">
     <link href="<%= ResolveUrl("~/Content/default.css") %>" rel="stylesheet" />
@@ -11,21 +11,15 @@
         <h2 id="title"><%: Title %>.</h2>
         <h3>Signos.</h3>
 
-        <div class="div-buscadores">
-            <div class="divs-contentBuscador" id="div-marca">
-                <p>Marca:</p>
-                <asp:DropDownList runat="server" CssClass="select-category" ID="marcaSelect" />
-            </div>
-
-            <div class="divs-contentBuscador" id="div-category">
-                <p>Categoria:</p>
-                <asp:DropDownList runat="server" CssClass="select-category" ID="categoriaSelect" />
-            </div>
-
-            <div class="divs-contentBuscador buscador-right">
-                <asp:TextBox ID="txtFiltro" runat="server" CssClass="mb-2" Style="width: 300px;"></asp:TextBox>
-                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-primary" />
-            </div>
+        <div class="mb-3 d-flex flex-wrap gap-2">
+            <asp:TextBox ID="txtFiltroProducto" runat="server" CssClass="form-control" placeholder="Buscar por nombre o código..." />
+            <asp:DropDownList ID="ddlFiltroCategoria" runat="server" CssClass="form-select">
+                <asp:ListItem Text="Todas las categorías" Value="" />
+            </asp:DropDownList>
+            <asp:DropDownList ID="ddlFiltroMarca" runat="server" CssClass="form-select">
+                <asp:ListItem Text="Todas las marcas" Value="" />
+            </asp:DropDownList>
+            <asp:Button ID="btnFiltrarProducto" runat="server" Text="Buscar" CssClass="btn btn-primary" OnClick="btnFiltrarProducto_Click" />
         </div>
 
 

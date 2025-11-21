@@ -17,7 +17,8 @@
                     </div>
                     <div class="mt-3 text-center">
                         ¿No tenés cuenta?
-                        <a href="altaUsuario.aspx" class="link-primary">Registrate acá</a>
+                       <a href="<%= ResolveUrl("~/altaUsuario.aspx") %>" class="link-primary">Registrate acá</a>
+
                     </div>
 
 

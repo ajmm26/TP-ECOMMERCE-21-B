@@ -79,7 +79,7 @@ namespace negocio
             try {
                 datos.limpiarParametros();
                 datos.setearConsulta("Insert into detalleProducto(idProducto,idPedido,cantidadProducto,precioUnitario,precioRebajado) " +
-                    "values(@idProducto,@idPedido,@cantidadProducto,@precioUnitario,@precioRebajadoido)");
+                    "values(@idProducto,@idPedido,@cantidadProducto,@precioUnitario,@precioRebajado)");
                 datos.agregarParametros("@idProducto",dp.idProducto);
                 datos.agregarParametros("@idPedido",dp.idPedido);
                 datos.agregarParametros("@cantidadProducto",dp.cantidadProducto);

@@ -8,7 +8,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Panel runat="server" CssClass="contentCarrito">
-    <asp:Button ID="btnVolverCatalogo" runat="server" Text="Volver al catálogo" CssClass="btn btn-secondary" OnClick="btnVolverCatalogo_Click" />
+    
     <asp:Label runat="server" ID="textcart" />
     <asp:Repeater runat="server" ID="repRepetidor">
         <ItemTemplate>
@@ -45,6 +45,7 @@
     </asp:Repeater>
        
     <asp:Button ID="btnIniciarCompra" runat="server" Text="Iniciar Compra" CssClass="btn btn-success" OnClick="btnIniciarCompra_Click" />
+        <asp:Button ID="btnVolverCatalogo" runat="server" Text="Volver al catálogo" CssClass="btn btn-secondary" OnClick="btnVolverCatalogo_Click" />
         </asp:Panel>
     <script src="<%= ResolveUrl("~/Scripts/WebForms/carrito.js") %>"></script>
 </asp:Content>

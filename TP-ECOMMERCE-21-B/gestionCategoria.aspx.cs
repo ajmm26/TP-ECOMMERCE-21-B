@@ -91,7 +91,7 @@ namespace TP_ECOMMERCE_21_B
         {
             negocioProducto negocioProd = new negocioProducto();
 
-            // 1. Verificar si hay fila seleccionada en Categorías
+            
             if (GridViewCategoria.SelectedDataKey != null)
             {
                 int idCategoria = Convert.ToInt32(GridViewCategoria.SelectedDataKey.Value);
@@ -110,7 +110,7 @@ namespace TP_ECOMMERCE_21_B
                 return;
             }
 
-            // 2. Verificar si hay fila seleccionada en Marcas
+           
             if (GridViewMarca.SelectedDataKey != null)
             {
                 int idMarca = Convert.ToInt32(GridViewMarca.SelectedDataKey.Value);
@@ -129,7 +129,7 @@ namespace TP_ECOMMERCE_21_B
                 return;
             }
 
-            // 3. Si no seleccionó nada
+           
             lblMensaje.Text = "Debe seleccionar una categoría o una marca.";
         }
     }

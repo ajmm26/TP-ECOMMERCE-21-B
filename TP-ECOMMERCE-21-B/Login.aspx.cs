@@ -47,9 +47,21 @@ namespace TP_ECOMMERCE_21_B
 
                 string returnUrl = Request.QueryString["returnUrl"];
                 if (!string.IsNullOrEmpty(returnUrl))
+                {
                     Response.Redirect(returnUrl, false);
-                else
-                    Response.Redirect("Default.aspx", false);
+                    return;
+                }
+
+                // Si no hay returnUrl pero venía del carrito
+                if (Session["redirectCarrito"] != null && (bool)Session["redirectCarrito"])
+                {
+                    Session["redirectCarrito"] = null; // limpiar el flag
+                    Response.Redirect("FormularioPago.aspx", false);
+                    return;
+                }
+
+                // Por defecto
+                Response.Redirect("Ecommerce.aspx", false);
             }
             else
             {

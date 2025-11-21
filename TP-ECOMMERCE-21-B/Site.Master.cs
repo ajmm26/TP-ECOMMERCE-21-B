@@ -53,7 +53,7 @@ namespace TP_ECOMMERCE_21_B
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             Session.Clear();
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Ecommerce.aspx");
         }
 
 

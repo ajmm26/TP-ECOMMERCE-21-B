@@ -15,15 +15,6 @@ namespace TP_ECOMMERCE_21_B
     {
 
         /// <summary>
-        /// Control btnVolverCatalogo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVolverCatalogo;
-
-        /// <summary>
         /// Control textcart.
         /// </summary>
         /// <remarks>
@@ -49,5 +40,14 @@ namespace TP_ECOMMERCE_21_B
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnIniciarCompra;
+
+        /// <summary>
+        /// Control btnVolverCatalogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolverCatalogo;
     }
 }
