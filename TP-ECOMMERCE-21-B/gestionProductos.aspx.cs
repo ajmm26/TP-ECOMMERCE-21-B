@@ -65,6 +65,11 @@ namespace TP_ECOMMERCE_21_B
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            Session.Remove("modificarId");
+            Session.Remove("modoModificar");
+            Session.Remove("modoBaja");
+            Session.Remove("modoAlta");
+            Session.Remove("modoEliminar");
             Response.Redirect("altaProducto.aspx");
         }
 
@@ -146,7 +151,7 @@ namespace TP_ECOMMERCE_21_B
         protected void GridViewProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridViewProductos.PageIndex = e.NewPageIndex;
-            cargarGrilla(); // Método que encapsula la lógica de carga
+            cargarGrilla(); 
 
         }
         protected void btnFiltrarProducto_Click(object sender, EventArgs e)

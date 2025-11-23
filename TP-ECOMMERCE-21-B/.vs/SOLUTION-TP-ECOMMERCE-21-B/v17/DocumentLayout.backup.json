@@ -1,92 +1,105 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\",
+  "WorkspaceRootPath": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\ale\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\confirmacion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:confirmacion.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\ale\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\formulariopago.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\formulariopago.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:formulariopago.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\formulariopago.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\formulariopago.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:formulariopago.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\product.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:product.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\product.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:product.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1FB2A66-9747-4064-969E-1713335019FF}|..\\negocio\\negocio.csproj|c:\\users\\ale\\desktop\\tp-ecommerce-21-b\\negocio\\negociopedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E9CE420-DAF8-4F0C-BD57-EBDDE99901B3}|..\\accesoAdatos\\accesoAdatos.csproj|c:\\users\\ale\\desktop\\tp-ecommerce-21-b\\accesoadatos\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionproductos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:gestionproductos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionproductos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:gestionproductos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestioncategoria.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:gestioncategoria.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestioncategoria.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:gestioncategoria.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altausuario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:altausuario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altausuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:altausuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\carritowithmaster.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\carritowithmaster.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:carritowithmaster.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\carritowithmaster.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\carritowithmaster.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:carritowithmaster.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\dominio\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\dominio\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioPedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEE03BB2-2BC9-4C85-BF34-C4AB5AD1DDE7}|..\\dominio\\dominio.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestioncategoria.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:gestioncategoria.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\gestionpedido.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:gestionpedido.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\gestioncategoria.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:gestioncategoria.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\gestionpedido.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:gestionpedido.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionproductos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:gestionproductos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\ecommerce.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:ecommerce.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\altaproducto.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:altaproducto.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FB2A66-9747-4064-969E-1713335019FF}|..\\negocio\\negocio.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\negocio\\negocioimagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\altaproducto.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:altaproducto.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionproductos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:gestionproductos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|c:\\users\\raull\\desktop\\tp-ecommerce-21-b\\tp-ecommerce-21-b\\gestionusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:gestionusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:site.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altausuario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:altausuario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altausuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{44535DD0-8210-429E-AE52-A11DD4A35E6F}|TP-ECOMMERCE-21-B.csproj|solutionrelative:altausuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FB2A66-9747-4064-969E-1713335019FF}|..\\negocio\\negocio.csproj|C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioPedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -96,176 +109,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Confirmacion.aspx",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Confirmacion.aspx",
-              "RelativeDocumentMoniker": "Confirmacion.aspx",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Confirmacion.aspx",
-              "RelativeToolTip": "Confirmacion.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-22T23:10:18.05Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AccesoDatos.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\accesoAdatos\\AccesoDatos.cs",
-              "RelativeDocumentMoniker": "..\\accesoAdatos\\AccesoDatos.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\accesoAdatos\\AccesoDatos.cs",
-              "RelativeToolTip": "..\\accesoAdatos\\AccesoDatos.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAAAFgAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T21:37:52.044Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "negocioPedido.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioPedido.cs",
-              "RelativeDocumentMoniker": "..\\negocio\\negocioPedido.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioPedido.cs",
-              "RelativeToolTip": "..\\negocio\\negocioPedido.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAArwIgAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T21:31:56.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Site.Master",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Site.Master",
-              "RelativeDocumentMoniker": "Site.Master",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Site.Master",
-              "RelativeToolTip": "Site.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-21T03:21:09.172Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "gestionProductos.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionProductos.aspx.cs",
-              "RelativeDocumentMoniker": "gestionProductos.aspx.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionProductos.aspx.cs",
-              "RelativeToolTip": "gestionProductos.aspx.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T03:20:30.14Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "gestionCategoria.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionCategoria.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionCategoria.aspx.cs",
               "RelativeDocumentMoniker": "gestionCategoria.aspx.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionCategoria.aspx.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionCategoria.aspx.cs",
               "RelativeToolTip": "gestionCategoria.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAiwIEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T03:15:48.462Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "gestionCategoria.aspx",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionCategoria.aspx",
-              "RelativeDocumentMoniker": "gestionCategoria.aspx",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionCategoria.aspx",
-              "RelativeToolTip": "gestionCategoria.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-21T03:14:12.803Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "gestionProductos.aspx",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionProductos.aspx",
-              "RelativeDocumentMoniker": "gestionProductos.aspx",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionProductos.aspx",
-              "RelativeToolTip": "gestionProductos.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-21T03:13:13.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Login.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Login.aspx.cs",
-              "RelativeDocumentMoniker": "Login.aspx.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Login.aspx.cs",
-              "RelativeToolTip": "Login.aspx.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T01:42:01.439Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Login.aspx",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Login.aspx",
-              "RelativeDocumentMoniker": "Login.aspx",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Login.aspx",
-              "RelativeToolTip": "Login.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-21T01:41:56.964Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "negocioPedido.cs",
-              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioPedido.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioPedido.cs",
-              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioPedido.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioPedido.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T22:29:58.798Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "DetallePedido.cs",
-              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs",
-              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T00:10:30.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "product.aspx",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\product.aspx",
-              "RelativeDocumentMoniker": "product.aspx",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\product.aspx",
-              "RelativeToolTip": "product.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-20T22:41:49.581Z",
+              "WhenOpened": "2025-11-23T19:06:15.187Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "FormularioPago.aspx",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\FormularioPago.aspx",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\FormularioPago.aspx",
               "RelativeDocumentMoniker": "FormularioPago.aspx",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\FormularioPago.aspx",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\FormularioPago.aspx",
               "RelativeToolTip": "FormularioPago.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -274,11 +143,255 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "altaProducto.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaProducto.aspx.cs",
+              "RelativeDocumentMoniker": "altaProducto.aspx.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaProducto.aspx.cs",
+              "RelativeToolTip": "altaProducto.aspx.cs",
+              "ViewState": "AgIAAPAAAAAAAAAAAAAAAN8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T14:35:30.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormularioPago.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\FormularioPago.aspx.cs",
+              "RelativeDocumentMoniker": "FormularioPago.aspx.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\FormularioPago.aspx.cs",
+              "RelativeToolTip": "FormularioPago.aspx.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAAwH0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T23:11:52.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "carritoWithMaster.aspx",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\carritoWithMaster.aspx",
+              "RelativeDocumentMoniker": "carritoWithMaster.aspx",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\carritoWithMaster.aspx",
+              "RelativeToolTip": "carritoWithMaster.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-19T22:16:38.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Pedido.cs",
+              "RelativeDocumentMoniker": "..\\dominio\\Pedido.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Pedido.cs",
+              "RelativeToolTip": "..\\dominio\\Pedido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T19:55:01.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "carritoWithMaster.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\carritoWithMaster.aspx.cs",
+              "RelativeDocumentMoniker": "carritoWithMaster.aspx.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\carritoWithMaster.aspx.cs",
+              "RelativeToolTip": "carritoWithMaster.aspx.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACsAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T20:07:38.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Producto.cs",
+              "RelativeDocumentMoniker": "..\\dominio\\Producto.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\Producto.cs",
+              "RelativeToolTip": "..\\dominio\\Producto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T19:59:34.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DetallePedido.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs",
+              "RelativeDocumentMoniker": "..\\dominio\\DetallePedido.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\dominio\\DetallePedido.cs",
+              "RelativeToolTip": "..\\dominio\\DetallePedido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T00:10:30.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "gestionCategoria.aspx",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionCategoria.aspx",
+              "RelativeDocumentMoniker": "gestionCategoria.aspx",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionCategoria.aspx",
+              "RelativeToolTip": "gestionCategoria.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-21T03:14:12.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "gestionProductos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionProductos.aspx.cs",
+              "RelativeDocumentMoniker": "gestionProductos.aspx.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionProductos.aspx.cs",
+              "RelativeToolTip": "gestionProductos.aspx.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T03:20:30.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "altaProducto.aspx",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaProducto.aspx",
+              "RelativeDocumentMoniker": "altaProducto.aspx",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaProducto.aspx",
+              "RelativeToolTip": "altaProducto.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-23T14:34:56.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Ecommerce.aspx",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Ecommerce.aspx",
+              "RelativeDocumentMoniker": "Ecommerce.aspx",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Ecommerce.aspx",
+              "RelativeToolTip": "Ecommerce.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-23T18:07:57.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "gestionPedido.aspx",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionPedido.aspx",
+              "RelativeDocumentMoniker": "gestionPedido.aspx",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionPedido.aspx",
+              "RelativeToolTip": "gestionPedido.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-23T18:22:08.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "gestionPedido.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionPedido.aspx.cs",
+              "RelativeDocumentMoniker": "gestionPedido.aspx.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionPedido.aspx.cs",
+              "RelativeToolTip": "gestionPedido.aspx.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAowHgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T18:29:34.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "gestionProductos.aspx",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionProductos.aspx",
+              "RelativeDocumentMoniker": "gestionProductos.aspx",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionProductos.aspx",
+              "RelativeToolTip": "gestionProductos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-21T03:13:13.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "negocioImagen.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioImagen.cs",
+              "RelativeDocumentMoniker": "..\\negocio\\negocioImagen.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioImagen.cs",
+              "RelativeToolTip": "..\\negocio\\negocioImagen.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAwwGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T16:06:31.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "gestionUsuario.aspx",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionUsuario.aspx",
+              "RelativeDocumentMoniker": "gestionUsuario.aspx",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\gestionUsuario.aspx",
+              "RelativeToolTip": "gestionUsuario.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-23T13:26:05.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "Login.aspx.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Login.aspx.cs",
+              "RelativeToolTip": "Login.aspx.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T01:42:01.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Login.aspx",
+              "RelativeDocumentMoniker": "Login.aspx",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Login.aspx",
+              "RelativeToolTip": "Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-21T01:41:56.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "negocioPedido.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioPedido.cs",
+              "RelativeDocumentMoniker": "..\\negocio\\negocioPedido.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\negocio\\negocioPedido.cs",
+              "RelativeToolTip": "..\\negocio\\negocioPedido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T22:29:58.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "Site.Master.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Site.Master.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Site.Master.cs",
               "RelativeDocumentMoniker": "Site.Master.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Site.Master.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Site.Master.cs",
               "RelativeToolTip": "Site.Master.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAgwAcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -286,24 +399,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormularioPago.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\FormularioPago.aspx.cs",
-              "RelativeDocumentMoniker": "FormularioPago.aspx.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\FormularioPago.aspx.cs",
-              "RelativeToolTip": "FormularioPago.aspx.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T23:11:52.082Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "altaUsuario.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaUsuario.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaUsuario.aspx.cs",
               "RelativeDocumentMoniker": "altaUsuario.aspx.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaUsuario.aspx.cs",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaUsuario.aspx.cs",
               "RelativeToolTip": "altaUsuario.aspx.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -311,11 +411,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "altaUsuario.aspx",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaUsuario.aspx",
+              "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaUsuario.aspx",
               "RelativeDocumentMoniker": "altaUsuario.aspx",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaUsuario.aspx",
+              "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\altaUsuario.aspx",
               "RelativeToolTip": "altaUsuario.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -323,61 +423,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "Default.aspx.cs",
               "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "Default.aspx.cs",
               "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx.cs",
+              "RelativeToolTip": "Default.aspx.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAwwEsAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-20T22:31:02.238Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "carritoWithMaster.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\carritoWithMaster.aspx.cs",
-              "RelativeDocumentMoniker": "carritoWithMaster.aspx.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\carritoWithMaster.aspx.cs",
-              "RelativeToolTip": "carritoWithMaster.aspx.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowBAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T22:16:41.813Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "carritoWithMaster.aspx",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\carritoWithMaster.aspx",
-              "RelativeDocumentMoniker": "carritoWithMaster.aspx",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\carritoWithMaster.aspx",
-              "RelativeToolTip": "carritoWithMaster.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-11-19T22:16:38.331Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "product.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\product.aspx.cs",
-              "RelativeDocumentMoniker": "product.aspx.cs",
-              "ToolTip": "C:\\Users\\Ale\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\product.aspx.cs",
-              "RelativeToolTip": "product.aspx.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAYwNQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T22:41:53.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "Default.aspx",
               "DocumentMoniker": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx",
+              "RelativeDocumentMoniker": "Default.aspx",
               "ToolTip": "C:\\Users\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx",
-              "RelativeToolTip": "..\\..\\..\\..\\raull\\Desktop\\TP-ECOMMERCE-21-B\\TP-ECOMMERCE-21-B\\Default.aspx",
+              "RelativeToolTip": "Default.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2025-11-19T22:16:36.028Z"

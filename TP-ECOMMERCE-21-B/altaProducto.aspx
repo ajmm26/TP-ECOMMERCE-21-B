@@ -23,7 +23,7 @@
                         <asp:DropDownList ID="ddlMarcas" runat="server" CssClass="form-control" />
                     </div>
                 </ContentTemplate>
-                
+
             </asp:UpdatePanel>
 
             <div class="mb-3">
@@ -53,6 +53,7 @@
 
 
                 <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="Aceptar_Click" CssClass="btn btn-success" />
+                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" CssClass="btn btn-secondary" />
             </div>
         </div>
 
@@ -60,7 +61,7 @@
         <div class="col-md-6">
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
-                   
+
 
                     <div class="mb-3 d-flex">
                         <asp:TextBox ID="txtUrlImagen" runat="server" AutoPostBack="false" CssClass="form-control me-2" placeholder="Url" />
@@ -71,9 +72,12 @@
 
                     <div class="mb-3">
                         <asp:Image ID="imgPreview" runat="server" Width="200px" Height="200px" CssClass="img-thumbnail" />
-                        <asp:Repeater ID="rptImagenes" runat="server">
+                        <asp:Repeater ID="rptImagenes" runat="server" OnItemCommand="rptImagenes_ItemCommand">
                             <ItemTemplate>
-                                <img src='<%# Eval("Url") %>' class="img-thumbnail me-2" width="100" />
+                                <div class="d-inline-block text-center me-2">
+                                    <img src='<%# Eval("Url") %>' class="img-thumbnail " width="100" />
+                                    <asp:Button ID="btnModificarImagen" runat="server" Text="Modificar" CommandName="Modificar" CommandArgument='<%# Eval("Url") %>' CssClass="btn btn-sm btn-danger mt-1" />
+                                </div>
                             </ItemTemplate>
                         </asp:Repeater>
 
@@ -83,10 +87,5 @@
             </asp:UpdatePanel>
         </div>
     </div>
-
-
-
-
-
 
 </asp:Content>

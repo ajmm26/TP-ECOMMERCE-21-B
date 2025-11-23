@@ -19,6 +19,7 @@ namespace TP_ECOMMERCE_21_B
             if (!IsPostBack)
             {
                 CargarProductos();
+               
             }
         }
 
@@ -38,6 +39,9 @@ namespace TP_ECOMMERCE_21_B
             repRepetidor.DataSource = products;
             repRepetidor.DataBind();
             btnIniciarCompra.Visible = true;
+
+            decimal total = products.Sum(p => p.PrecioVenta * p.cantidad);
+            lblTotalCarrito.Text = $"Total de la compra: ${total:N2}";
         }
 
 

@@ -77,5 +77,13 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+        public void modificarCategoria(int id,string nuevoNombre)
+        {
+            AccesoDatos datos =new AccesoDatos();
+            datos.setearConsulta("update categoria set Nombre = @nombre where Id = @id");
+            datos.agregarParametros("@nombre",nuevoNombre);
+            datos.agregarParametros("@id",id);
+            datos.ejecutarAccion();
+        }
     }
 }

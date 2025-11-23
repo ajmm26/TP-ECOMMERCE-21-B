@@ -67,6 +67,12 @@ namespace TP_ECOMMERCE_21_B
                         
                         ddlMarcas.SelectedValue = producto.IdMarca.Id.ToString();
                         ddlCategoria.SelectedValue = producto.IdCategoria.Id.ToString();
+                        negocioImagen negocioImg = new negocioImagen();
+                        List<Imagen> imagenes = negocioImg.ObetenerimagenesId(producto.Id);
+
+                        Session["imagenes"] = imagenes.Select(i => i.Url).ToList();
+                        rptImagenes.DataSource = imagenes;
+                        rptImagenes.DataBind();
 
                     }
                 }
@@ -151,7 +157,12 @@ namespace TP_ECOMMERCE_21_B
                 {
                     nuevo.Id = (int)Session["modificarId"];
                     negocio.modificarProducto(nuevo);
+                    negocioImagen negocioImg = new negocioImagen();
+                    negocioImg.eliminarPorProducto(nuevo.Id);
+                    List<Imagen> listaImagenes = imagenes.Select(url => new Imagen { Url = url,IdProducto=nuevo.Id }).ToList();
+                    negocioImg.agregarImagenes(listaImagenes);
                     Session.Remove("modificarId");
+
                 }
                 else
                 {
@@ -200,21 +211,35 @@ namespace TP_ECOMMERCE_21_B
                 return;
             }
 
-            if (imagenes.Contains(url))
+            if (Session["imagenEditando"] != null)
             {
-                lblError.Text = "⚠️ Esa imagen ya fue cargada.";
-                return;
+                string urlVieja = Session["imagenEditando"].ToString();
+                int index = imagenes.IndexOf(urlVieja);
+                if (index >= 0)
+                {
+                    imagenes[index] = url;
+                }
+                Session.Remove("imagenEditando");
             }
+            else
+            {
+                if (imagenes.Contains(url))
+                {
+                    lblError.Text = "⚠️ Esa imagen ya fue cargada.";
+                    return;
+                }
 
-            imagenes.Add(url);
+                imagenes.Add(url);
+                lblError.Text = $"✅ Imagen agregada ({imagenes.Count})";
+
+            }
             Session["imagenes"] = imagenes;
-
             rptImagenes.DataSource = imagenes.Select(i => new Imagen { Url = i });
             rptImagenes.DataBind();
 
             txtUrlImagen.Text = "";
             imgPreview.ImageUrl = "~/img/default.jpg";
-            lblError.Text = $"✅ Imagen agregada ({imagenes.Count})";
+            
         }
 
 
@@ -222,9 +247,25 @@ namespace TP_ECOMMERCE_21_B
         protected void btnVistaPrevia_Click(object sender, EventArgs e)
         {
             string url = txtUrlImagen.Text.Trim();
-            imgPreview.ImageUrl = string.IsNullOrWhiteSpace(url) ? "~/img/default.jpg" : url;
+            imgPreview.ImageUrl = string.IsNullOrWhiteSpace(url) ? "~/img/placeholder.webp" : url;
         }
 
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("gestionProductos.aspx");
+        }
 
+        protected void rptImagenes_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if(e.CommandName == "Modificar")
+            {
+                string url = e.CommandArgument.ToString();
+
+                Session["imagenEditando"] = url;
+                txtUrlImagen.Text = url;
+                imgPreview.ImageUrl = url;
+                lblError.Text = "✏️ Editá la URL y volvé a cargarla.";
+            }
+        }
     }
 }

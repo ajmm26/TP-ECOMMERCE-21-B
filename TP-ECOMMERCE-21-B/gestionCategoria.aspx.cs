@@ -11,23 +11,35 @@ namespace TP_ECOMMERCE_21_B
 {
     public partial class gestionCategoria : System.Web.UI.Page
     {
-       public void cargarListaMarcas()
+       public void cargarListaMarcas(string filtro = "")
         {
-            negocioMarca marcaNegocio = new negocioMarca();
-            GridViewMarca.DataSource = marcaNegocio.listar();
+            var negocio = new negocioMarca();
+            var lista = negocio.listar();
+
+            if (!string.IsNullOrWhiteSpace(filtro))
+                lista = lista.Where(m => m.Nombre.ToLower().Contains(filtro.ToLower())).ToList();
+
+            GridViewMarca.DataSource = lista;
             GridViewMarca.DataBind();
         }
-        public void cargarListaCategoria()
+        public void cargarListaCategoria(string filtro = "")
         {
-            negocioCategoria categoriaNegocio = new negocioCategoria();
-            GridViewCategoria.DataSource = categoriaNegocio.listarCategoria();
+            var negocio = new negocioCategoria();
+            var lista = negocio.listarCategoria();
+
+            if (!string.IsNullOrWhiteSpace(filtro))
+                lista = lista.Where(c => c.Nombre.ToLower().Contains(filtro.ToLower())).ToList();
+
+            GridViewCategoria.DataSource = lista;
             GridViewCategoria.DataBind();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            { 
             cargarListaCategoria();
             cargarListaMarcas();
-            
+            }
         }
 
         protected void GridViewCategoria_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -80,11 +92,42 @@ namespace TP_ECOMMERCE_21_B
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
+            if (Session["idCategoriaSeleccionada"] !=null && !string.IsNullOrEmpty(txtCategoria.Text))
+            {
+                int id = (int)Session["idCategoriaSeleccionada"];
+                string nuevoNombre = txtCategoria.Text.Trim();
+                negocioCategoria negocioCat = new negocioCategoria();
+                negocioCat.modificarCategoria(id,nuevoNombre);
+                cargarListaCategoria();
+                txtCategoria.Text = "";
+                Session["idCategoriaSeleccionada"] = null;
+                lblMensaje.Text = "Categoria modificada correctamente.";
+
+            }
+            if (Session["idMarcaSeleccionada"] != null && !string.IsNullOrEmpty(txtMarca.Text))
+            {
+                int id = (int)Session["idMarcaSeleccionada"];
+                string nuevoNombre = txtMarca.Text.Trim();
+
+                negocioMarca negocioMarca = new negocioMarca();
+                negocioMarca.modificarMarca(id, nuevoNombre);
+
+                cargarListaMarcas();
+                txtMarca.Text = "";
+                Session["idMarcaSeleccionada"] = null;
+                lblMensaje.Text = "Marca modificada correctamente.";
+            }
 
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            txtCategoria.Text = "";
+            txtMarca.Text = "";
+            Session["idCategoriaSeleccionada"] = null;
+            Session["idMarcaSeleccionada"] = null;
+            lblMensaje.Text = "";
+            cargarListaCategoria();
+            cargarListaMarcas();
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -131,6 +174,32 @@ namespace TP_ECOMMERCE_21_B
 
            
             lblMensaje.Text = "Debe seleccionar una categoría o una marca.";
+        }
+
+        protected void GridViewCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(GridViewCategoria.SelectedDataKey.Value);
+            string nombre = GridViewCategoria.SelectedRow.Cells[1].Text;
+            txtCategoria.Text = nombre;
+            Session["idCategoriaSeleccionada"] = id;
+        }
+
+        protected void GridViewMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(GridViewMarca.SelectedDataKey.Value);
+            string nombre = GridViewMarca.SelectedRow.Cells[1].Text;
+            txtMarca.Text = nombre;
+            Session["idMarcaSeleccionada"] = id;
+        }
+
+        protected void btnFiltrarCategoria_Click(object sender, EventArgs e)
+        {
+            cargarListaCategoria(txtFiltroCategoria.Text.Trim());
+        }
+
+        protected void btnFiltrarMarca_Click(object sender, EventArgs e)
+        {
+            cargarListaMarcas(txtFiltroMarca.Text.Trim());
         }
     }
 }

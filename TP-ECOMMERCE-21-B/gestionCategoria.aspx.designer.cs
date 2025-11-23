@@ -15,6 +15,24 @@ namespace TP_ECOMMERCE_21_B
     {
 
         /// <summary>
+        /// Control txtFiltroCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFiltroCategoria;
+
+        /// <summary>
+        /// Control btnFiltrarCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFiltrarCategoria;
+
+        /// <summary>
         /// Control GridViewCategoria.
         /// </summary>
         /// <remarks>
@@ -33,6 +51,33 @@ namespace TP_ECOMMERCE_21_B
         protected global::System.Web.UI.WebControls.TextBox txtCategoria;
 
         /// <summary>
+        /// Control rfvCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCategoria;
+
+        /// <summary>
+        /// Control txtFiltroMarca.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFiltroMarca;
+
+        /// <summary>
+        /// Control btnFiltrarMarca.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFiltrarMarca;
+
+        /// <summary>
         /// Control GridViewMarca.
         /// </summary>
         /// <remarks>
@@ -49,6 +94,15 @@ namespace TP_ECOMMERCE_21_B
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMarca;
+
+        /// <summary>
+        /// Control rfvMarca.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMarca;
 
         /// <summary>
         /// Control btnAgregar.

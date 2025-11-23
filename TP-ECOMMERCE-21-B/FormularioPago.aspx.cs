@@ -121,8 +121,9 @@ namespace TP_ECOMMERCE_21_B
             panelTelefono.Visible = tipo == "Coordinar";
         }
 
-
-
-
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ecommerce.aspx");
+        }
     }
 }

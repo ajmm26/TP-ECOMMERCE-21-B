@@ -51,6 +51,15 @@ namespace TP_ECOMMERCE_21_B
         protected global::System.Web.UI.WebControls.RadioButtonList rbEnvio;
 
         /// <summary>
+        /// Control rfvEnvio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEnvio;
+
+        /// <summary>
         /// Control panelDireccion.
         /// </summary>
         /// <remarks>
@@ -123,6 +132,15 @@ namespace TP_ECOMMERCE_21_B
         protected global::System.Web.UI.WebControls.RadioButtonList rbPago;
 
         /// <summary>
+        /// Control rfvMetodoPago.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMetodoPago;
+
+        /// <summary>
         /// Control panelTarjeta.
         /// </summary>
         /// <remarks>
@@ -193,5 +211,14 @@ namespace TP_ECOMMERCE_21_B
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnConfirmarPago;
+
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

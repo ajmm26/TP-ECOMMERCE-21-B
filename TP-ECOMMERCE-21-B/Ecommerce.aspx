@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Catalogo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ecommerce.aspx.cs" Inherits="TP_ECOMMERCE_21_B.Ecommerce" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ecommerce.aspx.cs" Inherits="TP_ECOMMERCE_21_B.Ecommerce" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="server">
     <link href="<%= ResolveUrl("~/Content/default.css") %>" rel="stylesheet" />
@@ -8,8 +8,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
-        <h2 id="title"><%: Title %>.</h2>
-        <h3>Signos.</h3>
+        <h2 id="title"><%: Title %></h2>
+        
 
         <div class="mb-3 d-flex flex-wrap gap-2">
             <asp:TextBox ID="txtFiltroProducto" runat="server" CssClass="form-control" placeholder="Buscar por nombre o código..." />

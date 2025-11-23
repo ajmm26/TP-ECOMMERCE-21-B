@@ -1,10 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="gestionPedido.aspx.cs" Inherits="TP_ECOMMERCE_21_B.gestionPedido" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:GridView ID="GridViewPedido" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered"
+
+    <h3>Administrá los pedidos del sistema</h3>
+    <p>Elegi el estado del pedido para cambiar.</p>
+    <div class="mb-3"> 
+       
+        <asp:TextBox ID="txtFiltroNumero" runat="server" placeholder="Número de Pedido:" ></asp:TextBox>
+        
+        <asp:DropDownList ID="ddlFiltroEstado" runat="server" >
+            <asp:ListItem Text="Todos" Value="" />
+            <asp:ListItem Text="Activo" Value="Activo" />
+            <asp:ListItem Text="En preparación" Value="En preparación" />
+            <asp:ListItem Text="Enviado" Value="Enviado" />
+            <asp:ListItem Text="Cancelado" Value="Cancelado" />
+        </asp:DropDownList>
+        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-secondary" OnClick="btnBuscar_Click" />
+    </div>
+    <asp:GridView ID="GridViewPedido" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered" PageSize="10" AllowPaging="true" OnPageIndexChanging="GridViewPedido_PageIndexChanging"
         OnRowCommand="GridViewPedido_RowCommand" OnRowDataBound="GridViewPedido_RowDataBound">
         <Columns>
-            <asp:BoundField DataField="Id" HeaderText="ID Pedido" />
+            <asp:BoundField DataField="Id" HeaderText="Numero de Pedido" />
             <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy HH:mm}" />
             <asp:BoundField DataField="IdUsuario" HeaderText="ID Usuario" />
             <asp:BoundField DataField="PrecioTotal" HeaderText="Precio Total" DataFormatString="{0:C}" />

@@ -1,8 +1,9 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
+using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using negocio;
-using dominio;
 
 namespace TP_ECOMMERCE_21_B
 {
@@ -11,8 +12,8 @@ namespace TP_ECOMMERCE_21_B
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            cargarPedidos(); // Cargar antes del postback
-            registrarValoresValidosParaDropDown(); // Registrar ítems válidos
+            //cargarPedidos(); // Cargar antes del postback
+            //registrarValoresValidosParaDropDown(); // Registrar ítems válidos
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -22,6 +23,10 @@ namespace TP_ECOMMERCE_21_B
                 Response.Redirect("login.aspx", false);
             }
             // No hace falta cargar acá, ya se hace en OnInit
+            if(!IsPostBack)
+            {
+                cargarPedidos();
+            }
         }
 
         private void cargarPedidos()
@@ -31,7 +36,7 @@ namespace TP_ECOMMERCE_21_B
             GridViewPedido.DataBind();
         }
 
-        private void registrarValoresValidosParaDropDown()
+        /*private void registrarValoresValidosParaDropDown()
         {
             foreach (GridViewRow row in GridViewPedido.Rows)
             {
@@ -48,7 +53,7 @@ namespace TP_ECOMMERCE_21_B
                     }
                 }
             }
-        }
+        }*/
 
         protected void GridViewPedido_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -59,6 +64,12 @@ namespace TP_ECOMMERCE_21_B
 
                 if (ddlEstado != null)
                 {
+                    ddlEstado.Items.Clear();
+                    ddlEstado.Items.Add("Activo");
+                    ddlEstado.Items.Add("En preparación");
+                    ddlEstado.Items.Add("Enviado");
+                    ddlEstado.Items.Add("Cancelado");
+
                     ListItem item = ddlEstado.Items.FindByText(pedido.Estado);
                     if (item != null)
                         item.Selected = true;
@@ -70,16 +81,44 @@ namespace TP_ECOMMERCE_21_B
         {
             if (e.CommandName == "CambiarEstado")
             {
-                int idPedido = Convert.ToInt32(e.CommandArgument);
+                
                 GridViewRow row = ((Button)e.CommandSource).NamingContainer as GridViewRow;
                 DropDownList ddlEstado = (DropDownList)row.FindControl("ddlEstado");
-                string nuevoEstado = ddlEstado.SelectedValue;
+                if (ddlEstado != null)
+                {
+                    string nuevoEstado = ddlEstado.SelectedValue;
+                    int idPedido = Convert.ToInt32(e.CommandArgument);
 
-                negocioPedido negocio = new negocioPedido();
-                negocio.actualizarEstado(idPedido, nuevoEstado);
+                    negocioPedido negocio = new negocioPedido();
+                    negocio.actualizarEstado(idPedido, nuevoEstado);
 
-                cargarPedidos(); // Refrescar grilla
+                    cargarPedidos(); // Refrescar grilla
+                }
             }
+        }
+
+        protected void GridViewPedido_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridViewPedido.PageIndex = e.NewPageIndex;
+            cargarPedidos();
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            int.TryParse(txtFiltroNumero.Text.Trim(), out int numeroPedido);
+            string estado = ddlFiltroEstado.SelectedValue;
+
+            negocioPedido negocio = new negocioPedido();
+            var lista = negocio.listarPedido();
+
+            if (numeroPedido > 0)
+                lista = lista.Where(p => p.Id == numeroPedido).ToList();
+
+            if (!string.IsNullOrEmpty(estado))
+                lista = lista.Where(p => p.Estado == estado).ToList();
+
+            GridViewPedido.DataSource = lista;
+            GridViewPedido.DataBind();
         }
     }
 }

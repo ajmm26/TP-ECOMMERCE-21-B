@@ -84,7 +84,7 @@
 
             <asp:Panel ID="pnlUsuario" runat="server" CssClass="d-flex align-items-center" Visible="false">
                 <asp:Label ID="lblUsuario" runat="server" CssClass="me-2 fw-bold text-dark" />
-                <asp:LinkButton ID="btnLogout" runat="server" CssClass="btn btn-danger" OnClick="btnLogout_Click">Cerrar sesión</asp:LinkButton>
+                <asp:LinkButton ID="btnLogout" runat="server" CssClass="btn btn-danger" OnClick="btnLogout_Click" CausesValidation="false">Cerrar sesión</asp:LinkButton>
             </asp:Panel>
 
             <asp:HyperLink ID="lnkCarrito" runat="server" NavigateUrl="carritoWithMaster.aspx" CssClass="btn btn-outline-dark ms-2">
@@ -101,12 +101,12 @@ session
 -->
 
 
-        <div class="container body-content">
+        <div class="container d-flex flex-column min-vh-100">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
+            <footer class="bg-dark text-bg-light py-3 mt-auto text-center">
+                <p class="mb-0">&copy; <%: DateTime.Now.Year %> - E-commerce SIGNOS | Todos los derechos reservados</p>
             </footer>
         </div>
     </form>
