@@ -1,10 +1,13 @@
-﻿using System;
+﻿using accesoAdatos;
+using dominio;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using dominio;
-using accesoAdatos;
 
 namespace negocio
 {
@@ -72,20 +75,26 @@ namespace negocio
 
 
 
-        public void AgregarDetalleDePedido(DetallePedido dp)
+        public bool AgregarDetalleDePedido(DetallePedido dp)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try {
+                datos.setearProcedimiento("agregar_detalleProducto");
                 datos.limpiarParametros();
-                datos.setearConsulta("Insert into detalleProducto(idProducto,idPedido,cantidadProducto,precioUnitario,precioRebajado) " +
-                    "values(@idProducto,@idPedido,@cantidadProducto,@precioUnitario,@precioRebajado)");
-                datos.agregarParametros("@idProducto",dp.idProducto);
-                datos.agregarParametros("@idPedido",dp.idPedido);
-                datos.agregarParametros("@cantidadProducto",dp.cantidadProducto);
-                datos.agregarParametros("@precioUnitario",dp.precioUnitario);
-                datos.agregarParametros("@precioRebajado",dp.precioRebajado);
+                datos.agregarParametros("@idProducto", dp.idProducto);
+                datos.agregarParametros("@idPedido", dp.idPedido);
+                datos.agregarParametros("@cantidadProducto", dp.cantidadProducto);
+                datos.agregarParametros("@precioUnitario", dp.precioUnitario);
+                datos.agregarParametros("@precioRebajado", 0);
+
+                SqlParameter res = datos.setParametro("@exito", SqlDbType.Bit);
+                res.Direction = ParameterDirection.Output;
+
                 datos.ejecutarAccion();
+
+                return (bool)res.Value;
+
             }
             catch (Exception ex)
             {
@@ -113,6 +122,29 @@ namespace negocio
             {
                 throw ex;
             }
+        }
+
+        public void verificarDetallePedido(int idpedido,bool response) {
+
+            AccesoDatos datos = new AccesoDatos();
+            try {
+
+                datos.setearProcedimiento("Desahacer_Compra");
+                datos.limpiarParametros();
+                datos.agregarParametros("@idpedido", idpedido);
+                datos.agregarParametros("@exito", response);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+
         }
 
     }

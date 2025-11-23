@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace accesoAdatos
 {
@@ -90,6 +91,11 @@ namespace accesoAdatos
         public void limpiarParametros()
         {
             comando.Parameters.Clear();
+        }
+
+        public SqlParameter setParametro(string param, SqlDbType sql)
+        {
+           return comando.Parameters.Add(param,sql);
         }
     }
 }

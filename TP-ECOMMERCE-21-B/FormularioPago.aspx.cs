@@ -69,43 +69,16 @@ namespace TP_ECOMMERCE_21_B
             pedido.DetallePedidos = getDetallePedido(numPedido);
             foreach(var detalle in pedido.DetallePedidos)
             {
-                np.AgregarDetalleDePedido(detalle);
-            }
-           /* string nombre = txtNombre.Text;
-            string apellido = txtApellido.Text;
-            string email = txtEmail.Text;
-            string tipoEnvio = rbEnvio.SelectedValue;
-            string metodoPago = rbPago.SelectedValue;*/
+              bool response =  np.AgregarDetalleDePedido(detalle);
 
-            
-           /* try
-            {
-                service.emailService servicioEmail = new service.emailService();
-
-                string asunto = "Confirmación de compra - E-commerce SIGNOS";
-
-                StringBuilder cuerpo = new StringBuilder();
-                cuerpo.AppendLine($"<h1>✔ Gracias por tu compra, {nombre}!</h1>");
-                cuerpo.AppendLine("<h2>Resumen del pedido:</h2>");
-                cuerpo.AppendLine("<ul>");
-                foreach (var p in carrito)
+                if (!response)
                 {
-                    cuerpo.AppendLine($"<li>{p.Nombre} x{p.cantidad} = ${p.PrecioVenta * p.cantidad}</li>");
+
+
+                np.verificarDetallePedido(numPedido, response);
                 }
-                cuerpo.AppendLine("</ul>");
-                cuerpo.AppendLine($"<h3>Total: ${carrito.Sum(p => p.PrecioVenta * p.cantidad)}</h3>");
-                cuerpo.AppendLine($"<p>Método de pago: {metodoPago}</p>");
-                cuerpo.AppendLine("<hr />");
-                cuerpo.AppendLine("<p>Tu pedido está siendo procesado. ¡Gracias por confiar en SIGNOS!</p>");
-
-                servicioEmail.armarCorreo(email, asunto, cuerpo.ToString());
-                servicioEmail.enviarMail();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }*/
-
+          
             Session["items"] = null;
             Response.Redirect("Confirmacion.aspx");
         }

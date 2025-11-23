@@ -4,7 +4,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Detalle productos</h1>
-
+    <asp:Label runat="server" ID="labelMessage" />
     <asp:Repeater ID="RepeaterCarrito" runat="server">
         <ItemTemplate>
             <div class="div-contenedor-producto">
