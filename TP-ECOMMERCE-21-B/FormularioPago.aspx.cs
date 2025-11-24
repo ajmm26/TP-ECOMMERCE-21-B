@@ -78,7 +78,40 @@ namespace TP_ECOMMERCE_21_B
                 np.verificarDetallePedido(numPedido, response);
                 }
             }
-          
+
+            try
+            {
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+                string email = txtEmail.Text;
+                string metodoPago = rbPago.SelectedValue;
+
+                service.emailService servicioEmail = new service.emailService();
+                string asunto = "Confirmación de compra - E-commerce SIGNOS";
+
+                StringBuilder cuerpo = new StringBuilder();
+                cuerpo.AppendLine($"<h1>✔ Gracias por tu compra, {nombre}!</h1>");
+                cuerpo.AppendLine("<h2>Resumen del pedido:</h2>");
+                cuerpo.AppendLine("<ul>");
+                foreach (var p in carrito)
+                {
+                    cuerpo.AppendLine($"<li>{p.Nombre} x{p.cantidad} = ${p.PrecioVenta * p.cantidad}</li>");
+                }
+                cuerpo.AppendLine("</ul>");
+                cuerpo.AppendLine($"<h3>Total: ${pedido.PrecioTotal}</h3>");
+                cuerpo.AppendLine($"<p>Método de pago: {metodoPago}</p>");
+                cuerpo.AppendLine("<hr />");
+                cuerpo.AppendLine("<p>Tu pedido está siendo procesado. ¡Gracias por confiar en SIGNOS!</p>");
+
+                servicioEmail.armarCorreo(email, asunto, cuerpo.ToString());
+                servicioEmail.enviarMail();
+            }
+            catch (Exception ex)
+            {
+                // Podés loguear el error si querés
+                throw ex;
+            }
+
             Session["items"] = null;
             Response.Redirect("Confirmacion.aspx");
         }

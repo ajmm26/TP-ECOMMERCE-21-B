@@ -196,7 +196,7 @@ namespace TP_ECOMMERCE_21_B
             if (!string.IsNullOrWhiteSpace(txt.Text))
                 imgPreview.ImageUrl = txt.Text;
             else
-                imgPreview.ImageUrl = string.IsNullOrWhiteSpace(txt.Text) ? "~/img/default.jpg" : txt.Text;
+                imgPreview.ImageUrl = string.IsNullOrWhiteSpace(txt.Text) ? "~/img/placeholder.jpg" : txt.Text;
 
         }
 
@@ -204,11 +204,10 @@ namespace TP_ECOMMERCE_21_B
         {
             List<string> imagenes = Session["imagenes"] as List<string> ?? new List<string>();
             string url = txtUrlImagen.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(url))
+            if (string.IsNullOrWhiteSpace(url) || !Uri.IsWellFormedUriString(url, UriKind.Absolute))
             {
-                lblError.Text = "⚠️ La URL no puede estar vacía.";
-                return;
+                imgPreview.ImageUrl = "~/img/placeholder.jpg";
+                lblErrorImagen.Text = "⚠️ La URL no es válida. Se muestra imagen por defecto.";
             }
 
             if (Session["imagenEditando"] != null)
@@ -225,12 +224,12 @@ namespace TP_ECOMMERCE_21_B
             {
                 if (imagenes.Contains(url))
                 {
-                    lblError.Text = "⚠️ Esa imagen ya fue cargada.";
+                    lblErrorImagen.Text = "⚠️ Esa imagen ya fue cargada.";
                     return;
                 }
 
                 imagenes.Add(url);
-                lblError.Text = $"✅ Imagen agregada ({imagenes.Count})";
+                lblErrorImagen.Text = $"✅ Imagen agregada ({imagenes.Count})";
 
             }
             Session["imagenes"] = imagenes;
@@ -238,7 +237,7 @@ namespace TP_ECOMMERCE_21_B
             rptImagenes.DataBind();
 
             txtUrlImagen.Text = "";
-            imgPreview.ImageUrl = "~/img/default.jpg";
+            imgPreview.ImageUrl = "~/img/placeholder.jpg";
             
         }
 
@@ -247,7 +246,17 @@ namespace TP_ECOMMERCE_21_B
         protected void btnVistaPrevia_Click(object sender, EventArgs e)
         {
             string url = txtUrlImagen.Text.Trim();
-            imgPreview.ImageUrl = string.IsNullOrWhiteSpace(url) ? "~/img/placeholder.webp" : url;
+
+            if (string.IsNullOrWhiteSpace(url) || !Uri.IsWellFormedUriString(url, UriKind.Absolute))
+            {
+                imgPreview.ImageUrl = "~/img/placeholder.jpg";
+                lblErrorImagen.Text = "⚠️ La URL no es válida. Se muestra imagen por defecto.";
+            }
+            else
+            {
+                imgPreview.ImageUrl = url;
+                lblErrorImagen.Text = ""; 
+            }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -264,7 +273,7 @@ namespace TP_ECOMMERCE_21_B
                 Session["imagenEditando"] = url;
                 txtUrlImagen.Text = url;
                 imgPreview.ImageUrl = url;
-                lblError.Text = "✏️ Editá la URL y volvé a cargarla.";
+                lblErrorImagen.Text = "✏️ Editá la URL y volvé a cargarla.";
             }
         }
     }

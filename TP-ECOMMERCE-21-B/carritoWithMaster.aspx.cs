@@ -33,6 +33,8 @@ namespace TP_ECOMMERCE_21_B
                 btnIniciarCompra.Visible= false;
                 repRepetidor.DataSource = null;
                 repRepetidor.DataBind();
+
+                lblTotalCarrito.Text = "Total de la compra: $0,00";
                 return;
             }
 
@@ -53,7 +55,7 @@ namespace TP_ECOMMERCE_21_B
         protected void btnIniciarCompra_Click(object sender, EventArgs e)
         {
 
-            Usuario user = (Usuario)Session["user"];
+            Usuario user = (Usuario)Session["usuario"]; 
 
             if (user != null) { 
             Response.Redirect("FormularioPago.aspx");
@@ -74,7 +76,13 @@ namespace TP_ECOMMERCE_21_B
             // Eliminar el producto
             Producto item = products.FirstOrDefault(x => x.Id == id);
             if (item != null)
-                products.Remove(item);
+            {
+                
+                if (item.cantidad > 1)
+                    item.cantidad -= 1;
+                else
+                    products.Remove(item);
+            }
 
             // Actualizar sesión
             Session["items"] = products;

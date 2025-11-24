@@ -32,7 +32,7 @@
                 <hr />
                 <asp:Label ID="lblTotal" runat="server" CssClass="total-pago" />
             </div>
-            
+
 
             <div class="col-md-6">
                 <h4>Formulario de pago</h4>
@@ -64,15 +64,15 @@
                 <hr />
 
 
-                <!----  <div class="mb-3">
-        <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" Placeholder="Nombre" />
-    </div>
-    <div class="mb-3">
-        <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" Placeholder="Apellido" />
-    </div>
-    <div class="mb-3">
-        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Placeholder="Email" TextMode="Email" />
-    </div> --->
+                <div class="mb-3">
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" Placeholder="Nombre" />
+                </div>
+                <div class="mb-3">
+                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" Placeholder="Apellido" />
+                </div>
+                <div class="mb-3">
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Placeholder="Email" TextMode="Email" />
+                </div>
 
 
 

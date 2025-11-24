@@ -62,8 +62,12 @@
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
 
-
+                    <div class="mb-3">
+                        <asp:Label ID="lblErrorImagen" runat="server" CssClass="text-danger mb-2" />
+                    </div>
                     <div class="mb-3 d-flex">
+
+
                         <asp:TextBox ID="txtUrlImagen" runat="server" AutoPostBack="false" CssClass="form-control me-2" placeholder="Url" />
                         <asp:Button ID="btnVistaPrevia" runat="server" Text="Vista previa" CssClass="btn btn-info me-2" OnClick="btnVistaPrevia_Click" />
                         <asp:Button ID="btnCargar" runat="server" Text="Cargar Imagen" CssClass="btn btn-success" OnClick="btnCargar_Click" />
@@ -75,8 +79,10 @@
                         <asp:Repeater ID="rptImagenes" runat="server" OnItemCommand="rptImagenes_ItemCommand">
                             <ItemTemplate>
                                 <div class="d-inline-block text-center me-2">
-                                    <img src='<%# Eval("Url") %>' class="img-thumbnail " width="100" />
-                                    <asp:Button ID="btnModificarImagen" runat="server" Text="Modificar" CommandName="Modificar" CommandArgument='<%# Eval("Url") %>' CssClass="btn btn-sm btn-danger mt-1" />
+                                   <img src='<%# Eval("Url") %>' class="img-thumbnail" width="100" onerror="this.onerror=null;this.src='/img/placeholder.jpg';" />
+
+
+                                    <asp:Button ID="btnModificarImagen" runat="server" Text="Modificar" CommandName="Modificar" CommandArgument='<%# Eval("Url") %>' Visible='<%# Session["modificarId"] != null %>' CssClass="btn btn-sm btn-danger mt-1" />
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
