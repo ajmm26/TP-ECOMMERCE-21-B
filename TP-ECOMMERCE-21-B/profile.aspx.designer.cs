@@ -11,43 +11,43 @@ namespace TP_ECOMMERCE_21_B
 {
 
 
-    public partial class WebForm1
+    public partial class WebForm2
     {
 
         /// <summary>
-        /// Control form1.
+        /// Control nombreUser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label nombreUser;
 
         /// <summary>
-        /// Control tituloProducto.
+        /// Control IDusuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tituloProducto;
+        protected global::System.Web.UI.WebControls.Label IDusuario;
 
         /// <summary>
-        /// Control imgProducto.
+        /// Control emailText.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgProducto;
+        protected global::System.Web.UI.WebControls.Label emailText;
 
         /// <summary>
-        /// Control ttlp.
+        /// Control TlfText.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ttlp;
+        protected global::System.Web.UI.WebControls.Label TlfText;
     }
 }

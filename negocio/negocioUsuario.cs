@@ -59,7 +59,7 @@ namespace negocio
                     usuario.Apellido = (string)datos.Lector["Apellido"];
                     usuario.Email = (string)datos.Lector["Correo"];
                     usuario.RolUsuario = (string)datos.Lector["Rol"];
-                    
+                    usuario.Telefono = (string)datos.Lector["Telefono"];
 
                     return usuario;
                 }

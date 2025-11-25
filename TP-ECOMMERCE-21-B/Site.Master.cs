@@ -28,7 +28,6 @@ namespace TP_ECOMMERCE_21_B
                 currentPage.Contains("altaproducto") ||
                 currentPage.Contains("admin") ||
                 currentPage.Contains("login") ||
-
                 currentPage.Contains("altausuario"));
 
 
@@ -38,6 +37,7 @@ namespace TP_ECOMMERCE_21_B
                     lblUsuario.Text = $"Hola, {usuario.Nombre}";
                     pnlUsuario.Visible = true;
                     btnLogin.Visible = false;
+                    userLinks.Visible = true;
                 }
                 else
                 {
