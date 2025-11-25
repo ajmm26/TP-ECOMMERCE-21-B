@@ -159,6 +159,24 @@ namespace TP_ECOMMERCE_21_B
         protected global::System.Web.UI.WebControls.TextBox txtNumeroTarjeta;
 
         /// <summary>
+        /// Control reqNumeroTarjeta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqNumeroTarjeta;
+
+        /// <summary>
+        /// Control regexNumeroTarjeta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexNumeroTarjeta;
+
+        /// <summary>
         /// Control txtNombreTitular.
         /// </summary>
         /// <remarks>
@@ -166,6 +184,24 @@ namespace TP_ECOMMERCE_21_B
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreTitular;
+
+        /// <summary>
+        /// Control reqNombreTitular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqNombreTitular;
+
+        /// <summary>
+        /// Control regexNombreTitular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexNombreTitular;
 
         /// <summary>
         /// Control txtVencimiento.
@@ -177,6 +213,24 @@ namespace TP_ECOMMERCE_21_B
         protected global::System.Web.UI.WebControls.TextBox txtVencimiento;
 
         /// <summary>
+        /// Control reqVencimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqVencimiento;
+
+        /// <summary>
+        /// Control regexVencimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexVencimiento;
+
+        /// <summary>
         /// Control txtCVV.
         /// </summary>
         /// <remarks>
@@ -184,6 +238,24 @@ namespace TP_ECOMMERCE_21_B
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCVV;
+
+        /// <summary>
+        /// Control reqCVV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqCVV;
+
+        /// <summary>
+        /// Control regexCVV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexCVV;
 
         /// <summary>
         /// Control panelTransferencia.

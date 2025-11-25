@@ -10,3 +10,9 @@ C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\obj\Debug\accesoAdatos.cspro
 C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\obj\Debug\accesoAdatos.csproj.CoreCompileInputs.cache
 C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\obj\Debug\accesoAdatos.dll
 C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\obj\Debug\accesoAdatos.pdb
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\bin\Debug\MercadoPago.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\bin\Debug\MercadoPago.pdb
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\bin\Debug\MercadoPago.xml
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\accesoAdatos\obj\Debug\accesoAd.C0E1D618.Up2Date

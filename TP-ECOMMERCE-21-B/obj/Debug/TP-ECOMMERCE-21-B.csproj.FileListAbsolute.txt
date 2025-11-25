@@ -162,3 +162,6 @@ C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\bin\service.dll
 C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\bin\service.pdb
 C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\bin\service.dll
 C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\bin\service.pdb
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\bin\MercadoPago.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\bin\MercadoPago.pdb
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\TP-ECOMMERCE-21-B\bin\MercadoPago.xml

@@ -79,6 +79,18 @@ namespace TP_ECOMMERCE_21_B
                 }
             }
 
+            if (rbPago.SelectedValue == "mercadopago")
+            {
+                string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
+                service.MercadoPago mpService = new service.MercadoPago(baseUrl);
+
+                
+                string initPoint = mpService.CrearPreferencia("Compra en SIGNOS", 1, pedido.PrecioTotal);
+
+                Response.Redirect(initPoint);
+                return;
+            }
+
             try
             {
                 string nombre = txtNombre.Text;

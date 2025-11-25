@@ -20,3 +20,8 @@ C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\negocio\obj\Debug\negocio.csproj.CoreComp
 C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\negocio\obj\Debug\negocio.csproj.Up2Date
 C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\negocio\obj\Debug\negocio.dll
 C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\negocio\obj\Debug\negocio.pdb
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\bin\Debug\MercadoPago.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\bin\Debug\MercadoPago.pdb
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\bin\Debug\MercadoPago.xml
+C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\negocio\bin\Debug\Newtonsoft.Json.xml

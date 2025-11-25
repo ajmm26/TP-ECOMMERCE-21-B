@@ -93,9 +93,45 @@
 
                 <asp:Panel ID="panelTarjeta" runat="server" Visible="false">
                     <asp:TextBox ID="txtNumeroTarjeta" runat="server" Placeholder="Número de tarjeta" CssClass="form-control" />
+                    <asp:RequiredFieldValidator ID="reqNumeroTarjeta" runat="server"
+                        ControlToValidate="txtNumeroTarjeta"
+                        ErrorMessage="⚠️ El número de tarjeta es obligatorio."
+                        CssClass="text-danger" Display="Dynamic" />
+                    <asp:RegularExpressionValidator ID="regexNumeroTarjeta" runat="server"
+                        ControlToValidate="txtNumeroTarjeta"
+                        ValidationExpression="^\d{13,19}$"
+                        ErrorMessage="⚠️ El número de tarjeta debe tener entre 13 y 19 dígitos."
+                        CssClass="text-danger" Display="Dynamic" />
                     <asp:TextBox ID="txtNombreTitular" runat="server" Placeholder="Nombre del titular" CssClass="form-control" />
+                    <asp:RequiredFieldValidator ID="reqNombreTitular" runat="server"
+                        ControlToValidate="txtNombreTitular"
+                        ErrorMessage="⚠️ El nombre del titular es obligatorio."
+                        CssClass="text-danger" Display="Dynamic" />
+                    <asp:RegularExpressionValidator ID="regexNombreTitular" runat="server"
+                        ControlToValidate="txtNombreTitular"
+                        ValidationExpression="^[a-zA-Z\s]+$"
+                        ErrorMessage="⚠️ Solo se permiten letras y espacios."
+                        CssClass="text-danger" Display="Dynamic" />
                     <asp:TextBox ID="txtVencimiento" runat="server" Placeholder="MM/AA" CssClass="form-control" />
+                    <asp:RequiredFieldValidator ID="reqVencimiento" runat="server"
+                        ControlToValidate="txtVencimiento"
+                        ErrorMessage="⚠️ La fecha de vencimiento es obligatoria."
+                        CssClass="text-danger" Display="Dynamic" />
+                    <asp:RegularExpressionValidator ID="regexVencimiento" runat="server"
+                        ControlToValidate="txtVencimiento"
+                        ValidationExpression="^(0[1-9]|1[0-2])\/\d{2}$"
+                        ErrorMessage="⚠️ Formato inválido. Use MM/AA."
+                        CssClass="text-danger" Display="Dynamic" />
                     <asp:TextBox ID="txtCVV" runat="server" Placeholder="CVV" CssClass="form-control" />
+                    <asp:RequiredFieldValidator ID="reqCVV" runat="server"
+                        ControlToValidate="txtCVV"
+                        ErrorMessage="⚠️ El CVV es obligatorio."
+                        CssClass="text-danger" Display="Dynamic" />
+                    <asp:RegularExpressionValidator ID="regexCVV" runat="server"
+                        ControlToValidate="txtCVV"
+                        ValidationExpression="^\d{3,4}$"
+                        ErrorMessage="⚠️ El CVV debe tener 3 o 4 dígitos."
+                        CssClass="text-danger" Display="Dynamic" />
                 </asp:Panel>
 
                 <asp:Panel ID="panelTransferencia" runat="server" Visible="false">
