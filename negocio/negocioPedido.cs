@@ -154,7 +154,7 @@ namespace negocio
             List<Pedido> pedidos = new List<Pedido>();
             try
             {
-                datos.setearConsulta("Select * from Pedido where pedido.id=@idUsuario");
+                datos.setearConsulta("Select * from Pedido where pedido.idUsuario=@idUsuario");
                 datos.limpiarParametros();
                 datos.agregarParametros("@idUsuario", idUsuario);
                 datos.ejecutarLectura();
@@ -217,7 +217,7 @@ namespace negocio
             }
             finally
             {
-
+                datos.cerrarConexion();
             }
         }
 
