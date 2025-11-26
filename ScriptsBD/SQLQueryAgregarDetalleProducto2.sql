@@ -10,9 +10,9 @@ Create procedure agregar_detalleProducto
  @exito bit OUTPUT
 AS
 begin
-
+ 
 Set nocount on;
-
+SET XACT_ABORT ON;
 begin try
 
 begin tran;
@@ -35,12 +35,11 @@ end try
 
  BEGIN CATCH
 
-  DELETE FROM detalleProducto WHERE idPedido = @idPedido;
-
+  
+ 
     IF XACT_STATE() <> 0
       ROLLBACK TRAN;
-
+       DELETE FROM detalleProducto WHERE idPedido = @idPedido;
     SET @exito = 0;
-    end catch
-    end
-
+    end catch
+    end

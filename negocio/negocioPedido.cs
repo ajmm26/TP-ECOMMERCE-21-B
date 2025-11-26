@@ -1,6 +1,7 @@
 ﻿using accesoAdatos;
 using dominio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -145,6 +146,79 @@ namespace negocio
 
             }
 
+        }
+
+        public List<Pedido> getPedidos(int idUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            List<Pedido> pedidos = new List<Pedido>();
+            try
+            {
+                datos.setearConsulta("Select * from Pedido where pedido.id=@idUsuario");
+                datos.limpiarParametros();
+                datos.agregarParametros("@idUsuario", idUsuario);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Pedido pedido = new Pedido();
+                    pedido.Id = (int)datos.Lector["id"];
+                    pedido.IdUsuario = (int)datos.Lector["idUsuario"];
+                    pedido.PrecioTotal = (decimal)datos.Lector["precioTotal"];
+                    pedido.Estado = (string)datos.Lector["estado"];
+                    pedido.MetodoDePago = (string)datos.Lector["metodoDepago"];
+                    pedido.DetallePedidos = getDetalle(pedido.Id);
+                    pedidos.Add(pedido);
+
+                }
+
+
+                return pedidos;
+
+            }
+            catch( Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public List<DetallePedido> getDetalle(int idPedido)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            negocioProducto productos = new negocioProducto();
+            List<DetallePedido> detalles = new List<DetallePedido>();
+            try
+            {
+                datos.setearConsulta("Select * from detalleProducto where idPedido=@idPedido");
+                datos.limpiarParametros();
+                datos.agregarParametros("@idPedido", idPedido);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    DetallePedido detallePedido = new DetallePedido();
+                    detallePedido.cantidadProducto = (int)datos.Lector["cantidadProducto"];
+                    Producto pro = new Producto();
+                   pro= productos.obtenerPorId((int)datos.Lector["idProducto"]);
+                    detallePedido.nombreProducto = pro.Nombre;
+                    detallePedido.precioUnitario = pro.PrecioVenta;
+
+                    detalles.Add(detallePedido);
+                }
+
+                return detalles;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
         }
 
     }

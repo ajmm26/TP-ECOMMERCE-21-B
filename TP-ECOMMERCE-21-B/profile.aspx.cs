@@ -1,4 +1,5 @@
 ﻿using dominio;
+using negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +28,43 @@ namespace TP_ECOMMERCE_21_B
                 IDusuario.Text = textid + user.Id.ToString();
                 emailText.Text= " " + user.Email;
                 TlfText.Text = " " + user.Telefono;
+                CurrentPassword.Attributes.Add("required", "required");
+                NewPassword.Attributes.Add("required", "required");
+
 
             }
+
+        }
+
+        protected void changePassword_Click(object sender, EventArgs e)
+        {
+            string current = CurrentPassword.Text.Trim();
+            string newPassword = NewPassword.Text.Trim();
+            
+            
+            if(newPassword=="" || current == "")
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                   "alert('No se aceptan caracteres vacios');", true);
+            }
+
+
+            Usuario user = (Usuario)Session["usuario"];
+            int id = user.Id;
+
+            negocioUsuario nu = new negocioUsuario();
+            string res = nu.UpdatePassword(id, current, newPassword);
+
+            if (res == "OK")
+            {
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                    "alert('Contraseña actualizada correctamente');", true);
+
+            }
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert",
+                    $"alert('Error: {res}');", true);
 
         }
     }

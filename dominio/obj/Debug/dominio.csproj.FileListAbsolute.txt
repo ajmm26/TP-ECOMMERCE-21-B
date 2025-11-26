@@ -16,3 +16,8 @@ C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\dominio\bin\Debug\MercadoPago.pdb
 C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\dominio\bin\Debug\MercadoPago.xml
 C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\dominio\bin\Debug\Newtonsoft.Json.xml
 C:\Users\raull\Desktop\TP-ECOMMERCE-21-B\dominio\obj\Debug\dominio.csproj.Up2Date
+C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\dominio\bin\Debug\MercadoPago.dll
+C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\dominio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\dominio\bin\Debug\MercadoPago.pdb
+C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\dominio\bin\Debug\MercadoPago.xml
+C:\Users\Ale\Desktop\TP-ECOMMERCE-21-B\dominio\obj\Debug\dominio.csproj.Up2Date

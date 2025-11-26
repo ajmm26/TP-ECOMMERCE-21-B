@@ -76,7 +76,7 @@
                         <asp:PlaceHolder ID="userLinks" runat="server" Visible="false">
 
                             <li class="nav-item"><a class="nav-link" runat="server" href="~/profile">Mi perfil</a></li>
-                            <li class="nav-item"><a class="nav-link" runat="server" href="~/">Mis pedidos</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/pedidos">Mis pedidos</a></li>
 
                             <!--
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/altaProducto">Alta Productos</a></li>

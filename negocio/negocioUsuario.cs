@@ -229,5 +229,46 @@ namespace negocio
             }
         }
 
+        public string UpdatePassword(int id, string current, string newPassword)
+        {
+            AccesoDatos datos= new AccesoDatos();
+
+            try
+            {
+
+                datos.setearProcedimiento("cambiar_password");
+                datos.limpiarParametros();
+                datos.agregarParametros("@idUsuario",id);
+                datos.agregarParametros("@currentPassword",current);
+                datos.agregarParametros("@newPassword", newPassword);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    string resultado = datos.Lector["Resultado"].ToString();
+                    string mensaje = datos.Lector["Mensaje"].ToString();
+
+                    if (resultado == "OK")
+                    {
+                        return "OK";
+
+                    }
+
+                    return mensaje; // mensaje del SP (contraseña incorrecta)
+                }
+
+                return "Error inesperado";
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }

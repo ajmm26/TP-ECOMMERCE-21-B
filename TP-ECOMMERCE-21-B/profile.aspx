@@ -21,6 +21,23 @@
             <asp:Label runat="server" ID="TlfText"> </asp:Label>
                 </div>
         </div>
+
+        
+     <div id="container-password">
+
+         <div class="div-password">
+             <p>Contrasena Actual</p>
+             <asp:Textbox runat="server" ID="CurrentPassword" TextMode="Password"> </asp:Textbox>
+         </div>
+
+         <div class="div-password">
+              <p>Nueva Contrasena</p>
+          <asp:Textbox runat="server" ID="NewPassword" TextMode="Password"> </asp:Textbox>
+         </div>
+
+         <asp:Button ID="changePassword" runat="server" Text="Confirmar" CssClass="btn btn-primary" Onclick="changePassword_Click"/>
+     </div>
+
 </div>
      <script src="<%= ResolveUrl("~/Scripts/WebForms/profile.js") %>"></script>
 </asp:Content>
