@@ -70,6 +70,14 @@ namespace TP_ECOMMERCE_21_B
             {
                 Response.Redirect("login.aspx", false);
             }
+            else
+            {
+                Usuario usuario = (Usuario)Session["usuario"];
+                if (!usuario.RolUsuario.Equals("admin", StringComparison.OrdinalIgnoreCase))
+                {
+                    Response.Redirect("login.aspx", false);
+                }
+            }
 
             if (!IsPostBack)
             {

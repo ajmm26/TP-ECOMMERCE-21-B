@@ -70,26 +70,29 @@ namespace TP_ECOMMERCE_21_B
 
 
         protected void btnFiltrarProducto_Click(object sender, EventArgs e)
-        { 
-            string filtroTexto = txtFiltroProducto.Text.Trim().ToLower(); 
-            string filtroCategoria = ddlFiltroCategoria.SelectedValue; 
-            string filtroMarca = ddlFiltroMarca.SelectedValue; 
+        {
+            string filtroTexto = txtFiltroProducto.Text.Trim().ToLower();
+            string filtroCategoria = ddlFiltroCategoria.SelectedValue;
+            string filtroMarca = ddlFiltroMarca.SelectedValue;
 
-            var productos = listaProducto; 
+            var productos = listaProducto;
 
-            var listaFiltrada = productos.Where(p => 
-             (string.IsNullOrEmpty(filtroTexto) || 
-             (p.Nombre != null && p.Nombre.ToLower().Contains(filtroTexto)) || 
-             (p.Codigo != null && p.Codigo.ToLower().Contains(filtroTexto))) && 
-             (string.IsNullOrEmpty(filtroCategoria) || p.IdCategoria.Nombre == filtroCategoria) && 
-             (string.IsNullOrEmpty(filtroMarca) || p.IdMarca.Nombre == filtroMarca)).ToList();
-            Session["listaFiltrada"] = listaFiltrada;
+            var listaFiltrada = productos.Where(p =>
+                (string.IsNullOrEmpty(filtroTexto) ||
+                 (p.Nombre != null && p.Nombre.ToLower().Contains(filtroTexto)) ||
+                 (p.Codigo != null && p.Codigo.ToLower().Contains(filtroTexto))) &&
+                (string.IsNullOrEmpty(filtroCategoria) || p.IdCategoria.Nombre == filtroCategoria) &&
+                (string.IsNullOrEmpty(filtroMarca) || p.IdMarca.Nombre == filtroMarca)).ToList();
+
+           
+            bool filtrosVacios = string.IsNullOrEmpty(filtroTexto) && string.IsNullOrEmpty(filtroCategoria) && string.IsNullOrEmpty(filtroMarca);
+            Session["listaFiltrada"] = filtrosVacios ? null : listaFiltrada;
+
             int cantidad = (int)Session["cantidadMostrar"];
-            var productosLimitados = listaFiltrada.Take(cantidad).ToList();
+            var productosLimitados = (filtrosVacios ? listaProducto : listaFiltrada).Take(cantidad).ToList();
 
-            RepeaterProducto.DataSource = productosLimitados; 
-            RepeaterProducto.DataBind();
-            btnMostrarMas.Visible = listaFiltrada.Count > cantidad;
+            BindRepeater(productosLimitados);
+            btnMostrarMas.Visible = (filtrosVacios ? listaProducto.Count : listaFiltrada.Count) > cantidad;
         }
 
         protected void btnMostrarMas_Click(object sender, EventArgs e)

@@ -14,7 +14,8 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            
+
 
             if (!IsPostBack)
             {
@@ -120,7 +121,7 @@ namespace TP_ECOMMERCE_21_B
             }
             catch (Exception ex)
             {
-                // Podés loguear el error si querés
+               
                 throw ex;
             }
 

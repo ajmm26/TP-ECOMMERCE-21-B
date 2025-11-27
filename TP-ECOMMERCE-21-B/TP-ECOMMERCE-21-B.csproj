@@ -107,6 +107,7 @@
     <Content Include="altaUsuario.aspx" />
     <Content Include="carritoWithMaster.aspx" />
     <Content Include="Confirmacion.aspx" />
+    <Content Include="contacto.aspx" />
     <Content Include="Content\carrito.css" />
     <Content Include="Content\default.css" />
     <Content Include="Content\estilos.css" />
@@ -238,6 +239,13 @@
     </Compile>
     <Compile Include="Confirmacion.aspx.designer.cs">
       <DependentUpon>Confirmacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contacto.aspx.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contacto.aspx.designer.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormularioPago.aspx.cs">
       <DependentUpon>FormularioPago.aspx</DependentUpon>

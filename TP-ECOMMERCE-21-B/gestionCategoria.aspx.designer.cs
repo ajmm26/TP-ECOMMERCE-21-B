@@ -60,49 +60,49 @@ namespace TP_ECOMMERCE_21_B
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCategoria;
 
         /// <summary>
-        /// Control btnAgregarCategoria.
+        /// Control btnAgregarC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarCategoria;
+        protected global::System.Web.UI.WebControls.Button btnAgregarC;
 
         /// <summary>
-        /// Control btnModificarCategoria.
+        /// Control btnModificarC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModificarCategoria;
+        protected global::System.Web.UI.WebControls.Button btnModificarC;
 
         /// <summary>
-        /// Control btnEliminarCategoria.
+        /// Control btnEliminarC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminarCategoria;
+        protected global::System.Web.UI.WebControls.Button btnEliminarC;
 
         /// <summary>
-        /// Control btnCancelarCategoria.
+        /// Control CancelarC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelarCategoria;
+        protected global::System.Web.UI.WebControls.Button CancelarC;
 
         /// <summary>
-        /// Control lblMensajeCategoria.
+        /// Control lblMensajeC.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensajeCategoria;
+        protected global::System.Web.UI.WebControls.Label lblMensajeC;
 
         /// <summary>
         /// Control txtFiltroMarca.
@@ -150,48 +150,48 @@ namespace TP_ECOMMERCE_21_B
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMarca;
 
         /// <summary>
-        /// Control btnAgregarMarca.
+        /// Control btnAgregarM.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarMarca;
+        protected global::System.Web.UI.WebControls.Button btnAgregarM;
 
         /// <summary>
-        /// Control btnModificarMarca.
+        /// Control btnModificarM.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModificarMarca;
+        protected global::System.Web.UI.WebControls.Button btnModificarM;
 
         /// <summary>
-        /// Control btnEliminarMarca.
+        /// Control btnEliminarM.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminarMarca;
+        protected global::System.Web.UI.WebControls.Button btnEliminarM;
 
         /// <summary>
-        /// Control btnCancelarMarca.
+        /// Control btnCancelarM.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelarMarca;
+        protected global::System.Web.UI.WebControls.Button btnCancelarM;
 
         /// <summary>
-        /// Control lblMensajeMarca.
+        /// Control lblMensajeM.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensajeMarca;
+        protected global::System.Web.UI.WebControls.Label lblMensajeM;
     }
 }

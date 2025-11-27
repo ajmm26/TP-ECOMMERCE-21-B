@@ -102,9 +102,8 @@
                 <div class="col-md-3 mb-3">
                     <h5>Navegación</h5>
                     <ul class="list-unstyled">
-                        <li><a href="EcommerceSignos.aspx" class="text-light">Inicio</a></li>
-                        <li><a href="product.aspx" class="text-light">Productos</a></li>
-                        <li><a href="contacto.aspx" class="text-light">Contacto</a></li>
+                        <li><a href="Ecommerce.aspx" class="text-light">Inicio</a></li>  
+                        <li><a href="contacto.aspx" class="text-light">Soporte</a></li>
                     </ul>
                 </div>
 

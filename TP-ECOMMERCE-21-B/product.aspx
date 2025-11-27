@@ -23,7 +23,7 @@
 <asp:Label runat="server" CssClass="labelNum" ID="numLabel" Text="0"/>
 <asp:Button runat="server" CssClass="buttonCant" Text="+" ID="buttonPlus" OnClick="click_buttonPlus" />
     </div>
-    <asp:Button runat="server" Cssclass="buttonAddCart" Onclick="click_buttonAdd"  role="button" Text="Add to cart"></asp:Button>
+    <asp:Button runat="server" Cssclass="buttonAddCart" Onclick="click_buttonAdd"  role="button" Text="Agregar al carrito"></asp:Button>
         </div>
 
     <div class="mt-3">

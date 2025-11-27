@@ -12,8 +12,7 @@ namespace TP_ECOMMERCE_21_B
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            //cargarPedidos(); // Cargar antes del postback
-            //registrarValoresValidosParaDropDown(); // Registrar ítems válidos
+            
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -22,8 +21,16 @@ namespace TP_ECOMMERCE_21_B
             {
                 Response.Redirect("login.aspx", false);
             }
-            // No hace falta cargar acá, ya se hace en OnInit
-            if(!IsPostBack)
+            else
+            {
+                Usuario usuario = (Usuario)Session["usuario"];
+                if (!usuario.RolUsuario.Equals("admin", StringComparison.OrdinalIgnoreCase))
+                {
+                    Response.Redirect("login.aspx", false);
+                }
+            }
+           
+            if (!IsPostBack)
             {
                 cargarPedidos();
             }
