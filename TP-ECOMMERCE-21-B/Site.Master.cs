@@ -21,7 +21,7 @@ namespace TP_ECOMMERCE_21_B
 
 
                 // Mostrar menú solo si estás en gestionProductos.aspx
-                phGestionLinks.Visible = currentPage.Contains("gestion");
+               
                 lnkCarrito.Visible = !(
                 currentPage.Contains("carritowithmaster") ||
                 currentPage.Contains("gestion") ||
@@ -32,17 +32,30 @@ namespace TP_ECOMMERCE_21_B
 
 
                 Usuario usuario = Session["usuario"] as Usuario;
-                if (Session["usuario"] != null && !esRegistroPublico)
+
+                if (usuario!=null && !esRegistroPublico)
                 {
                     lblUsuario.Text = $"Hola, {usuario.Nombre}";
                     pnlUsuario.Visible = true;
                     btnLogin.Visible = false;
-                    userLinks.Visible = true;
+                    if(usuario.RolUsuario=="Admin" || usuario.RolUsuario=="admin")
+                    {
+                        phGestionLinks.Visible = true;
+                        userLinks.Visible = false;
+                    }
+                    else
+                    {
+                        phGestionLinks.Visible = false;
+                        userLinks.Visible = true;
+                    }
+                    
                 }
                 else
                 {
                     pnlUsuario.Visible = false;
                     btnLogin.Visible = !currentPage.Contains("login") && !esRegistroPublico;
+                    phGestionLinks.Visible = false;
+                    userLinks.Visible = false;
                 }
 
 

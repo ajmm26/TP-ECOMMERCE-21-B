@@ -24,6 +24,14 @@
                 ControlToValidate="txtCategoria"
                 ErrorMessage="⚠️ Ingresá un nombre de categoría."
                 Display="Dynamic" CssClass="text-danger" />
+
+            <div class="d-flex flex-wrap gap-2 mt-3">
+                <asp:Button ID="btnAgregarCategoria" runat="server" Text="Agregar" OnClick="btnAgregarCategoria_Click" CssClass="btn btn-primary" CausesValidation="true" />
+                <asp:Button ID="btnModificarCategoria" runat="server" Text="Modificar" OnClick="btnModificarCategoria_Click" CssClass="btn btn-primary" />
+                <asp:Button ID="btnEliminarCategoria" runat="server" Text="Eliminar" OnClick="btnEliminarCategoria_Click" CssClass="btn btn-warning" />
+                <asp:Button ID="btnCancelarCategoria" runat="server" Text="Cancelar" OnClick="btnCancelarCategoria_Click" CssClass="btn btn-secondary" />
+                <asp:Label ID="lblMensajeCategoria" runat="server" CssClass="text-danger" />
+            </div>
         </div>
 
         <div class="col-md-6">
@@ -43,18 +51,20 @@
                 ControlToValidate="txtMarca"
                 ErrorMessage="⚠️ Ingresá un nombre de marca."
                 Display="Dynamic" CssClass="text-danger" />
+
+            <div class="d-flex flex-wrap gap-2 mt-3">
+                <asp:Button ID="btnAgregarMarca" runat="server" Text="Agregar" OnClick="btnAgregarMarca_Click" CssClass="btn btn-primary" CausesValidation="true" />
+                <asp:Button ID="btnModificarMarca" runat="server" Text="Modificar" OnClick="btnModificarMarca_Click" CssClass="btn btn-primary" />
+                <asp:Button ID="btnEliminarMarca" runat="server" Text="Eliminar" OnClick="btnEliminarMarca_Click" CssClass="btn btn-warning" />
+                <asp:Button ID="btnCancelarMarca" runat="server" Text="Cancelar" OnClick="btnCancelarMarca_Click" CssClass="btn btn-secondary" />
+                <asp:Label ID="lblMensajeMarca" runat="server" CssClass="text-danger" />
+            </div>
         </div>
 
     </div>
 
     <hr />
-    <div class="d-flex flex-wrap gap-2 mt-3">
-        <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" CssClass="btn btn-primary" CausesValidation="true" />
-        <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" CssClass="btn btn-primary" />
-        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" CssClass="btn btn-warning" />
-        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" CssClass="btn btn-secondary" />
-        <asp:Label ID="lblMensaje" runat="server" CssClass="text-danger" />
-    </div>
+
 
 
 </asp:Content>

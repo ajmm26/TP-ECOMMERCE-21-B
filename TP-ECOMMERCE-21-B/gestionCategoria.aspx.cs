@@ -54,126 +54,206 @@ namespace TP_ECOMMERCE_21_B
             cargarListaMarcas(); 
         }
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
+        protected void btnAgregarCategoria_Click(object sender, EventArgs e)
         {
             string nombreCategoria = txtCategoria.Text.Trim();
-            string nombreMarca = txtMarca.Text.Trim();
+            lblMensajeCategoria.ForeColor = System.Drawing.Color.Red;
 
-            if (!string.IsNullOrEmpty(nombreCategoria))
+            if (string.IsNullOrEmpty(nombreCategoria))
             {
-                Categoria nuevaCat = new Categoria();
-                nuevaCat.Nombre = nombreCategoria;
-
-                negocioCategoria negocioCat = new negocioCategoria();
-                negocioCat.agregarCategoria(nuevaCat);
-
-                cargarListaCategoria();
-                txtCategoria.Text = "";
+                lblMensajeCategoria.Text = "⚠️ Debe ingresar un nombre para la categoría.";
+                return;
             }
 
-            if (!string.IsNullOrEmpty(nombreMarca))
+            var negocioCat = new negocioCategoria();
+            var listaCat = negocioCat.listarCategoria();
+
+            bool existeCategoria = listaCat.Any(c => c.Nombre.Equals(nombreCategoria, StringComparison.OrdinalIgnoreCase));
+            if (existeCategoria)
             {
-                Marca nuevaMarca = new Marca();
-                nuevaMarca.Nombre = nombreMarca;
-
-                negocioMarca negocioMarca = new negocioMarca();
-                negocioMarca.agregarMarca(nuevaMarca);
-
-                cargarListaMarcas();
-                txtMarca.Text = "";
+                lblMensajeCategoria.Text = "⚠️ Ya existe una categoría con ese nombre.";
+                return;
             }
 
-            if (string.IsNullOrEmpty(nombreCategoria) && string.IsNullOrEmpty(nombreMarca))
-            {
-                // Mostrar mensaje: "Debe ingresar un nombre para categoría o marca"
-            }
+            negocioCat.agregarCategoria(new Categoria { Nombre = nombreCategoria });
+            cargarListaCategoria();
+            txtCategoria.Text = "";
+            lblMensajeCategoria.ForeColor = System.Drawing.Color.Green;
+            lblMensajeCategoria.Text = "✅ Categoría agregada correctamente.";
+
 
         }
-
-        protected void btnModificar_Click(object sender, EventArgs e)
+        protected void btnAgregarMarca_Click(object sender, EventArgs e)
         {
-            if (Session["idCategoriaSeleccionada"] !=null && !string.IsNullOrEmpty(txtCategoria.Text))
+
+            string nombreMarca = txtMarca.Text.Trim();
+            lblMensajeMarca.ForeColor = System.Drawing.Color.Red;
+
+            if (string.IsNullOrEmpty(nombreMarca))
             {
-                int id = (int)Session["idCategoriaSeleccionada"];
-                string nuevoNombre = txtCategoria.Text.Trim();
-                negocioCategoria negocioCat = new negocioCategoria();
-                negocioCat.modificarCategoria(id,nuevoNombre);
-                cargarListaCategoria();
-                txtCategoria.Text = "";
-                Session["idCategoriaSeleccionada"] = null;
-                lblMensaje.Text = "Categoria modificada correctamente.";
-
+                lblMensajeMarca.Text = "⚠️ Debe ingresar un nombre para la marca.";
+                return;
             }
-            if (Session["idMarcaSeleccionada"] != null && !string.IsNullOrEmpty(txtMarca.Text))
+
+            var negocioMarca = new negocioMarca();
+            var listaMarca = negocioMarca.listar();
+
+            bool existeMarca = listaMarca.Any(m => m.Nombre.Equals(nombreMarca, StringComparison.OrdinalIgnoreCase));
+            if (existeMarca)
             {
-                int id = (int)Session["idMarcaSeleccionada"];
-                string nuevoNombre = txtMarca.Text.Trim();
-
-                negocioMarca negocioMarca = new negocioMarca();
-                negocioMarca.modificarMarca(id, nuevoNombre);
-
-                cargarListaMarcas();
-                txtMarca.Text = "";
-                Session["idMarcaSeleccionada"] = null;
-                lblMensaje.Text = "Marca modificada correctamente.";
+                lblMensajeMarca.Text = "⚠️ Ya existe una marca con ese nombre.";
+                return;
             }
+
+            negocioMarca.agregarMarca(new Marca { Nombre = nombreMarca });
+            cargarListaMarcas();
+            txtMarca.Text = "";
+            lblMensajeMarca.ForeColor = System.Drawing.Color.Green;
+            lblMensajeMarca.Text = "✅ Marca agregada correctamente.";
 
         }
-        protected void btnCancelar_Click(object sender, EventArgs e)
+
+        protected void btnModificarCategoria_Click(object sender, EventArgs e)
+        {
+            if (Session["idCategoriaSeleccionada"] == null)
+            {
+                lblMensajeCategoria.Text = "⚠️ Debe seleccionar una categoría para modificar.";
+                lblMensajeCategoria.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            string nuevoNombre = txtCategoria.Text.Trim();
+            if (string.IsNullOrEmpty(nuevoNombre))
+            {
+                lblMensajeCategoria.Text = "⚠️ El nombre de la categoría no puede estar vacío.";
+                lblMensajeCategoria.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            int id = (int)Session["idCategoriaSeleccionada"];
+            var negocioCat = new negocioCategoria();
+            var listaCat = negocioCat.listarCategoria();
+
+            bool nombreDuplicado = listaCat.Any(c => c.Nombre.Equals(nuevoNombre, StringComparison.OrdinalIgnoreCase) && c.Id != id);
+            if (nombreDuplicado)
+            {
+                lblMensajeCategoria.Text = "⚠️ Ya existe otra categoría con ese nombre.";
+                lblMensajeCategoria.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            negocioCat.modificarCategoria(id, nuevoNombre);
+            cargarListaCategoria();
+            txtCategoria.Text = "";
+            Session["idCategoriaSeleccionada"] = null;
+            lblMensajeCategoria.ForeColor = System.Drawing.Color.Green;
+            lblMensajeCategoria.Text = "✅ Categoría modificada correctamente.";
+
+        }
+
+        protected void btnModificarMarca_Click(object sender, EventArgs e)
+        {
+            if (Session["idMarcaSeleccionada"] == null)
+            {
+                lblMensajeMarca.Text = "⚠️ Debe seleccionar una marca para modificar.";
+                lblMensajeMarca.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            string nuevoNombre = txtMarca.Text.Trim();
+            if (string.IsNullOrEmpty(nuevoNombre))
+            {
+                lblMensajeMarca.Text = "⚠️ El nombre de la marca no puede estar vacío.";
+                lblMensajeMarca.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            int id = (int)Session["idMarcaSeleccionada"];
+            var negocioMarca = new negocioMarca();
+            var listaMarca = negocioMarca.listar();
+
+            bool nombreDuplicado = listaMarca.Any(m => m.Nombre.Equals(nuevoNombre, StringComparison.OrdinalIgnoreCase) && m.Id != id);
+            if (nombreDuplicado)
+            {
+                lblMensajeMarca.Text = "⚠️ Ya existe otra marca con ese nombre.";
+                lblMensajeMarca.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            negocioMarca.modificarMarca(id, nuevoNombre);
+            cargarListaMarcas();
+            txtMarca.Text = "";
+            Session["idMarcaSeleccionada"] = null;
+            lblMensajeMarca.ForeColor = System.Drawing.Color.Green;
+            lblMensajeMarca.Text = "✅ Marca modificada correctamente.";
+
+        }
+        protected void btnCancelarCategoria_Click(object sender, EventArgs e)
         {
             txtCategoria.Text = "";
-            txtMarca.Text = "";
             Session["idCategoriaSeleccionada"] = null;
-            Session["idMarcaSeleccionada"] = null;
-            lblMensaje.Text = "";
+            lblMensajeCategoria.Text = "";
             cargarListaCategoria();
+        }
+        protected void btnCancelarMarca_Click(object sender, EventArgs e)
+        {
+            txtMarca.Text = "";
+            Session["idMarcaSeleccionada"] = null;
+            lblMensajeMarca.Text = "";
             cargarListaMarcas();
         }
 
-        protected void btnEliminar_Click(object sender, EventArgs e)
+        protected void btnEliminarCategoria_Click(object sender, EventArgs e)
         {
-            negocioProducto negocioProd = new negocioProducto();
-
-            
-            if (GridViewCategoria.SelectedDataKey != null)
+            if (GridViewCategoria.SelectedDataKey == null)
             {
-                int idCategoria = Convert.ToInt32(GridViewCategoria.SelectedDataKey.Value);
-
-                if (negocioProd.ExistenProductosPorCategoria(idCategoria))
-                {
-                    lblMensaje.Text = "No se puede eliminar la categoría porque tiene productos asociados.";
-                    return;
-                }
-
-                negocioCategoria negocioCat = new negocioCategoria();
-                negocioCat.eliminarCategoria(idCategoria);
-
-                cargarListaCategoria();
-                lblMensaje.Text = "Categoría eliminada correctamente.";
+                lblMensajeCategoria.Text = "⚠️ Debe seleccionar una categoría para eliminar.";
+                lblMensajeCategoria.ForeColor = System.Drawing.Color.Red;
                 return;
             }
 
-           
-            if (GridViewMarca.SelectedDataKey != null)
+            int idCategoria = Convert.ToInt32(GridViewCategoria.SelectedDataKey.Value);
+            var negocioProd = new negocioProducto();
+
+            if (negocioProd.ExistenProductosPorCategoria(idCategoria))
             {
-                int idMarca = Convert.ToInt32(GridViewMarca.SelectedDataKey.Value);
-
-                if (negocioProd.ExistenProductosPorMarca(idMarca))
-                {
-                    lblMensaje.Text = "No se puede eliminar la marca porque tiene productos asociados.";
-                    return;
-                }
-
-                negocioMarca negocioMarca = new negocioMarca();
-                negocioMarca.eliminarMarca(idMarca);
-
-                cargarListaMarcas();
-                lblMensaje.Text = "Marca eliminada correctamente.";
+                lblMensajeCategoria.Text = "⚠️ No se puede eliminar la categoría porque tiene productos asociados.";
+                lblMensajeCategoria.ForeColor = System.Drawing.Color.Red;
                 return;
             }
 
-           
-            lblMensaje.Text = "Debe seleccionar una categoría o una marca.";
+            var negocioCat = new negocioCategoria();
+            negocioCat.eliminarCategoria(idCategoria);
+            cargarListaCategoria();
+            lblMensajeCategoria.ForeColor = System.Drawing.Color.Green;
+            lblMensajeCategoria.Text = "✅ Categoría eliminada correctamente.";
+        }
+
+        protected void btnEliminarMarca_Click(object sender, EventArgs e)
+        {
+            if (GridViewMarca.SelectedDataKey == null)
+            {
+                lblMensajeMarca.Text = "⚠️ Debe seleccionar una marca para eliminar.";
+                lblMensajeMarca.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            int idMarca = Convert.ToInt32(GridViewMarca.SelectedDataKey.Value);
+            var negocioProd = new negocioProducto();
+
+            if (negocioProd.ExistenProductosPorMarca(idMarca))
+            {
+                lblMensajeMarca.Text = "⚠️ No se puede eliminar la marca porque tiene productos asociados.";
+                lblMensajeMarca.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            var negocioMarca = new negocioMarca();
+            negocioMarca.eliminarMarca(idMarca);
+            cargarListaMarcas();
+            lblMensajeMarca.ForeColor = System.Drawing.Color.Green;
+            lblMensajeMarca.Text = "✅ Marca eliminada correctamente.";
+
         }
 
         protected void GridViewCategoria_SelectedIndexChanged(object sender, EventArgs e)

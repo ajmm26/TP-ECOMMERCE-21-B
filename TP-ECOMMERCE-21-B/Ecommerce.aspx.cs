@@ -55,14 +55,6 @@ namespace TP_ECOMMERCE_21_B
         {
             int idProducto = Convert.ToInt32(e.CommandArgument);
 
-            /*
-            if (Session["usuario"] == null)
-            {
-                Response.Redirect("login.aspx?returnUrl=product.aspx?id=" + idProducto + "&msg=loginRequired", false);
-                return;
-            }
-            */
-            
             Usuario usuario = (Usuario)Session["usuario"];
 
             if (usuario != null && usuario.RolUsuario == "admin")

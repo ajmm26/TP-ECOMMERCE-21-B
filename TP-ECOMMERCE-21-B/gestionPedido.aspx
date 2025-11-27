@@ -4,11 +4,11 @@
 
     <h3>Administrá los pedidos del sistema</h3>
     <p>Elegi el estado del pedido para cambiar.</p>
-    <div class="mb-3"> 
+    <div class="mb-3 d-flex align-items-center"> 
        
-        <asp:TextBox ID="txtFiltroNumero" runat="server" placeholder="Número de Pedido:" ></asp:TextBox>
+        <asp:TextBox ID="txtFiltroNumero" runat="server" CssClass="form form-control mb-2" placeholder="Número de Pedido:" ></asp:TextBox>
         
-        <asp:DropDownList ID="ddlFiltroEstado" runat="server" >
+        <asp:DropDownList ID="ddlFiltroEstado" runat="server" CssClass="form form-control mb-2" >
             <asp:ListItem Text="Todos" Value="" />
             <asp:ListItem Text="Activo" Value="Activo" />
             <asp:ListItem Text="En preparación" Value="En preparación" />

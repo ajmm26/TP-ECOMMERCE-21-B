@@ -46,15 +46,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
             <asp:Repeater ID="RepeaterProducto" runat="server">
@@ -89,7 +80,9 @@
 
 
 
-                                <asp:Button ID="btnComprar" runat="server" Text="Comprar ahora" CssClass="btn btn-primary w-100"
+                                <asp:Button ID="btnComprar" runat="server" Text='<%# Convert.ToInt32(Eval("StockActual")) <=0 ? "Sin stock" : "Comprar ahora" %>' Enabled='<%# Convert.ToInt32(Eval("StockActual")) > 0 %>'
+                                    
+                                    CssClass="btn btn-primary w-100"
                                     CommandArgument='<%# Eval("Id") %>' CommandName="ComprarAhora" OnCommand="btnComprar_Command" />
 
                             </div>

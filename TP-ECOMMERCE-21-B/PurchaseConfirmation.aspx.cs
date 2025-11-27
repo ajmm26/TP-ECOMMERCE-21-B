@@ -25,7 +25,7 @@ namespace TP_ECOMMERCE_21_B
                     lblTotal.Text = $"Total pagado: ${total}";
                 }
 
-                // Mensaje de confirmación
+               
                 lblMensaje.Text = "Tu pago fue aprobado y el pedido está siendo procesado.";
             }
         }

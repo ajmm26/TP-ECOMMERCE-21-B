@@ -204,10 +204,21 @@ namespace TP_ECOMMERCE_21_B
         {
             List<string> imagenes = Session["imagenes"] as List<string> ?? new List<string>();
             string url = txtUrlImagen.Text.Trim();
+            
             if (string.IsNullOrWhiteSpace(url) || !Uri.IsWellFormedUriString(url, UriKind.Absolute))
             {
                 imgPreview.ImageUrl = "~/img/placeholder.jpg";
-                lblErrorImagen.Text = "⚠️ La URL no es válida. Se muestra imagen por defecto.";
+                lblErrorImagen.CssClass = "text-danger mb-2";
+                lblErrorImagen.Text = "⚠️ La URL no es válida. No se agregó ninguna imagen.";
+                return; 
+            }
+
+           
+            if (imagenes.Contains(url))
+            {
+                lblErrorImagen.CssClass = "text-warning mb-2";
+                lblErrorImagen.Text = "⚠️ Esa imagen ya fue cargada.";
+                return;
             }
 
             if (Session["imagenEditando"] != null)
@@ -219,18 +230,14 @@ namespace TP_ECOMMERCE_21_B
                     imagenes[index] = url;
                 }
                 Session.Remove("imagenEditando");
+                lblErrorImagen.CssClass = "text-success mb-2";
+                lblErrorImagen.Text = "✅ Imagen modificada.";
             }
             else
             {
-                if (imagenes.Contains(url))
-                {
-                    lblErrorImagen.Text = "⚠️ Esa imagen ya fue cargada.";
-                    return;
-                }
-
                 imagenes.Add(url);
-                lblErrorImagen.Text = $"✅ Imagen agregada ({imagenes.Count})";
-
+                lblErrorImagen.CssClass = "text-success mb-2";
+                lblErrorImagen.Text = $"✅ Imagen agregada ({imagenes.Count}).";
             }
             Session["imagenes"] = imagenes;
             rptImagenes.DataSource = imagenes.Select(i => new Imagen { Url = i });
@@ -241,21 +248,48 @@ namespace TP_ECOMMERCE_21_B
             
         }
 
+        private bool EsUrlImagenValida(string url)
+        {
+            if (string.IsNullOrWhiteSpace(url))
+                return false;
 
+            // Verifica que sea una URL bien formada
+            if (!Uri.IsWellFormedUriString(url, UriKind.Absolute))
+                return false;
+
+            // Opcional: restringir a http/https
+            Uri uri = new Uri(url);
+            if (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps)
+                return false;
+
+            return true;
+        }
 
         protected void btnVistaPrevia_Click(object sender, EventArgs e)
         {
             string url = txtUrlImagen.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(url) || !Uri.IsWellFormedUriString(url, UriKind.Absolute))
+            if (!EsUrlImagenValida(url))
             {
                 imgPreview.ImageUrl = "~/img/placeholder.jpg";
+                lblErrorImagen.CssClass = "text-danger mb-2";
                 lblErrorImagen.Text = "⚠️ La URL no es válida. Se muestra imagen por defecto.";
             }
             else
             {
-                imgPreview.ImageUrl = url;
-                lblErrorImagen.Text = ""; 
+                // Validar que apunte a una extensión de imagen común
+                string[] extensiones = { ".jpg", ".jpeg", ".png", ".gif", ".webp" };
+                if (extensiones.Any(ext => url.ToLower().EndsWith(ext)))
+                {
+                    imgPreview.ImageUrl = url;
+                    lblErrorImagen.Text = "";
+                }
+                else
+                {
+                    imgPreview.ImageUrl = "~/img/placeholder.jpg";
+                    lblErrorImagen.CssClass = "text-warning mb-2";
+                    lblErrorImagen.Text = "⚠️ La URL no parece ser una imagen. Se muestra placeholder.";
+                }
             }
         }
 
