@@ -85,8 +85,15 @@ namespace TP_ECOMMERCE_21_B
                 string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
                 service.MercadoPago mpService = new service.MercadoPago(baseUrl);
 
-                
-                string initPoint = mpService.CrearPreferencia("Compra en SIGNOS", 1, pedido.PrecioTotal);
+                string initPoint = mpService.CrearPreferencia(
+                    "Compra en SIGNOS",
+                    1,
+                    pedido.PrecioTotal,
+                    $"{baseUrl}/PurchaseConfirmation.aspx?id={numPedido}"
+                );
+
+                // Limpio el carrito antes de salir
+                Session["items"] = null;
 
                 Response.Redirect(initPoint);
                 return;

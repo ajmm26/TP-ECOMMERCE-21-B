@@ -12,7 +12,7 @@
                     <ul>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <li><%# Eval("Nombre") %> x <%# Eval("cantidad") %> = $<%# Eval("PrecioVenta") %></li>
+                    <li><%# Eval("nombreProducto") %> x <%# Eval("cantidadProducto") %> = $<%# Eval("PrecioUnitario") %></li>
                 </ItemTemplate>
                 <FooterTemplate>
                     </ul>

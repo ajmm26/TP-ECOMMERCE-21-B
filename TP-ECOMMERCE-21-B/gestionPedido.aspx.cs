@@ -102,6 +102,17 @@ namespace TP_ECOMMERCE_21_B
                     cargarPedidos(); // Refrescar grilla
                 }
             }
+            else if (e.CommandName == "VerDetalle")
+            {
+                int idPedido = Convert.ToInt32(e.CommandArgument);
+                negocioPedido negocio = new negocioPedido();
+
+                // Traés el pedido con JOIN al usuario (nuevo método en negocioPedido)
+                Pedido pedido = negocio.ObtenerPedidoConUsuario(idPedido);
+
+                // Redirigís a la página detalle
+                Response.Redirect("detallePedido.aspx?id=" + idPedido);
+            }
         }
 
         protected void GridViewPedido_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -127,5 +138,7 @@ namespace TP_ECOMMERCE_21_B
             GridViewPedido.DataSource = lista;
             GridViewPedido.DataBind();
         }
+
+        
     }
 }

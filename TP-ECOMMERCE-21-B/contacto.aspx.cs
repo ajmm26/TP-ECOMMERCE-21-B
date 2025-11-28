@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -21,12 +22,33 @@ namespace TP_ECOMMERCE_21_B
             string mensaje = txtMensaje.Text.Trim();
 
             
-            lblConfirmacion.Text = "Gracias por tu mensaje, " + nombre + ". Te responderemos pronto.";
-            lblConfirmacion.Visible = true;
+            try
+            {
+                service.emailService servicioEmail = new service.emailService();
+                string asunto = "Consulta desde la pagina de contacto";
+                StringBuilder cuerpo = new StringBuilder();
+                cuerpo.AppendLine("<h2>Nuevo mensaje de contacto</h2>");
+                cuerpo.AppendLine($"<p><strong>Nombre:</strong> {nombre}</p>");
+                cuerpo.AppendLine($"<p><strong>Email:</strong> {email}</p>");
+                cuerpo.AppendLine($"<p><strong>Mensaje:</strong><br/>{mensaje}</p>");
 
-            txtNombre.Text = "";
-            txtEmail.Text = "";
-            txtMensaje.Text = "";
+
+                servicioEmail.armarCorreo("utnprogramacionprueba@gmail.com", asunto, cuerpo.ToString());
+                servicioEmail.enviarMail();
+
+                lblConfirmacion.Text = "Gracias por tu mensaje, " + nombre + ". Te responderemos pronto.";
+                lblConfirmacion.Visible = true;
+
+                txtNombre.Text = "";
+                txtEmail.Text = "";
+                txtMensaje.Text = "";
+            }
+            catch (Exception ex)
+            {
+                lblConfirmacion.Text = "❌ Error al enviar el mensaje: " + ex.Message;
+                lblConfirmacion.Visible = true;
+
+            }
         }
     }
 }

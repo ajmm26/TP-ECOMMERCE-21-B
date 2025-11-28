@@ -37,23 +37,36 @@ namespace service
                 Items = new List<PreferenceItemRequest>()
             };
         }
-        public string CrearPreferencia(string titulo, int cantidad, decimal precio) 
-        { 
-             var item = new PreferenceItemRequest 
-           { 
-            Title = titulo, 
-            Quantity = cantidad, 
-            CurrencyId = "ARS",
-            UnitPrice = precio 
-           };
 
-            request.Items.Add(item); 
+        public string CrearPreferencia(string titulo, int cantidad, decimal precioTotal, string returnUrl)
+        {
+            // Configuración de la preferencia
+            var request = new PreferenceRequest
+            {
+                Items = new List<PreferenceItemRequest>
+                {
+                    new PreferenceItemRequest
+                    {
+                        Title = titulo,
+                        Quantity = cantidad,
+                        UnitPrice = precioTotal
+                    }
+                },
+                BackUrls = new PreferenceBackUrlsRequest
+                {
+                    Success = returnUrl,   // ✅ URL de retorno con idPedido
+                    Failure = returnUrl,
+                    Pending = returnUrl
+                },
+                AutoReturn = "approved"
+            };
 
+            var client = new PreferenceClient();
             Preference preference = client.Create(request);
-            return preference.InitPoint; 
+
+            return preference.InitPoint; // URL para redirigir al checkout
         }
-        
-          
+
 
     }
 }

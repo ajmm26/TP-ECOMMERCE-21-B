@@ -99,10 +99,11 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update Producto set Codigo = @codigo,Nombre=@nombre,MarcaId=@marcaId,Descripcion=@descripcion,PrecioCompra=@precioCompra,PorcentajeGanancia=@porcentajeGanancia,PrecioVenta=@precioVenta,StockActual=@stockActual,StockMinimo=@stockMinimo,Estado=@estado where Id=@id");
+                datos.setearConsulta("update Producto set Codigo = @codigo,Nombre=@nombre,MarcaId=@marcaId,CategoriaId=@categoriaId,Descripcion=@descripcion,PrecioCompra=@precioCompra,PorcentajeGanancia=@porcentajeGanancia,PrecioVenta=@precioVenta,StockActual=@stockActual,StockMinimo=@stockMinimo,Estado=@estado where Id=@id");
                 datos.agregarParametros("@codigo", aModificar.Codigo);
                 datos.agregarParametros("@nombre", aModificar.Nombre);
                 datos.agregarParametros("@marcaId", aModificar.IdMarca.Id);
+                datos.agregarParametros("@categoriaId", aModificar.IdCategoria.Id);
                 datos.agregarParametros("@descripcion", aModificar.Descripcion);
                 datos.agregarParametros("@precioCompra", aModificar.PrecioCompra);
                 decimal porcentaje = aModificar.PrecioCompra == 0 ? 0 :

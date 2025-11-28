@@ -122,7 +122,6 @@ namespace TP_ECOMMERCE_21_B
             Session["modoModificar"] = true;
             Response.Redirect("gestionProductos.aspx"); 
 
-
         }
         /*
         protected void btnEliminar_Click(object sender, EventArgs e)

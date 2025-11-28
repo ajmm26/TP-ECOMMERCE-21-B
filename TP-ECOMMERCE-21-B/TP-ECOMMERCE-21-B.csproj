@@ -113,6 +113,7 @@
     <Content Include="Content\estilos.css" />
     <Content Include="Content\pedidos.css" />
     <Content Include="Content\profile.css" />
+    <Content Include="detallePedido.aspx" />
     <Content Include="FormularioPago.aspx" />
     <Content Include="gestionCategoria.aspx" />
     <Content Include="gestionPedido.aspx" />
@@ -246,6 +247,13 @@
     </Compile>
     <Compile Include="contacto.aspx.designer.cs">
       <DependentUpon>contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="detallePedido.aspx.cs">
+      <DependentUpon>detallePedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detallePedido.aspx.designer.cs">
+      <DependentUpon>detallePedido.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormularioPago.aspx.cs">
       <DependentUpon>FormularioPago.aspx</DependentUpon>

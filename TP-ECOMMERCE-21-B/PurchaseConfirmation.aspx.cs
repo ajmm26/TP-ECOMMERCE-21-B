@@ -1,7 +1,9 @@
 ﻿using dominio;
+using negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,19 +16,40 @@ namespace TP_ECOMMERCE_21_B
         {
             if (!IsPostBack)
             {
-                // Recuperar carrito de sesión
-                List<Producto> carrito = Session["items"] as List<Producto>;
-                if (carrito != null && carrito.Count > 0)
+                int idPedido;
+                if (int.TryParse(Request.QueryString["id"],out idPedido))
                 {
-                    RepeaterResumen.DataSource = carrito;
+                    negocioPedido np = new negocioPedido();
+                    Pedido pedido = np.ObtenerPedidoConUsuario(idPedido);
+                    lblMensaje.Text = $"Pedido #{pedido.Id} confirmado correctamente";
+
+                    RepeaterResumen.DataSource = pedido.DetallePedidos;
                     RepeaterResumen.DataBind();
+                    lblTotal.Text =$"Total: ${pedido.PrecioTotal}";
 
-                    decimal total = carrito.Sum(p => p.PrecioVenta * p.cantidad);
-                    lblTotal.Text = $"Total pagado: ${total}";
+                    Usuario user = new negocioUsuario().buscarPorId(pedido.IdUsuario); // <- en vez de Session["usuario"]
+
+                    service.emailService servicioEmail = new service.emailService();
+                    string asunto = "Confirmación de compra - E-commerce SIGNOS";
+                    StringBuilder cuerpo = new StringBuilder();
+                    cuerpo.AppendLine($"<h1>✔ Gracias por tu compra, {user.Nombre} {user.Apellido}!</h1>");
+                    cuerpo.AppendLine("<h2>Resumen del pedido:</h2><ul>");
+                    foreach(var d in pedido.DetallePedidos)
+                    {
+                        cuerpo.AppendLine($"<li>{d.nombreProducto} x{d.cantidadProducto} = ${d.SubTotal}</li>");
+                    }
+                    cuerpo.AppendLine("</ul>");
+                    cuerpo.AppendLine($"<h3>Total: ${pedido.PrecioTotal}</h3>");
+                    cuerpo.AppendLine($"<p>Método de pago: {pedido.MetodoDePago}</p>");
+                    cuerpo.AppendLine("<hr /><p>Tu pedido está siendo procesado. ¡Gracias por confiar en SIGNOS!</p>");
+
+                    servicioEmail.armarCorreo(user.Email, asunto, cuerpo.ToString());
+                    servicioEmail.enviarMail();
+
+                    
+                    Session["items"] = null;
                 }
-
                
-                lblMensaje.Text = "Tu pago fue aprobado y el pedido está siendo procesado.";
             }
         }
     }

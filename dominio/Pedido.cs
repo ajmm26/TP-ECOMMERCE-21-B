@@ -11,6 +11,8 @@ namespace dominio
         public int Id {  get; set; }
         public DateTime Fecha { get; set; }
         public int IdUsuario { get; set; }
+        public string NombreUsuario { get; set;}
+        public string ApellidoUsuario { get; set;}
         public decimal PrecioTotal { get; set; }
         public string Estado {  get; set; }
         public string MetodoDePago { get; set; }
