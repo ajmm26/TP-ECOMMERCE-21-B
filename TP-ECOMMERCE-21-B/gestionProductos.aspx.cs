@@ -154,14 +154,7 @@ namespace TP_ECOMMERCE_21_B
 
             Response.Redirect("gestionProductos.aspx"); 
         }
-
-        protected void GridViewProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            GridViewProductos.PageIndex = e.NewPageIndex;
-            cargarGrilla(); 
-
-        }
-        protected void btnFiltrarProducto_Click(object sender, EventArgs e)
+        private void aplicarFiltroProductos()
         {
             string texto = txtFiltroProducto.Text.Trim().ToLower();
             string idCategoria = ddlFiltroCategoria.SelectedValue;
@@ -181,6 +174,16 @@ namespace TP_ECOMMERCE_21_B
 
             GridViewProductos.DataSource = filtrados;
             GridViewProductos.DataBind();
+        }
+        protected void GridViewProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridViewProductos.PageIndex = e.NewPageIndex; 
+            aplicarFiltroProductos(); 
+        }
+        protected void btnFiltrarProducto_Click(object sender, EventArgs e)
+        {
+            GridViewProductos.PageIndex = 0; 
+            aplicarFiltroProductos();
         }
     }
 }

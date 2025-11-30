@@ -15,7 +15,7 @@
             <asp:ListItem Text="Enviado" Value="Enviado" />
             <asp:ListItem Text="Cancelado" Value="Cancelado" />
         </asp:DropDownList>
-        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-secondary" OnClick="btnBuscar_Click" />
+        <asp:Button ID="btnBuscar" runat="server" Text="Buscar"  CssClass="btn btn-secondary ms-2 " OnClick="btnBuscar_Click"  />
     </div>
     <asp:GridView ID="GridViewPedido" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered" PageSize="10" AllowPaging="true" OnPageIndexChanging="GridViewPedido_PageIndexChanging"
         OnRowCommand="GridViewPedido_RowCommand" OnRowDataBound="GridViewPedido_RowDataBound">
@@ -30,6 +30,7 @@
             <asp:BoundField DataField="Id" HeaderText="Numero de Pedido" />
             <asp:BoundField DataField="Fecha" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy HH:mm}" />
             <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre" />
+            <asp:BoundField DataField="ApellidoUsuario" HeaderText="Apellido" />
             <asp:BoundField DataField="IdUsuario" HeaderText="ID Usuario" Visible="false" />
             <asp:BoundField DataField="PrecioTotal" HeaderText="Precio Total" DataFormatString="{0:C}" />
             <asp:BoundField DataField="Estado" HeaderText="Estado Actual" />
@@ -41,7 +42,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
 
-            <asp:TemplateField>
+            <asp:TemplateField HeaderText="Acciones">
                 <ItemTemplate>
                     <asp:Button ID="btnCambiarEstado" runat="server" Text="Cambiar"
                         CommandName="CambiarEstado" CommandArgument='<%# Eval("Id") %>'

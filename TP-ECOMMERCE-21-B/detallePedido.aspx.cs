@@ -14,6 +14,9 @@ namespace TP_ECOMMERCE_21_B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            System.Globalization.CultureInfo cultura = new System.Globalization.CultureInfo("es-AR");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultura;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultura;
             if (!IsPostBack)
             {
                 int idPedido;

@@ -8,42 +8,42 @@
         <!-- Columna izquierda -->
         <div class="col-md-6">
             <div class="mb-3">
-                <asp:TextBox ID="txtCodigo" runat="server" CssClass="form-control" Placeholder="Código" />
+                <p><strong>Codigo:</strong>  <asp:TextBox ID="txtCodigo" runat="server" CssClass="form-control" Placeholder="Código" /></p>             
             </div>
             <div class="mb-3">
-                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" Placeholder="Nombre" />
+                <p><strong>Nombre:</strong><asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" Placeholder="Nombre" /></p>                
             </div>
 
             <asp:UpdatePanel ID="updListas" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="true">
                 <ContentTemplate>
                     <div class="mb-3">
-                        <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-control" />
+                        <p><strong>Categoria:</strong> <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-control" /></p>                       
                     </div>
                     <div class="mb-3">
-                        <asp:DropDownList ID="ddlMarcas" runat="server" CssClass="form-control" />
+                        <p><strong>Marca:</strong> <asp:DropDownList ID="ddlMarcas" runat="server" CssClass="form-control" /></p>                       
                     </div>
                 </ContentTemplate>
 
             </asp:UpdatePanel>
 
             <div class="mb-3">
-                <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" Placeholder="Descripción" />
+                <p><strong>Descripcion:</strong> <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" Placeholder="Descripción" /></p>   
             </div>
             <div class="mb-3">
-                <asp:TextBox ID="txtPrecioCompra" runat="server" CssClass="form-control" Placeholder="Precio Compra" />
+                <p><strong>Precio de Compra:</strong> <asp:TextBox ID="txtPrecioCompra" runat="server" CssClass="form-control" Placeholder="Precio Compra" /></p>              
             </div>
             <div class="mb-3">
-                <asp:TextBox ID="txtPorcentajeGanancia" runat="server" CssClass="form-control" ReadOnly="true" />
-
+                <p><strong>Porcentaje de Ganancia:</strong><asp:TextBox ID="txtPorcentajeGanancia" runat="server" CssClass="form-control" ReadOnly="true" /></p>
             </div>
             <div class="mb-3">
-                <asp:TextBox ID="txtPrecioVenta" runat="server" CssClass="form-control" Placeholder="Precio Venta" />
+                <p><strong>Precio de Venta:</strong>  <asp:TextBox ID="txtPrecioVenta" runat="server" CssClass="form-control" Placeholder="Precio Venta" /></p>              
             </div>
             <div class="mb-3">
-                <asp:TextBox ID="txtStockActual" runat="server" CssClass="form-control" Placeholder="Stock Actual" />
+                <p><strong>Stock Actual:</strong> <asp:TextBox ID="txtStockActual" runat="server" CssClass="form-control" Placeholder="Stock Actual" /></p>               
             </div>
             <div class="mb-3">
-                <asp:TextBox ID="txtStockMinimo" runat="server" CssClass="form-control" Placeholder="Stock Mínimo" />
+                <p><strong>Stock Minimo:</strong><asp:TextBox ID="txtStockMinimo" runat="server" CssClass="form-control" Placeholder="Stock Mínimo" /></p>
+                
             </div>
             <div class="mb-3">
                 <asp:CheckBox ID="CheckBoxEstado" runat="server" Checked="true" Enabled="false" Text="&nbsp;&nbsp;Activo" />
@@ -65,6 +65,7 @@
                     <div class="mb-3">
                         <asp:Label ID="lblErrorImagen" runat="server" CssClass="text-danger mb-2" />
                     </div>
+                    <label for="txtUrlImagen" class="form-label"><strong>URL Imagen:</strong></label>
                     <div class="mb-3 d-flex">
 
 

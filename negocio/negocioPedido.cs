@@ -20,7 +20,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta(@" SELECT p.id,p.idUsuario,p.precioTotal,p.estado,p.metodoDepago,p.fechaPedido,u.nombre AS NombreUsuario FROM Pedido p INNER JOIN Usuario u ON p.idUsuario = u.id;");
+                datos.setearConsulta(@" SELECT p.id,p.idUsuario,p.precioTotal,p.estado,p.metodoDepago,p.fechaPedido,u.nombre AS NombreUsuario,u.apellido AS ApellidoUsuario FROM Pedido p INNER JOIN Usuario u ON p.idUsuario = u.id;");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -32,6 +32,7 @@ namespace negocio
                     pedido.MetodoDePago = (string)datos.Lector["metodoDepago"];
                     pedido.Fecha = (DateTime)datos.Lector["fechaPedido"];
                     pedido.NombreUsuario = (string)datos.Lector["NombreUsuario"];
+                    pedido.ApellidoUsuario = (string)datos.Lector["ApellidoUsuario"];
                     lista.Add(pedido);
                 }
 
@@ -231,21 +232,21 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta(@"SELECT p.id,p.idUsuario,p.precioTotal,p.estado,p.metodoDepago,p.FechaPedido,u.nombre AS NombreUsuario, u.apellido AS Apellido  FROM Pedido p INNER JOIN Usuario u ON p.idUsuario = u.id WHERE p.id = @idPedido");
+                datos.setearConsulta(@"SELECT p.id,p.idUsuario,p.precioTotal,p.estado,p.metodoDepago,p.FechaPedido,u.nombre AS NombreUsuario, u.apellido AS ApellidoUsuario  FROM Pedido p INNER JOIN Usuario u ON p.idUsuario = u.id WHERE p.id = @idPedido");
                 datos.limpiarParametros();
-                datos.agregarParametros("@idPedido",idPedido);
+                datos.agregarParametros("@idPedido", idPedido);
                 datos.ejecutarLectura();
-                if(datos.Lector.Read())
+                if (datos.Lector.Read())
                 {
-                    Pedido pedido= new Pedido();
+                    Pedido pedido = new Pedido();
                     pedido.Id = (int)datos.Lector["id"];
-                    pedido.IdUsuario= (int)datos.Lector["idUsuario"];
+                    pedido.IdUsuario = (int)datos.Lector["idUsuario"];
                     pedido.Fecha = datos.Lector["FechaPedido"] != DBNull.Value ? (DateTime)datos.Lector["FechaPedido"] : DateTime.MinValue;
                     pedido.PrecioTotal = (decimal)datos.Lector["precioTotal"];
-                    pedido.Estado= (string)datos.Lector["estado"];
+                    pedido.Estado = (string)datos.Lector["estado"];
                     pedido.MetodoDePago = (string)datos.Lector["metodoDepago"];
                     pedido.NombreUsuario = (string)datos.Lector["NombreUsuario"];
-                    pedido.ApellidoUsuario = (string)datos.Lector["Apellido"];
+                    pedido.ApellidoUsuario = (string)datos.Lector["ApellidoUsuario"];
                     pedido.DetallePedidos = getDetalle(pedido.Id);
                     return pedido;
                 }

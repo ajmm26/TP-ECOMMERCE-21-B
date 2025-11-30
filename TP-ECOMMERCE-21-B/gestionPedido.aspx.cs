@@ -1,7 +1,9 @@
 ﻿using dominio;
 using negocio;
+using service;
 using System;
 using System.Linq;
+using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -17,6 +19,9 @@ namespace TP_ECOMMERCE_21_B
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            System.Globalization.CultureInfo cultura = new System.Globalization.CultureInfo("es-AR");
+            System.Threading.Thread.CurrentThread.CurrentCulture = cultura;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = cultura;
             if (Session["usuario"] == null)
             {
                 Response.Redirect("login.aspx", false);
@@ -43,24 +48,7 @@ namespace TP_ECOMMERCE_21_B
             GridViewPedido.DataBind();
         }
 
-        /*private void registrarValoresValidosParaDropDown()
-        {
-            foreach (GridViewRow row in GridViewPedido.Rows)
-            {
-                if (row.RowType == DataControlRowType.DataRow)
-                {
-                    DropDownList ddlEstado = (DropDownList)row.FindControl("ddlEstado");
-                    if (ddlEstado != null)
-                    {
-                        ddlEstado.Items.Clear();
-                        ddlEstado.Items.Add("Activo");
-                        ddlEstado.Items.Add("En preparación");
-                        ddlEstado.Items.Add("Enviado");
-                        ddlEstado.Items.Add("Cancelado");
-                    }
-                }
-            }
-        }*/
+        
 
         protected void GridViewPedido_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -99,7 +87,22 @@ namespace TP_ECOMMERCE_21_B
                     negocioPedido negocio = new negocioPedido();
                     negocio.actualizarEstado(idPedido, nuevoEstado);
 
-                    cargarPedidos(); // Refrescar grilla
+                    
+                    Pedido pedido = negocio.ObtenerPedidoConUsuario(idPedido);
+                    Usuario user = new negocioUsuario().buscarPorId(pedido.IdUsuario);
+                    emailService servicioEmail = new emailService();
+                    string asunto = $"Estado actualizado - Pedido #{pedido.Id}";
+
+                    StringBuilder cuerpo = new StringBuilder();
+                    cuerpo.AppendLine($"<h2>Hola {user.Nombre},</h2>");
+                    cuerpo.AppendLine($"<p>Tu pedido <strong>#{pedido.Id}</strong> ha cambiado de estado.</p>");
+                    cuerpo.AppendLine($"<p><strong>Nuevo estado:</strong> {pedido.Estado}</p>");
+                    cuerpo.AppendLine("<hr /><p>Gracias por confiar en SIGNOS.</p>");
+
+                    servicioEmail.armarCorreo(user.Email, asunto, cuerpo.ToString());
+                    servicioEmail.enviarMail();
+
+                    cargarPedidos(); 
                 }
             }
             else if (e.CommandName == "VerDetalle")
@@ -107,21 +110,14 @@ namespace TP_ECOMMERCE_21_B
                 int idPedido = Convert.ToInt32(e.CommandArgument);
                 negocioPedido negocio = new negocioPedido();
 
-                // Traés el pedido con JOIN al usuario (nuevo método en negocioPedido)
+                
                 Pedido pedido = negocio.ObtenerPedidoConUsuario(idPedido);
 
-                // Redirigís a la página detalle
+                
                 Response.Redirect("detallePedido.aspx?id=" + idPedido);
             }
         }
-
-        protected void GridViewPedido_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            GridViewPedido.PageIndex = e.NewPageIndex;
-            cargarPedidos();
-        }
-
-        protected void btnBuscar_Click(object sender, EventArgs e)
+        private void aplicarFiltroPedidos()
         {
             int.TryParse(txtFiltroNumero.Text.Trim(), out int numeroPedido);
             string estado = ddlFiltroEstado.SelectedValue;
@@ -137,6 +133,18 @@ namespace TP_ECOMMERCE_21_B
 
             GridViewPedido.DataSource = lista;
             GridViewPedido.DataBind();
+        }
+
+        protected void GridViewPedido_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridViewPedido.PageIndex = e.NewPageIndex; // cambia a la página seleccionada
+            aplicarFiltroPedidos(); // reaplica el filtro
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            GridViewPedido.PageIndex = 0; // siempre arranca en la primera página
+            aplicarFiltroPedidos();
         }
 
         

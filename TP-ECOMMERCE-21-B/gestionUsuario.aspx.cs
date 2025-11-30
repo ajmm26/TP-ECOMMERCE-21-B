@@ -134,15 +134,14 @@ namespace TP_ECOMMERCE_21_B
 
         protected void GridViewUsuario_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            GridViewUsuario.PageIndex = e.NewPageIndex;
-            cargarListaUsuarios(); // ← si tenés este método para recargar la grilla
+            GridViewUsuario.PageIndex = e.NewPageIndex; 
+            aplicarFiltroUsuarios(); 
         }
         public bool MostrarBotonSeleccionar()
         {
             return Session["modoModificar"] != null || Session["modoBaja"] != null || Session["modoAlta"] != null || Session["modoEliminar"] != null;
         }
-
-        protected void btnFiltrar_Click(object sender, EventArgs e)
+        private void aplicarFiltroUsuarios()
         {
             string filtroTexto = txtFiltro.Text.Trim().ToLower();
             string estadoSeleccionado = ddlEstado.SelectedValue;
@@ -165,10 +164,17 @@ namespace TP_ECOMMERCE_21_B
             GridViewUsuario.DataBind();
         }
 
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            GridViewUsuario.PageIndex = 0; 
+            aplicarFiltroUsuarios();
+        }
+
         protected void btnLimpiarFiltro_Click(object sender, EventArgs e)
         {
             txtFiltro.Text = "";
-            cargarListaUsuarios();
+            ddlEstado.SelectedIndex = 0; 
+            cargarListaUsuarios(); 
         }
     }
 }
