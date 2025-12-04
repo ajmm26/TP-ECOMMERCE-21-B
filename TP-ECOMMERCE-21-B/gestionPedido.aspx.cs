@@ -48,7 +48,6 @@ namespace TP_ECOMMERCE_21_B
             GridViewPedido.DataBind();
         }
 
-        
 
         protected void GridViewPedido_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -60,14 +59,56 @@ namespace TP_ECOMMERCE_21_B
                 if (ddlEstado != null)
                 {
                     ddlEstado.Items.Clear();
-                    ddlEstado.Items.Add("Activo");
-                    ddlEstado.Items.Add("En preparación");
-                    ddlEstado.Items.Add("Enviado");
-                    ddlEstado.Items.Add("Cancelado");
 
-                    ListItem item = ddlEstado.Items.FindByText(pedido.Estado);
+                    bool esTransferencia = pedido.MetodoDePago != null &&
+                        pedido.MetodoDePago.Trim().ToLower().Contains("transferencia");
+
+                    if (esTransferencia)
+                    {
+                        ddlEstado.Items.Add("Pago aprobado");
+                        ddlEstado.Items.Add("En preparación");
+                        ddlEstado.Items.Add("Enviado");
+                        ddlEstado.Items.Add("Entregado");
+                        ddlEstado.Items.Add("Cancelado");
+                    }
+                    else
+                    {
+                        ddlEstado.Items.Add("En preparación");
+                        ddlEstado.Items.Add("Enviado");
+                        ddlEstado.Items.Add("Entregado");
+                        ddlEstado.Items.Add("Cancelado");
+                    }
+
+                    
+                    string estadoActual = pedido.Estado?.Trim() ?? "";
+                    string estadoPreseleccionado = estadoActual;
+
+                    if (esTransferencia)
+                    {
+                        if (estadoActual.Equals("Pago pendiente", StringComparison.OrdinalIgnoreCase))
+                            estadoPreseleccionado = "Pago aprobado";
+                        else if (estadoActual.Equals("Pago aprobado", StringComparison.OrdinalIgnoreCase))
+                            estadoPreseleccionado = "En preparación";
+                        else if (estadoActual.Equals("En preparación", StringComparison.OrdinalIgnoreCase))
+                            estadoPreseleccionado = "Enviado";
+                        else if (estadoActual.Equals("Enviado", StringComparison.OrdinalIgnoreCase))
+                            estadoPreseleccionado = "Entregado";
+                    }
+                    else
+                    {
+                        if (estadoActual.Equals("Activo", StringComparison.OrdinalIgnoreCase))
+                            estadoPreseleccionado = "En preparación";
+                        else if (estadoActual.Equals("En preparación", StringComparison.OrdinalIgnoreCase))
+                            estadoPreseleccionado = "Enviado";
+                        else if (estadoActual.Equals("Enviado", StringComparison.OrdinalIgnoreCase))
+                            estadoPreseleccionado = "Entregado";
+                    }
+
+                    ListItem item = ddlEstado.Items.FindByText(estadoPreseleccionado);
                     if (item != null)
                         item.Selected = true;
+                    else
+                        ddlEstado.SelectedIndex = 0;
                 }
             }
         }
@@ -76,7 +117,6 @@ namespace TP_ECOMMERCE_21_B
         {
             if (e.CommandName == "CambiarEstado")
             {
-                
                 GridViewRow row = ((Button)e.CommandSource).NamingContainer as GridViewRow;
                 DropDownList ddlEstado = (DropDownList)row.FindControl("ddlEstado");
                 if (ddlEstado != null)
@@ -85,10 +125,21 @@ namespace TP_ECOMMERCE_21_B
                     int idPedido = Convert.ToInt32(e.CommandArgument);
 
                     negocioPedido negocio = new negocioPedido();
+                    Pedido pedido = negocio.ObtenerPedidoConUsuario(idPedido);
+
+                    
+                    if (pedido.MetodoDePago != null &&
+                        pedido.MetodoDePago.Trim().ToLower().Contains("transferencia") &&
+                        nuevoEstado == "Activo")
+                    {
+                        
+                        nuevoEstado = "Pago aprobado";
+                    }
+
+                    
                     negocio.actualizarEstado(idPedido, nuevoEstado);
 
                     
-                    Pedido pedido = negocio.ObtenerPedidoConUsuario(idPedido);
                     Usuario user = new negocioUsuario().buscarPorId(pedido.IdUsuario);
                     emailService servicioEmail = new emailService();
                     string asunto = $"Estado actualizado - Pedido #{pedido.Id}";
@@ -96,13 +147,13 @@ namespace TP_ECOMMERCE_21_B
                     StringBuilder cuerpo = new StringBuilder();
                     cuerpo.AppendLine($"<h2>Hola {user.Nombre},</h2>");
                     cuerpo.AppendLine($"<p>Tu pedido <strong>#{pedido.Id}</strong> ha cambiado de estado.</p>");
-                    cuerpo.AppendLine($"<p><strong>Nuevo estado:</strong> {pedido.Estado}</p>");
+                    cuerpo.AppendLine($"<p><strong>Nuevo estado:</strong> {nuevoEstado}</p>");
                     cuerpo.AppendLine("<hr /><p>Gracias por confiar en SIGNOS.</p>");
 
                     servicioEmail.armarCorreo(user.Email, asunto, cuerpo.ToString());
                     servicioEmail.enviarMail();
 
-                    cargarPedidos(); 
+                    cargarPedidos();
                 }
             }
             else if (e.CommandName == "VerDetalle")
@@ -110,13 +161,14 @@ namespace TP_ECOMMERCE_21_B
                 int idPedido = Convert.ToInt32(e.CommandArgument);
                 negocioPedido negocio = new negocioPedido();
 
-                
                 Pedido pedido = negocio.ObtenerPedidoConUsuario(idPedido);
 
-                
                 Response.Redirect("detallePedido.aspx?id=" + idPedido);
             }
         }
+
+
+
         private void aplicarFiltroPedidos()
         {
             int.TryParse(txtFiltroNumero.Text.Trim(), out int numeroPedido);
@@ -137,13 +189,13 @@ namespace TP_ECOMMERCE_21_B
 
         protected void GridViewPedido_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            GridViewPedido.PageIndex = e.NewPageIndex; // cambia a la página seleccionada
-            aplicarFiltroPedidos(); // reaplica el filtro
+            GridViewPedido.PageIndex = e.NewPageIndex; 
+            aplicarFiltroPedidos(); 
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            GridViewPedido.PageIndex = 0; // siempre arranca en la primera página
+            GridViewPedido.PageIndex = 0; 
             aplicarFiltroPedidos();
         }
 

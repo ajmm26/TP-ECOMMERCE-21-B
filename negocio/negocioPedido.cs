@@ -47,12 +47,23 @@ namespace negocio
 
         public int AgregarPedido(Pedido pedido)
         {
+            if (pedido.MetodoDePago != null &&
+                pedido.MetodoDePago.Trim().ToLower().Contains("transferencia"))
+            {
+                pedido.Estado = "Pago pendiente";
+            }
+            else if (pedido.MetodoDePago == "MercadoPago" || pedido.MetodoDePago == "Tarjeta de crédito")
+            {
+                pedido.Estado = "Activo"; 
+            }
+            else
+            {
+                pedido.Estado = "Pendiente"; 
+            }
 
             AccesoDatos datos = new AccesoDatos();
-
             try
             {
-
                 datos.limpiarParametros();
                 datos.setearProcedimiento("agregar_Pedido");
                 datos.agregarParametros("@idUsuario", pedido.IdUsuario);
@@ -62,7 +73,6 @@ namespace negocio
 
                 object res = datos.ejecutarEscalar();
                 return Convert.ToInt32(res);
-
             }
             catch (Exception ex)
             {
@@ -72,10 +82,8 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
-
-
-
         }
+
 
 
 

@@ -10,6 +10,7 @@
 
         <asp:DropDownList ID="ddlFiltroEstado" runat="server" CssClass="form form-control mb-2">
             <asp:ListItem Text="Todos" Value="" />
+            <asp:ListItem Text="Pago en proceso" Value="Pago en proceso" />
             <asp:ListItem Text="Activo" Value="Activo" />
             <asp:ListItem Text="En preparación" Value="En preparación" />
             <asp:ListItem Text="Enviado" Value="Enviado" />
