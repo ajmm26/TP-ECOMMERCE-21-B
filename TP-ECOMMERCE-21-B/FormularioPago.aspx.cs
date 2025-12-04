@@ -64,9 +64,12 @@ namespace TP_ECOMMERCE_21_B
             Usuario user = (Usuario)Session["usuario"];
             pedido.IdUsuario = user.Id;
             pedido.PrecioTotal= carrito.Sum(p => p.PrecioVenta * p.cantidad);
-            pedido.Estado = "Pagado";
+
+            //pedido.Estado = "Pagado";
             pedido.MetodoDePago = rbPago.SelectedValue;
+
             int numPedido = np.AgregarPedido(pedido);
+
             pedido.DetallePedidos = getDetallePedido(numPedido);
             foreach(var detalle in pedido.DetallePedidos)
             {
@@ -92,7 +95,7 @@ namespace TP_ECOMMERCE_21_B
                     $"{baseUrl}/PurchaseConfirmation.aspx?id={numPedido}"
                 );
 
-                // Limpio el carrito antes de salir
+               
                 Session["items"] = null;
 
                 Response.Redirect(initPoint);

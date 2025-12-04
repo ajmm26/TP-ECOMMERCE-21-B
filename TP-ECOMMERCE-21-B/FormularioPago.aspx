@@ -78,7 +78,7 @@
 
                 <div class="mb-3">
                     <label for="rbPago">Método de pago</label>
-                    <asp:RadioButtonList ID="rbPago" runat="server" AutoPostBack="true" OnSelectedIndexChanged="rbPago_SelectedIndexChanged">
+                    <asp:RadioButtonList ID="rbPago" runat="server" AutoPostBack="false" OnSelectedIndexChanged="rbPago_SelectedIndexChanged">
                         <asp:ListItem Text="Tarjeta de crédito" Value="tarjeta" />
                         <asp:ListItem Text="Transferencia bancaria" Value="transferencia" />
                         <asp:ListItem Text="MercadoPago" Value="mercadopago" />

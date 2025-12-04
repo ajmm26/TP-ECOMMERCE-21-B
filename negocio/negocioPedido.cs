@@ -47,19 +47,23 @@ namespace negocio
 
         public int AgregarPedido(Pedido pedido)
         {
-            if (pedido.MetodoDePago != null &&
-                pedido.MetodoDePago.Trim().ToLower().Contains("transferencia"))
+
+            string metodo = pedido.MetodoDePago?.Trim().ToLower();
+
+            if (metodo == "transferencia")
             {
                 pedido.Estado = "Pago pendiente";
             }
-            else if (pedido.MetodoDePago == "MercadoPago" || pedido.MetodoDePago == "Tarjeta de crédito")
+            else if (metodo == "mercadopago" || metodo == "tarjeta")
             {
                 pedido.Estado = "Activo"; 
             }
             else
             {
-                pedido.Estado = "Pendiente"; 
+                pedido.Estado = "Activo"; 
             }
+
+
 
             AccesoDatos datos = new AccesoDatos();
             try
@@ -70,6 +74,8 @@ namespace negocio
                 datos.agregarParametros("@precioTotal", pedido.PrecioTotal);
                 datos.agregarParametros("@estado", pedido.Estado);
                 datos.agregarParametros("@metodoDePago", pedido.MetodoDePago);
+               
+
 
                 object res = datos.ejecutarEscalar();
                 return Convert.ToInt32(res);
